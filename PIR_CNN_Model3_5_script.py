@@ -6,8 +6,7 @@ import numpy as np
 import json
 from pandas.io.json import json_normalize
 import pickle
-import matplotlib.pyplot as plt
-from IPython.display import display
+import h5py
 
 import keras
 import tensorflow as tf
