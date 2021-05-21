@@ -7,6 +7,7 @@
   date         = {2018},
   file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Xu2018 - Deep Learning Based Fatigue Crack Diagnosis of Aircraft Structures.pdf:PDF},
   journaltitle = {7th Asia-Pacific Workshop on Structural Health Monitoring},
+  url          = {https://www.ndt.net/search/docs.php3?id=24093},
 }
 
 @Article{Li2018,
@@ -29,6 +30,7 @@
   date         = {2018},
   file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Amidi2018 - VIP Cheatsheet_ Convolutional Neural Networks.pdf:PDF},
   journaltitle = {CS 230 – Deep Learning},
+  url          = {https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks},
 }
 
 @Article{MONTEROJIMENEZ2020539,
@@ -76,14 +78,7 @@
   date         = {2019},
   file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Bindal2019 - Normalization Techniques in Deep Neural Networks.pdf:PDF},
   journaltitle = {Medium},
-}
-
-@Article{Bai2018,
-  author       = {Shaojie Bai; J. Zico Kolter; Vladlen Koltun},
-  title        = {An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling},
-  date         = {2018},
-  file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Bai2018 - An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling.pdf:PDF},
-  journaltitle = {arXiv},
+  url          = {https://medium.com/techspace-usict/normalization-techniques-in-deep-neural-networks-9121bf100d8},
 }
 
 @Article{LeCun2015,
@@ -148,6 +143,7 @@
   pages        = {528-533},
   volume       = {85},
   date         = {1963-12},
+  doi          = {https://doi.org/10.1115/1.3656900},
   journaltitle = {Journal of Basic Engineering},
 }
 
@@ -159,6 +155,7 @@
   article-doi        = {10.1109/72.279181},
   completed          = {20121002},
   date               = {1994},
+  doi                = {DOI: 10.1109/72.279181},
   history            = {1994/01/01 00:00 [entrez]},
   issue              = {2},
   journaltitle       = {IEEE transactions on neural networks},
@@ -411,6 +408,20 @@
   doi          = {10.1109/ACCESS.2019.2950985},
   file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/A_Review_on_Deep_Learning_Applications_in_Prognost.pdf:PDF},
   journaltitle = {IEEE Access},
+}
+
+@Article{Bai2018,
+  author        = {Shaojie Bai and J. Zico Kolter and Vladlen Koltun},
+  journal       = {CoRR},
+  title         = {An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling},
+  year          = {2018},
+  volume        = {abs/1803.01271},
+  archiveprefix = {arXiv},
+  bibsource     = {dblp computer science bibliography, https://dblp.org},
+  biburl        = {https://dblp.org/rec/journals/corr/abs-1803-01271.bib},
+  eprint        = {1803.01271},
+  timestamp     = {Mon, 13 Aug 2018 16:47:39 +0200},
+  url           = {http://arxiv.org/abs/1803.01271},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}

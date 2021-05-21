@@ -38,7 +38,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{ifthen}
-\usepackage{biblatex}
+\usepackage[backend=biber, style=ieee]{biblatex}
 \addbibresource{references.bib}
 \usepackage{hyperref}
 \usepackage{url}
@@ -171,12 +171,12 @@ In one of the first applications of \glspl{cnn} to \gls{phm} \textsc{Li et al.} 
 
 % ADD MORE CNN FOR PHM EXAMPLES HERE
 
-As it showed promising results in other applications of deep learning to \gls{phm} (\cite{Liu2019a}, \cite{Xiao2016}), classification is an interesting alternative to regression for \gls{rul} prediction. Instead of trying to predict an exact \gls{rul} value the goal is to predict the correct \gls{rul} class with a lower and upper bound for the \gls{rul}.
+As it showed promising results in other applications of deep learning to \gls{phm} (\cite{Liu2019a, Xiao2016}), classification is an interesting alternative to regression for \gls{rul} prediction. Instead of trying to predict an exact \gls{rul} value the goal is to predict the correct \gls{rul} class with a lower and upper bound for the \gls{rul}.
 
 \section{Research relevance}
 \label{sec:research-relevance}
 
-The goal of this study is to predict the \gls{rul} of precracked aircraft fuselage panels based on strain gauge measurements using deep learning. This approach is driven by the impressive results of deep learning to \gls{rul} prediction as shown in \cite{Xu2018}, \cite{Li2018}, \cite{Liu2019}, \cite{Yuan2016}, \cite{Wu2018}, \cite{Park2020} and other publications (For an overview see \textsc{Akrim et al.} \cite{Akrim2021}). Strain gauges play a vital role in \gls{phm} in general \cite{Tinga2019} and specifically for the aircraft domain \cite{Timothy2009}. According to \textsc{Fink et al.} \cite{Fink2020} is the use of simulation environments and adaption to real-life applications a promising future research approach as the data will more likely be sufficient in the source domain. The synthetic dataset used for this study aims at using this advantages. For the application of deep learning to crack growth for \gls{rul} prediction based on strain gauge measurements no results in the literature could be found. This study tries to fill this research gap.
+The goal of this study is to predict the \gls{rul} of precracked aircraft fuselage panels based on strain gauge measurements using deep learning. This approach is driven by the impressive results of deep learning to \gls{rul} prediction as shown in \cite{Xu2018, Li2018, Liu2019, Yuan2016, Wu2018, Park2020} and other publications (For an overview see \textsc{Akrim et al.} \cite{Akrim2021}). Strain gauges play a vital role in \gls{phm} in general \cite{Tinga2019} and specifically for the aircraft domain \cite{Timothy2009}. According to \textsc{Fink et al.} \cite{Fink2020} is the use of simulation environments and adaption to real-life applications a promising future research approach as the data will more likely be sufficient in the source domain. The synthetic dataset used for this study aims at using this advantages. For the application of deep learning to crack growth for \gls{rul} prediction based on strain gauge measurements no results in the literature could be found. This study tries to fill this research gap.
 
 
 \printbibliography
