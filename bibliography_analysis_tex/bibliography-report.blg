@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: bibliography-report.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Database file #1: references.bib
+Warning--can't use both author and editor fields in Little1996
+Warning--empty booktitle in Liu2019
+Warning--empty journal in Rana2016
+Warning--empty journal in Timothy2009
+Warning--can't use both author and editor fields in Tinga2019
+Warning--empty journal in Wu2016
+Warning--empty journal in Xiao2016
+You've used 28 entries,
+            2118 wiz_defined-function locations,
+            703 strings with 10009 characters,
+and the built_in function-call counts, 10801 in all, are:
+= -- 1016
+> -- 614
+< -- 6
++ -- 247
+- -- 215
+* -- 828
+:= -- 1819
+add.period$ -- 87
+call.type$ -- 28
+change.case$ -- 189
+chr.to.int$ -- 0
+cite$ -- 35
+duplicate$ -- 373
+empty$ -- 762
+format.name$ -- 215
+if$ -- 2220
+int.to.chr$ -- 0
+int.to.str$ -- 28
+missing$ -- 30
+newline$ -- 144
+num.names$ -- 58
+pop$ -- 190
+preamble$ -- 1
+purify$ -- 163
+quote$ -- 0
+skip$ -- 264
+stack$ -- 0
+substring$ -- 643
+swap$ -- 80
+text.length$ -- 6
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 108
+warning$ -- 7
+while$ -- 90
+width$ -- 30
+write$ -- 305
+(There were 7 warnings)

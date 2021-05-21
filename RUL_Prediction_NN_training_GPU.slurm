@@ -20,7 +20,7 @@
 ## priority, but if you exceed these values, your job will be terminated.
 ## Check your "Job Ended" emails for actual resource usage info.
 ##SBATCH --mem=190G          # Total memory needed for your job (suffixes: K,M,G,T)
-#SBATCH --time=0-01:00    # Total time needed for your job: Days-Hours:Minutes
+#SBATCH --time=0-02:00    # Total time needed for your job: Days-Hours:Minutes
 
 ## These options are more useful when running parallel and array jobs
 #SBATCH --nodes=1
@@ -34,4 +34,4 @@ module load cuda/11.0
 conda activate RUL-Prediction
 
 ## Start the job
-srun -n 1 python PIR_CNN_Model3_5_script_distributed.py
+srun -n 1 python PIR_CNN_Model3_6_script_distributed.py

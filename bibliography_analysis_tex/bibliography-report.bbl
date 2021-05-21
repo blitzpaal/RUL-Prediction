@@ -1,0 +1,181 @@
+\begin{thebibliography}{10}
+
+\bibitem{Xu2018}
+L.~Xu; S. F. Yuan; J. Chen;~Q. Bao.
+\newblock Deep learning based fatigue crack diagnosis of aircraft structures.
+\newblock In {\em 7th Asia-Pacific Workshop on Structural Health Monitoring},
+  2018.
+
+\bibitem{Bengio1994}
+Y.~Bengio, P.~Simard, and P.~Frasconi.
+\newblock Learning long-term dependencies with gradient descent is difficult.
+\newblock {\em IEEE transactions on neural networks}, 5:157--66, 1994.
+
+\bibitem{Paris1963}
+P.~Paris;~F. Erdogan.
+\newblock A critical analysis of crack propagation laws.
+\newblock {\em Journal of Basic Engineering}, 85(4):528--533, December 1963.
+
+\bibitem{Fink2020}
+Olga Fink, Qin Wang, Markus Svensén, Pierre Dersin, Wan-Jui Lee, and Melanie
+  Ducoffe.
+\newblock Potential, challenges and future directions for deep learning in
+  prognostics and health management applications.
+\newblock {\em Engineering Applications of Artificial Intelligence}, 92:103678,
+  2020.
+
+\bibitem{Hochreiter1997}
+Sepp Hochreiter and Jürgen Schmidhuber.
+\newblock {Long Short-Term Memory}.
+\newblock {\em Neural Computation}, 9(8):1735--1780, 11 1997.
+
+\bibitem{Hopfield1982}
+J~J Hopfield.
+\newblock Neural networks and physical systems with emergent collective
+  computational abilities.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  79(8):2554--2558, 1982.
+
+\bibitem{Bai2018}
+Shaojie Bai; J. Zico Kolter;~Vladlen Koltun.
+\newblock An empirical evaluation of generic convolutional and recurrent
+  networks for sequence modeling.
+\newblock {\em arXiv}, 2018.
+
+\bibitem{Lecun1998}
+Y.~Lecun, L.~Bottou, Y.~Bengio, and P.~Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324, 1998.
+
+\bibitem{LeCun2015}
+Yann LeCun, Yoshua Bengio, and Geoffrey Hinton.
+\newblock Deep learning.
+\newblock {\em Nature}, 521(7553):436--444, 2015.
+
+\bibitem{LI20181}
+Xiang Li, Qian Ding, and Jian-Qiao Sun.
+\newblock Remaining useful life estimation in prognostics using deep
+  convolution neural networks.
+\newblock {\em Reliability Engineering \& System Safety}, 172:1--11, 2018.
+
+\bibitem{Little1996}
+W.~A. Little.
+\newblock {\em The Existence of Persistent States in the Brain}, pages
+  145--164.
+\newblock Springer US, Boston, MA, 1996.
+
+\bibitem{Liu2019a}
+Chien-Liang Liu, Wen-Hoar Hsaio, and Yao-Chung Tu.
+\newblock Time series classification with multivariate convolutional neural
+  network.
+\newblock {\em IEEE Transactions on Industrial Electronics}, 66(6):4788--4797,
+  2019.
+
+\bibitem{Liu2019}
+Chongdang Liu, Linxuan Zhang, and Cheng Wu.
+\newblock Direct remaining useful life prediction for rolling bearing using
+  temporal convolutional networks.
+\newblock pages 2965--2971, Xiamen, China, 2019. IEEE.
+
+\bibitem{MONTEROJIMENEZ2020539}
+Juan~José {Montero Jimenez}, Sébastien Schwartz, Rob Vingerhoeds, Bernard
+  Grabot, and Michel Salaün.
+\newblock Towards multi-model approaches to predictive maintenance: A
+  systematic literature survey on diagnostics and prognostics.
+\newblock {\em Journal of Manufacturing Systems}, 56:539--557, 2020.
+
+\bibitem{Park2020}
+Kyungnam Park, Yohwan Choi, Won Choi, Hee-Yeon Ryu, and Hongseok Kim.
+\newblock Lstm-based battery remaining useful life prediction with
+  multi-channel charging profiles.
+\newblock {\em IEEE Access}, PP:1--1, 01 2020.
+
+\bibitem{Rana2016}
+Rajib Rana.
+\newblock Gated recurrent unit (gru) for emotion classification from noisy
+  speech.
+\newblock December 2016.
+
+\bibitem{Akrim2021}
+Anass Akrim; Christian Gogua; Rob Vingerhoeds;~Michel Salaun.
+\newblock Review of prognostics approaches with a particularfocus on the
+  current machine learning algorithms.
+\newblock {\em Preprint}, 2021.
+
+\bibitem{Saxena2008}
+Abhinav Saxena, Kai Goebel, Don Simon, and Neil Eklund.
+\newblock Damage propagation modeling for aircraft engine run-to-failure
+  simulation.
+\newblock In {\em 2008 International Conference on Prognostics and Health
+  Management}, pages 1--9, 2008.
+
+\bibitem{Sikorska2011}
+J.~Z. Sikorska, M.~Hodkiewicz, and L.~Ma.
+\newblock Prognostic modelling options for remaining useful life estimation by
+  industry.
+\newblock {\em Mechanical Systems and Signal Processing}, 25(5):1803--1836,
+  2011.
+
+\bibitem{Timothy2009}
+Fallon Timothy, Mahal Devinder, and Hebden Iain.
+\newblock F-35 joint strike fighter structural prognosis and health management
+  an overview.
+\newblock 01 2009.
+
+\bibitem{Tinga2019}
+Tiedo Tinga and Richard Loendersloot.
+\newblock {\em Physical Model-Based Prognostics and Health Monitoring to Enable
+  Predictive Maintenance}, pages 313--353.
+\newblock Springer International Publishing, Cham, 2019.
+
+\bibitem{Voulodimos2018}
+Athanasios Voulodimos, Nikolaos Doulamis, George Bebis, and Tania Stathaki.
+\newblock Recent developments in deep learning for engineering applications.
+\newblock {\em Computational Intelligence and Neuroscience}, 2018:8141259,
+  2018.
+
+\bibitem{Wu2015}
+Shaomin Wu, Kwok~L. Tsui, Nan Chen, Qiang Zhou, Yizhen Hai, and Wenbin Wang.
+\newblock Prognostics and health management: A review on data driven
+  approaches.
+\newblock {\em Mathematical Problems in Engineering}, 2015:793161, 2015.
+
+\bibitem{Wu2016}
+Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc~V. Le, Mohammad Norouzi, Wolfgang
+  Macherey, Maxim Krikun, Yuan Cao, Qin Gao, Klaus Macherey, Jeff Klingner,
+  Apurva Shah, Melvin Johnson, Xiaobing Liu, Łukasz Kaiser, Stephan Gouws,
+  Yoshikiyo Kato, Taku Kudo, Hideto Kazawa, Keith Stevens, George Kurian,
+  Nishant Patil, Wei Wang, Cliff Young, Jason Smith, Jason Riesa, Alex Rudnick,
+  Oriol Vinyals, Greg Corrado, Macduff Hughes, and Jeffrey Dean.
+\newblock Google's neural machine translation system: Bridging the gap between
+  human and machine translation.
+\newblock September 2016.
+
+\bibitem{Wu2018}
+Yuting Wu, Mei Yuan, Shaopeng Dong, Li~Lin, and Yingqi Liu.
+\newblock Remaining useful life estimation of engineered systems using vanilla
+  lstm neural networks.
+\newblock {\em Neurocomputing}, 275:167--179, 2018.
+
+\bibitem{Xiao2016}
+Wei Xiao.
+\newblock A probabilistic machine learning approach to detect industrial plant
+  faults.
+\newblock March 2016.
+
+\bibitem{Yuan2016}
+Mei Yuan, Yuting Wu, and Li~Lin.
+\newblock Fault diagnosis and remaining useful life estimation of aero engine
+  using lstm neural network.
+\newblock In {\em 2016 IEEE International Conference on Aircraft Utility
+  Systems (AUS)}, pages 135--140, 2016.
+
+\bibitem{Zio2012}
+Enrico Zio.
+\newblock {Prognostics and Health Management of Industrial Equipment}.
+\newblock In Seifedine Kadry, editor, {\em {Diagnostics and Prognostics of
+  Engineering Systems: Methods and Techniques}}, pages 333--356. {IGI Global},
+  September 2012.
+\newblock ISBN13: 9781466620957.
+
+\end{thebibliography}
