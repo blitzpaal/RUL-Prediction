@@ -38,7 +38,10 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{ifthen}
-\usepackage{cite}
+\usepackage{biblatex}
+\addbibresource{references.bib}
+\usepackage{hyperref}
+\usepackage{url}
 \usepackage[pdftex]{graphicx}
 \graphicspath{{images/}}
 \usepackage{tikz,filecontents}
@@ -67,8 +70,6 @@
 
 \newcommand{\alert}[1]{\textcolor{red}{#1}}
 \usepackage[caption=false,font=footnotesize]{subfig}
-\usepackage{url}
-
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -166,7 +167,7 @@ Pioneers models were developed such as \glspl{erm} or Jordan Networks, outperfor
 
 The common \gls{cnn} models deal with 2-Dimensional data as input such as pictures. The time sequence data used for \gls{phm} is in 1-Dimensional format. For this application 1D-\gls{cnn} have been introduced. The key differences between them and the 2D-\glspl{cnn} are that their input data is reduced by one dimension and the convolution filter only slides in one dimension. \cite{Akrim2021}
 
-In one of the first applications of \glspl{cnn} to \gls{phm} \textsc{Li et al.} suggested that \glspl{cnn} can be used to obtain \gls{rul} prognoses for machinery \cite{LI20181}. The model was applied to the C-MAPSS dataset \cite{Saxena2008} and outperformed state-of-the-art prognostics approaches including \gls{rnn} and \gls{lstm} models. To prepare the data for the \gls{cnn} a sliding window approach was used. This approach maps the \gls{rul} at time $ t_i $ to the current and past time steps of the input features $ [x_{t-N+1}, x_{t-N+2},..., x_{t-1}, x_t] $ where $ N $ is the length of the sequence. The resulting input matrix has therefore the dimension $ k \times N $ where $ k $ is the number of features.
+In one of the first applications of \glspl{cnn} to \gls{phm} \textsc{Li et al.} suggested that \glspl{cnn} can be used to obtain \gls{rul} prognoses for machinery \cite{Li2018}. The model was applied to the C-MAPSS dataset \cite{Saxena2008} and outperformed state-of-the-art prognostics approaches including \gls{rnn} and \gls{lstm} models. To prepare the data for the \gls{cnn} a sliding window approach was used. This approach maps the \gls{rul} at time $ t_i $ to the current and past time steps of the input features $ [x_{t-N+1}, x_{t-N+2},..., x_{t-1}, x_t] $ where $ N $ is the length of the sequence. The resulting input matrix has therefore the dimension $ k \times N $ where $ k $ is the number of features.
 
 % ADD MORE CNN FOR PHM EXAMPLES HERE
 
@@ -175,11 +176,10 @@ As it showed promising results in other applications of deep learning to \gls{ph
 \section{Research relevance}
 \label{sec:research-relevance}
 
-The goal of this study is to predict the \gls{rul} of precracked aircraft fuselage panels based on strain gauge measurements using deep learning. This approach is driven by the impressive results of deep learning to \gls{rul} prediction as shown in \cite{Xu2018}, \cite{LI20181}, \cite{Liu2019}, \cite{Yuan2016}, \cite{Wu2018}, \cite{Park2020} and other publications (For an overview see \textsc{Akrim et al.} \cite{Akrim2021}). Strain gauges play a vital role in \gls{phm} in general \cite{Tinga2019} and specifically for the aircraft domain \cite{Timothy2009}. According to \textsc{Fink et al.} \cite{Fink2020} is the use of simulation environments and adaption to real-life applications a promising future research approach as the data will more likely be sufficient in the source domain. The synthetic dataset used for this study aims at using this advantages. For the application of deep learning to crack growth for \gls{rul} prediciton based on strain gauge measurements no results in the literature could be found. This study tries to fill this research gap.
+The goal of this study is to predict the \gls{rul} of precracked aircraft fuselage panels based on strain gauge measurements using deep learning. This approach is driven by the impressive results of deep learning to \gls{rul} prediction as shown in \cite{Xu2018}, \cite{Li2018}, \cite{Liu2019}, \cite{Yuan2016}, \cite{Wu2018}, \cite{Park2020} and other publications (For an overview see \textsc{Akrim et al.} \cite{Akrim2021}). Strain gauges play a vital role in \gls{phm} in general \cite{Tinga2019} and specifically for the aircraft domain \cite{Timothy2009}. According to \textsc{Fink et al.} \cite{Fink2020} is the use of simulation environments and adaption to real-life applications a promising future research approach as the data will more likely be sufficient in the source domain. The synthetic dataset used for this study aims at using this advantages. For the application of deep learning to crack growth for \gls{rul} prediction based on strain gauge measurements no results in the literature could be found. This study tries to fill this research gap.
 
 
-\bibliographystyle{plain}
-\bibliography{references}
+\printbibliography
 
 \end{document}
 

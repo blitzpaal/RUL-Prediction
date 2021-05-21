@@ -1,56 +1,18 @@
-This is BibTeX, Version 0.99d
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: bibliography-report.aux
-Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: plain.bst
-Reallocating 'name_of_file' (item size: 1) to 11 items.
-Database file #1: references.bib
-Warning--can't use both author and editor fields in Little1996
-Warning--empty booktitle in Liu2019
-Warning--empty journal in Rana2016
-Warning--empty journal in Timothy2009
-Warning--can't use both author and editor fields in Tinga2019
-Warning--empty journal in Wu2016
-Warning--empty journal in Xiao2016
-You've used 28 entries,
-            2118 wiz_defined-function locations,
-            703 strings with 10009 characters,
-and the built_in function-call counts, 10801 in all, are:
-= -- 1016
-> -- 614
-< -- 6
-+ -- 247
-- -- 215
-* -- 828
-:= -- 1819
-add.period$ -- 87
-call.type$ -- 28
-change.case$ -- 189
-chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 373
-empty$ -- 762
-format.name$ -- 215
-if$ -- 2220
-int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 30
-newline$ -- 144
-num.names$ -- 58
-pop$ -- 190
-preamble$ -- 1
-purify$ -- 163
-quote$ -- 0
-skip$ -- 264
-stack$ -- 0
-substring$ -- 643
-swap$ -- 80
-text.length$ -- 6
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 108
-warning$ -- 7
-while$ -- 90
-width$ -- 30
-write$ -- 305
-(There were 7 warnings)
+[0] Config.pm:311> INFO - This is Biber 2.16
+[1] Config.pm:314> INFO - Logfile is 'bibliography-report.blg'
+[232] biber-MSWIN64:340> INFO - === 
+[296] Biber.pm:415> INFO - Reading 'bibliography-report.bcf'
+[517] Biber.pm:952> INFO - Found 28 citekeys in bib section 0
+[551] Biber.pm:4340> INFO - Processing section 0
+[572] Biber.pm:4531> INFO - Looking for bibtex format file 'references.bib' for section 0
+[679] bibtex.pm:1689> INFO - LaTeX decoding ...
+[806] bibtex.pm:1494> INFO - Found BibTeX data source 'references.bib'
+[1171] Utils.pm:395> WARN - Entry 'Liu2019' (references.bib): Invalid format '6-9 Dec. 2019' of date field 'date' - ignoring
+[1172] Utils.pm:395> WARN - Entry 'Liu2019' (references.bib): Invalid format '6-9 Dec. 2019' of date field 'eventdate' - ignoring
+[1331] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1332] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1332] Biber.pm:4168> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[1332] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[1401] bbl.pm:654> INFO - Writing 'bibliography-report.bbl' with encoding 'UTF-8'
+[1441] bbl.pm:757> INFO - Output to bibliography-report.bbl
+[1442] Biber.pm:128> INFO - WARNINGS: 2
