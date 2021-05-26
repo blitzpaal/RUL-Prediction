@@ -215,7 +215,7 @@
       \verb 10.1016/j.jmsy.2020.07.008
       \endverb
       \verb{file}
-      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Towards multi-model approaches to predictive maintenance A systematic literature survey on diagnostics and prognostics.pdf:PDF
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/MONTEROJIMENEZ2020539 - Towards Multi Model Approaches to Predictive Maintenance_ a Systematic Literature Survey on Diagnostics and Prognostics.pdf:PDF
       \endverb
       \verb{urlraw}
       \verb https://www.sciencedirect.com/science/article/pii/S0278612520301187
@@ -360,7 +360,7 @@
       \field{pages}{528\bibrangedash 533}
       \range{pages}{6}
       \verb{doi}
-      \verb https://doi.org/10.1115/1.3656900
+      \verb 10.1115/1.3656900
       \endverb
     \endentry
     \entry{Zio2012}{incollection}{}
@@ -592,19 +592,14 @@
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprinttype}{arXiv}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{CoRR}
       \field{title}{An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling}
       \field{volume}{abs/1803.01271}
       \field{year}{2018}
+      \field{dateera}{ce}
       \verb{eprint}
       \verb 1803.01271
-      \endverb
-      \verb{urlraw}
-      \verb http://arxiv.org/abs/1803.01271
-      \endverb
-      \verb{url}
-      \verb http://arxiv.org/abs/1803.01271
       \endverb
     \endentry
     \entry{Bengio1994}{article}{}
@@ -650,7 +645,7 @@
       \field{pages}{157\bibrangedash 66}
       \range{pages}{10}
       \verb{doi}
-      \verb DOI: 10.1109/72.279181
+      \verb 10.1109/72.279181
       \endverb
     \endentry
     \entry{Hochreiter1997}{article}{}
@@ -910,6 +905,193 @@
       \endverb
       \keyw{cs.HC}
     \endentry
+    \entry{Elman1990}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d5a20a1ebd7891ecfcfd79254de20395}{%
+           family={Elman},
+           familyi={E\bibinitperiod},
+           given={Jeffrey\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{fullhash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{bibnamehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{authorbibnamehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{authornamehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{authorfullhash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Time underlies many interesting human behaviors. Thus, the question of how to represent time in connectionist models is very important. One approach is to represent time implicitly by its effects on processing rather than explicitly (as in a spatial representation). The current report develops a proposal along these lines first described by Jordan (1986) which involves the use of recurrent links in order to provide networks with a dynamic memory. In this approach, hidden unit patterns are fed back to themselves; the internal representations which develop thus reflect task demands in the context of prior internal states. A set of simulations is reported which range from relatively simple problems (temporal version of XOR) to discovering syntactic/semantic features for words. The networks are able to learn interesting internal representations which incorporate task demands with memory demands; indeed, in this approach the notion of memory is inextricably bound up with task processing. These representations reveal a rich structure, which allows them to be highly context-dependent, while also expressing generalizations across classes of items. These representations suggest a method for representing lexical categories and the type/token distinction.}
+      \field{issn}{0364-0213}
+      \field{journaltitle}{Cognitive Science}
+      \field{number}{2}
+      \field{title}{Finding structure in time}
+      \field{volume}{14}
+      \field{year}{1990}
+      \field{dateera}{ce}
+      \field{pages}{179\bibrangedash 211}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1016/0364-0213(90)90002-E
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Elman1990 - Finding Structure in Time.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/036402139090002E
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/036402139090002E
+      \endverb
+    \endentry
+    \entry{Jordan1997}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=8a36116840c7ee55901618c95fd08a58}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Michael\bibnamedelima I.},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=d0981a1398b1aabe29935ee38d616039}{%
+           family={Donahoe},
+           familyi={D\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ecbb3b314bcf62bf8b4a366b64e36f9f}{%
+           family={{Packard Dorsel}},
+           familyi={P\bibinitperiod},
+           given={Vivian},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{fullhash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{bibnamehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{authorbibnamehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{authornamehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{authorfullhash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{editorbibnamehash}{ca3452b693bbf6e67927e2d102fa1305}
+      \strng{editornamehash}{ca3452b693bbf6e67927e2d102fa1305}
+      \strng{editorfullhash}{ca3452b693bbf6e67927e2d102fa1305}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{ABSTRACT A theory of learned sequential behavior is presented, with a focus on coarticulatory phenomena in speech. The theory is implemented as a recurrent parallel distributed processing network that is trained via a generalized error-correcting algorithm. The basic idea underlying the theory is that both serial order and coarticulatory overlap can be represented in terms of relative levels of activation in a network if a clear distinction is made between the state of the network and the output of the network.}
+      \field{booktitle}{Neural-Network Models of Cognition}
+      \field{issn}{0166-4115}
+      \field{series}{Advances in Psychology}
+      \field{title}{Chapter 25 - Serial Order: A Parallel Distributed Processing Approach}
+      \field{volume}{121}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{pages}{471\bibrangedash 495}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/S0166-4115(97)80111-2
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Jordan1997 - Chapter 25 Serial Order_ a Parallel Distributed Processing Approach.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0166411597801112
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0166411597801112
+      \endverb
+    \endentry
+    \entry{Yan2007}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=42f440b77dadf4e9040471e98c3e3c40}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Jihong},
+           giveni={J\bibinitperiod}}}%
+        {{hash=abbb65a25c6b3ee2d53e6f535c44654c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Pengxiang},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{fullhash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{bibnamehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{authorbibnamehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{authornamehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{authorfullhash}{4a99795f0dcccf0ded5281826759e04d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ASME Conference Proceedings}
+      \field{month}{1}
+      \field{title}{Blade Material Fatigue Assessment Using Elman Neural Networks}
+      \field{volume}{2007}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1115/IMECE2007-43311
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Yan2007 - Blade Material Fatigue Assessment Using Elman Neural Networks.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Kramti2018}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=1a603c8a4660cdac1a1deea8f0916433}{%
+           family={Kramti},
+           familyi={K\bibinitperiod},
+           given={Sharaf\bibnamedelima Eddine},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=0bb440dc83e1e010f5470f7ab5c4859a}{%
+           family={Ben\bibnamedelima Ali},
+           familyi={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Jaouher},
+           giveni={J\bibinitperiod}}}%
+        {{hash=60787cd24d1763a4104bbd489c9a8278}{%
+           family={Saidi},
+           familyi={S\bibinitperiod},
+           given={Lotfi},
+           giveni={L\bibinitperiod}}}%
+        {{hash=88d0283c88b994ea36dce31635db8c76}{%
+           family={Sayadi},
+           familyi={S\bibinitperiod},
+           given={Mounir},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a0a547dcb639e372a587d255343f7b0d}{%
+           family={Bechhoefer},
+           familyi={B\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0d2425339d4cb91adf73e8c53e681130}
+      \strng{fullhash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \strng{bibnamehash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \strng{authorbibnamehash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \strng{authornamehash}{0d2425339d4cb91adf73e8c53e681130}
+      \strng{authorfullhash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 5th International Conference on Control, Decision and Information Technologies (CoDIT)}
+      \field{title}{Direct Wind Turbine Drivetrain Prognosis Approach Using Elman Neural Network}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{pages}{859\bibrangedash 864}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/CoDIT.2018.8394926
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Kramti2018 - Direct Wind Turbine Drivetrain Prognosis Approach Using Elman Neural Network.pdf:PDF
+      \endverb
+    \endentry
     \entry{Li2018}{article}{}
       \name{author}{3}{}{%
         {{hash=09e1a64c667557dd7866bc4e66d193ce}{%
@@ -934,8 +1116,8 @@
       \strng{authorbibnamehash}{ca31af484927f6957d7874ffa434ea6a}
       \strng{authornamehash}{ca31af484927f6957d7874ffa434ea6a}
       \strng{authorfullhash}{ca31af484927f6957d7874ffa434ea6a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0951-8320}
@@ -989,8 +1171,8 @@
       \strng{authorbibnamehash}{82dc3e1a5c77e4a73fb4ec36691324b3}
       \strng{authornamehash}{5409dd67fea73b791e672d5040639597}
       \strng{authorfullhash}{82dc3e1a5c77e4a73fb4ec36691324b3}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2008 International Conference on Prognostics and Health Management}
@@ -1030,8 +1212,8 @@
       \strng{authorbibnamehash}{37170fefb7afd99c043be4edcbe54219}
       \strng{authornamehash}{37170fefb7afd99c043be4edcbe54219}
       \strng{authorfullhash}{37170fefb7afd99c043be4edcbe54219}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Industrial Electronics}
@@ -1063,8 +1245,8 @@
       \strng{authorbibnamehash}{e276ae26977a9b2e37343fd9ee050e70}
       \strng{authornamehash}{e276ae26977a9b2e37343fd9ee050e70}
       \strng{authorfullhash}{e276ae26977a9b2e37343fd9ee050e70}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{eprintclass}{stat.ML}
@@ -1162,8 +1344,8 @@
       \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Direct Remaining Useful Life Prediction for RollingBearing Using Temporal Convolutional Networks.pdf:PDF
       \endverb
       \keyw{Feature extraction,Vibrations,Convolution,Predictive models,Rolling bearings,Training,Task analysis,remaining useful life,rolling bearings,temporal convolutional networks,time series data analysis}
-      \warn{\item Entry 'Liu2019' (references.bib): Invalid format '6-9 Dec. 2019' of date field 'date' - ignoring}
-      \warn{\item Entry 'Liu2019' (references.bib): Invalid format '6-9 Dec. 2019' of date field 'eventdate' - ignoring}
+      \warn{\item Entry 'Liu2019' (references_bibliography_report.bib): Invalid format '6-9 Dec. 2019' of date field 'date' - ignoring}
+      \warn{\item Entry 'Liu2019' (references_bibliography_report.bib): Invalid format '6-9 Dec. 2019' of date field 'eventdate' - ignoring}
     \endentry
     \entry{Yuan2016}{inproceedings}{}
       \name{author}{3}{}{%
