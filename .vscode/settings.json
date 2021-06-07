@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\pajo8\\anaconda3\\envs\\RUL-Prediction\\python.exe"
+    "python.pythonPath": "C:\\Users\\pajo8\\anaconda3\\envs\\RUL-Prediction\\python.exe",
+    "git.ignoreLimitWarning": true
 }
