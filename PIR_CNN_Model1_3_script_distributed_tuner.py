@@ -83,7 +83,7 @@ def get_dataset(sequence_length, batch_size):
     #random.shuffle(data_train_group)
     #data_train_df_random = pd.concat(data_train_group)
 
-    data_train = data_train_df[data_train_df.ID <= 100]
+    data_train = data_train_df[data_train_df.ID <= 1000]
     data_val = data_train_df[data_train_df.ID > 9900]
     data_test = data_test_df
 
@@ -143,7 +143,7 @@ class MyHyperModel(HyperModel):
         input_layer = Input(shape=self.input_shape)
 
         x = LayerNormalization(axis=1)(input_layer)
-        X = Dropout(hp.Float('dropout_rate', min_value=0.0, max_value=0.5, step=0.1))(x)
+        x = Dropout(hp.Float('dropout_rate', min_value=0.0, max_value=0.5, step=0.1))(x)
 
         for i in range(hp.Int('num_layers', min_value=2, max_value=8, step=2)):
             x = Conv1D(filters=hp.Int('filters', min_value=20, max_value=50, step=5),
@@ -169,7 +169,7 @@ class MyHyperModel(HyperModel):
 
 # Load training, validation and test data
 batch_size = 4096
-sequence_length = 15
+sequence_length = 30
 train_dataset, val_dataset, test_dataset = get_dataset(
     sequence_length=sequence_length, batch_size=batch_size)
 
@@ -182,7 +182,7 @@ print("Number of devices: {}".format(strategy.num_replicas_in_sync))
 with strategy.scope():
     # Everything that creates variables should be under the strategy scope.
     # In general this is only model construction & `compile()`.
-    hypermodel = MyHyperModel(input_shape = (15, 3), output_shape = 20)
+    hypermodel = MyHyperModel(input_shape = (sequence_length, 3), output_shape = 20)
 
 tuner = RandomSearch(
     hypermodel,
@@ -190,7 +190,7 @@ tuner = RandomSearch(
     max_trials=100,
     executions_per_trial=1,
     directory='CNN_Model1_3',
-    project_name='100_structures_randomSearch_7')
+    project_name='1000_structures_randomSearch_1')
 
 tuner.search_space_summary()
 
