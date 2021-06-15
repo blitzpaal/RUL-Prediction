@@ -1,0 +1,1687 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{LeCun2015}{article}{}
+      \name{author}{3}{}{%
+        {{hash=6a1aa6b7eab12b931ca7c7e3f927231d}{%
+           family={LeCun},
+           familyi={L\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=9a8750ccdb2a4cf14d2655face1ce016}{%
+           family={Hinton},
+           familyi={H\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{fullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{bibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorbibnamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authornamehash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \strng{authorfullhash}{c6c75bd00ce5a488e91a749d8383b3df}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1476-4687}
+      \field{journaltitle}{Nature}
+      \field{number}{7553}
+      \field{title}{Deep learning}
+      \field{volume}{521}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{436\bibrangedash 444}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1038/nature14539
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/LeCun2015 - Deep Learning.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Sikorska2011}{article}{}
+      \name{author}{3}{}{%
+        {{hash=411ee7ed9ed7a67f7824e2350fdec90c}{%
+           family={Sikorska},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi Z.},
+           giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=d07fd5efe1ec99e8e7ad1cd737febdbe}{%
+           family={Hodkiewicz},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=99b9a60607967ccae4682a367cc91dde}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{b65d6fe24db3fe7119b74c4f35c4eb5e}
+      \strng{fullhash}{b65d6fe24db3fe7119b74c4f35c4eb5e}
+      \strng{bibnamehash}{b65d6fe24db3fe7119b74c4f35c4eb5e}
+      \strng{authorbibnamehash}{b65d6fe24db3fe7119b74c4f35c4eb5e}
+      \strng{authornamehash}{b65d6fe24db3fe7119b74c4f35c4eb5e}
+      \strng{authorfullhash}{b65d6fe24db3fe7119b74c4f35c4eb5e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0888-3270}
+      \field{journaltitle}{Mechanical Systems and Signal Processing}
+      \field{number}{5}
+      \field{title}{Prognostic modelling options for remaining useful life estimation by industry}
+      \field{volume}{25}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{pages}{1803\bibrangedash 1836}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1016/j.ymssp.2010.11.018
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Sikorska2011 - Prognostic Modelling Options for Remaining Useful Life Estimation by Industry.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0888327010004218
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0888327010004218
+      \endverb
+      \keyw{Prognostics,Remaining useful life (RUL),Maintenance,Reliability}
+    \endentry
+    \entry{Voulodimos2018}{article}{}
+      \name{author}{4}{}{%
+        {{hash=c06c2fd68d80faf8b963d257f10fe4ba}{%
+           family={Voulodimos},
+           familyi={V\bibinitperiod},
+           given={Athanasios},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ead3a6d2034d9ea00f98b73f0ab9fc60}{%
+           family={Doulamis},
+           familyi={D\bibinitperiod},
+           given={Nikolaos},
+           giveni={N\bibinitperiod}}}%
+        {{hash=841fed534c8d9df7d15bb6bceffdd967}{%
+           family={Bebis},
+           familyi={B\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=df9e188fafe58a0d39381c0c2d6f83a2}{%
+           family={Stathaki},
+           familyi={S\bibinitperiod},
+           given={Tania},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Hindawi}%
+      }
+      \strng{namehash}{e524417e7f29f82c47929f3fa3d368ae}
+      \strng{fullhash}{f1900a27df4531f9ac45538fc4ce508e}
+      \strng{bibnamehash}{f1900a27df4531f9ac45538fc4ce508e}
+      \strng{authorbibnamehash}{f1900a27df4531f9ac45538fc4ce508e}
+      \strng{authornamehash}{e524417e7f29f82c47929f3fa3d368ae}
+      \strng{authorfullhash}{f1900a27df4531f9ac45538fc4ce508e}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1687-5265}
+      \field{journaltitle}{Computational Intelligence and Neuroscience}
+      \field{title}{Recent Developments in Deep Learning for Engineering Applications}
+      \field{volume}{2018}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{pages}{8141259}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1155/2018/8141259
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Voulodimos2018 - Recent Developments in Deep Learning for Engineering Applications.pdf:PDF
+      \endverb
+    \endentry
+    \entry{MONTEROJIMENEZ2020539}{article}{}
+      \name{author}{5}{}{%
+        {{hash=3507d08a14f87ac98ef968a17939eebd}{%
+           family={{Montero Jimenez}},
+           familyi={M\bibinitperiod},
+           given={Juan\bibnamedelima José},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=748eff77e76b131c7bf38a22ab4efa62}{%
+           family={Schwartz},
+           familyi={S\bibinitperiod},
+           given={Sébastien},
+           giveni={S\bibinitperiod}}}%
+        {{hash=732a71f3b870f8c849fd380e72151bd8}{%
+           family={Vingerhoeds},
+           familyi={V\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1ed1693d51ce7d6dd598a89bcf34e066}{%
+           family={Grabot},
+           familyi={G\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=834906cf8254f315349a15f0eb7d6231}{%
+           family={Salaün},
+           familyi={S\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f35dd8a9ff70b600f7c9773ea8427bc}
+      \strng{fullhash}{3c4fcf75948549f8ad2918809e02664a}
+      \strng{bibnamehash}{3c4fcf75948549f8ad2918809e02664a}
+      \strng{authorbibnamehash}{3c4fcf75948549f8ad2918809e02664a}
+      \strng{authornamehash}{9f35dd8a9ff70b600f7c9773ea8427bc}
+      \strng{authorfullhash}{3c4fcf75948549f8ad2918809e02664a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0278-6125}
+      \field{journaltitle}{Journal of Manufacturing Systems}
+      \field{title}{Towards multi-model approaches to predictive maintenance: A systematic literature survey on diagnostics and prognostics}
+      \field{volume}{56}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{539\bibrangedash 557}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1016/j.jmsy.2020.07.008
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Towards multi-model approaches to predictive maintenance A systematic literature survey on diagnostics and prognostics.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0278612520301187
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0278612520301187
+      \endverb
+      \keyw{Predictive maintenance,Systematic literature review,Diagnostics,Prognostics,Single-model approaches,Multi-model approaches}
+    \endentry
+    \entry{Wu2015}{article}{}
+      \name{author}{6}{}{%
+        {{hash=e18f36b96c79808b1349122b47eed101}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Shaomin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=947b03c28cd0ff25e24bcd2ac4485692}{%
+           family={Tsui},
+           familyi={T\bibinitperiod},
+           given={Kwok\bibnamedelima L.},
+           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=02cfb826604463ea0a0e51f11981b52b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f623cc51d03ac4acc7aba477043a270b}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Qiang},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=3e64d7133d09773c3be6aa1dd76f059e}{%
+           family={Hai},
+           familyi={H\bibinitperiod},
+           given={Yizhen},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=deaa85d20a011b0d2600af68515733bc}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wenbin},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Hindawi Publishing Corporation}%
+      }
+      \strng{namehash}{3f13e4c290c1c7a7b1ddbe0c146a1922}
+      \strng{fullhash}{607fd5577c10f0df1a7220f3f5ad0564}
+      \strng{bibnamehash}{607fd5577c10f0df1a7220f3f5ad0564}
+      \strng{authorbibnamehash}{607fd5577c10f0df1a7220f3f5ad0564}
+      \strng{authornamehash}{3f13e4c290c1c7a7b1ddbe0c146a1922}
+      \strng{authorfullhash}{607fd5577c10f0df1a7220f3f5ad0564}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1024-123X}
+      \field{journaltitle}{Mathematical Problems in Engineering}
+      \field{title}{Prognostics and Health Management: A Review on Data Driven Approaches}
+      \field{volume}{2015}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{793161}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1155/2015/793161
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Wu2015 - Prognostics and Health Management_ a Review on Data Driven Approaches.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Akrim2021}{unpublished}{}
+      \name{author}{4}{}{%
+        {{hash=776c1d5b96e9025eb1f9c75490428d9c}{%
+           family={Akrim},
+           familyi={A\bibinitperiod},
+           given={Anass},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3c3d2c5d73ff0510a47984eb9f344cfa}{%
+           family={Gogua},
+           familyi={G\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=732a71f3b870f8c849fd380e72151bd8}{%
+           family={Vingerhoeds},
+           familyi={V\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod}}}%
+        {{hash=75c9fdd2865bd8c52fbaaaa35958d517}{%
+           family={Salaun},
+           familyi={S\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{52c89e7b5a20823471428f8bd70f7126}
+      \strng{fullhash}{f75b7cbcacaac33a4243cad8a9dbd263}
+      \strng{bibnamehash}{f75b7cbcacaac33a4243cad8a9dbd263}
+      \strng{authorbibnamehash}{f75b7cbcacaac33a4243cad8a9dbd263}
+      \strng{authornamehash}{52c89e7b5a20823471428f8bd70f7126}
+      \strng{authorfullhash}{f75b7cbcacaac33a4243cad8a9dbd263}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Preprint}
+      \field{title}{Review of Prognostics approaches with a particularfocus on the current Machine Learning algorithms}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Akrim2021 - Review of Prognostics Approaches with a Particularfocus on the Current Machine Learning Algorithms.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Zio2012}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=a39584d47f804edfd114dc151188882f}{%
+           family={Zio},
+           familyi={Z\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=89ad1c6aa74355d573a6d32e70d637fb}{%
+           family={Kadry},
+           familyi={K\bibinitperiod},
+           given={Seifedine},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IGI Global}%
+      }
+      \strng{namehash}{a39584d47f804edfd114dc151188882f}
+      \strng{fullhash}{a39584d47f804edfd114dc151188882f}
+      \strng{bibnamehash}{a39584d47f804edfd114dc151188882f}
+      \strng{authorbibnamehash}{a39584d47f804edfd114dc151188882f}
+      \strng{authornamehash}{a39584d47f804edfd114dc151188882f}
+      \strng{authorfullhash}{a39584d47f804edfd114dc151188882f}
+      \strng{editorbibnamehash}{89ad1c6aa74355d573a6d32e70d637fb}
+      \strng{editornamehash}{89ad1c6aa74355d573a6d32e70d637fb}
+      \strng{editorfullhash}{89ad1c6aa74355d573a6d32e70d637fb}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{{Diagnostics and Prognostics of Engineering Systems: Methods and Techniques}}
+      \field{month}{9}
+      \field{note}{ISBN13: 9781466620957}
+      \field{title}{{Prognostics and Health Management of Industrial Equipment}}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{pages}{333\bibrangedash 356}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.4018/978-1-4666-2095-7.ch017
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Zio2012 - Prognostics and Health Management of Industrial Equipment.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://hal-supelec.archives-ouvertes.fr/hal-00778377
+      \endverb
+      \verb{url}
+      \verb https://hal-supelec.archives-ouvertes.fr/hal-00778377
+      \endverb
+    \endentry
+    \entry{Li2018}{article}{}
+      \name{author}{3}{}{%
+        {{hash=09e1a64c667557dd7866bc4e66d193ce}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Xiang},
+           giveni={X\bibinitperiod}}}%
+        {{hash=b2cbf3f76f3525a0d4f832e71564e47b}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={Qian},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=cdc681c6ad47b72d9499ebd0e8e2f2ab}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jian-Qiao},
+           giveni={J\bibinithyphendelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{ca31af484927f6957d7874ffa434ea6a}
+      \strng{fullhash}{ca31af484927f6957d7874ffa434ea6a}
+      \strng{bibnamehash}{ca31af484927f6957d7874ffa434ea6a}
+      \strng{authorbibnamehash}{ca31af484927f6957d7874ffa434ea6a}
+      \strng{authornamehash}{ca31af484927f6957d7874ffa434ea6a}
+      \strng{authorfullhash}{ca31af484927f6957d7874ffa434ea6a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0951-8320}
+      \field{journaltitle}{Reliability Engineering \& System Safety}
+      \field{title}{Remaining useful life estimation in prognostics using deep convolution neural networks}
+      \field{volume}{172}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 11}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/j.ress.2017.11.021
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Remaining useful life estimation in prognostics using deep convolution neural networks.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0951832017307779
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0951832017307779
+      \endverb
+      \keyw{Prognostics and health management,Remaining useful life,Deep learning,Convolution neural network}
+    \endentry
+    \entry{Liu2019}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=0f3cd4383ed00fafb7b9caf4fe51d2e4}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chongdang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d545210fd7c2a6f7f6eecbe61b3e3a02}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Linxuan},
+           giveni={L\bibinitperiod}}}%
+        {{hash=9ec1d35ff9048459d8d4b29365fe0508}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Xiamen, China}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{aed0adcda581200dce8a8ac0ab875bf1}
+      \strng{fullhash}{aed0adcda581200dce8a8ac0ab875bf1}
+      \strng{bibnamehash}{aed0adcda581200dce8a8ac0ab875bf1}
+      \strng{authorbibnamehash}{aed0adcda581200dce8a8ac0ab875bf1}
+      \strng{authornamehash}{aed0adcda581200dce8a8ac0ab875bf1}
+      \strng{authorfullhash}{aed0adcda581200dce8a8ac0ab875bf1}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eventtitleaddon}{Xiamen, China}
+      \field{isbn}{978-1-7281-2486-5}
+      \field{journaltitle}{2019 IEEE Symposium Series on Computational Intelligence (SSCI)}
+      \field{title}{Direct Remaining Useful Life Prediction for Rolling Bearing Using Temporal Convolutional Networks}
+      \field{year}{2019}
+      \field{pages}{2965\bibrangedash 2971}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/SSCI44817.2019.9003163
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Direct Remaining Useful Life Prediction for RollingBearing Using Temporal Convolutional Networks.pdf:PDF
+      \endverb
+      \keyw{Feature extraction,Vibrations,Convolution,Predictive models,Rolling bearings,Training,Task analysis,remaining useful life,rolling bearings,temporal convolutional networks,time series data analysis}
+      \warn{\item Entry 'Liu2019' (references_final_report.bib): Invalid format '6-9 Dec. 2019' of date field 'date' - ignoring}
+      \warn{\item Entry 'Liu2019' (references_final_report.bib): Invalid format '6-9 Dec. 2019' of date field 'eventdate' - ignoring}
+    \endentry
+    \entry{Yuan2016}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=79367480ba2c773106e8e389c4105b8a}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Mei},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b139dbe55c6e717004d63f354dbdcc71}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yuting},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=84e9edb45602671fc0899e2c5a23f482}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{04c16bd6f677b080535bacd49b28f7e0}
+      \strng{fullhash}{04c16bd6f677b080535bacd49b28f7e0}
+      \strng{bibnamehash}{04c16bd6f677b080535bacd49b28f7e0}
+      \strng{authorbibnamehash}{04c16bd6f677b080535bacd49b28f7e0}
+      \strng{authornamehash}{04c16bd6f677b080535bacd49b28f7e0}
+      \strng{authorfullhash}{04c16bd6f677b080535bacd49b28f7e0}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE International Conference on Aircraft Utility Systems (AUS)}
+      \field{title}{Fault diagnosis and remaining useful life estimation of aero engine using LSTM neural network}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{135\bibrangedash 140}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/AUS.2016.7748035
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Yuan2016 - Fault Diagnosis and Remaining Useful Life Estimation of Aero Engine Using LSTM Neural Network.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Wu2018}{article}{}
+      \name{author}{5}{}{%
+        {{hash=b139dbe55c6e717004d63f354dbdcc71}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yuting},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=79367480ba2c773106e8e389c4105b8a}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Mei},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d3c0e8f2def0e23b6ecb3a0feb2e8c9b}{%
+           family={Dong},
+           familyi={D\bibinitperiod},
+           given={Shaopeng},
+           giveni={S\bibinitperiod}}}%
+        {{hash=84e9edb45602671fc0899e2c5a23f482}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=62b2128627aaca0331a9d07d51b3216b}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yingqi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9aedd2c6294218b3ec7112ae761b40fb}
+      \strng{fullhash}{0280a727b226c085db4a4f8845e381b3}
+      \strng{bibnamehash}{0280a727b226c085db4a4f8845e381b3}
+      \strng{authorbibnamehash}{0280a727b226c085db4a4f8845e381b3}
+      \strng{authornamehash}{9aedd2c6294218b3ec7112ae761b40fb}
+      \strng{authorfullhash}{0280a727b226c085db4a4f8845e381b3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0925-2312}
+      \field{journaltitle}{Neurocomputing}
+      \field{title}{Remaining useful life estimation of engineered systems using vanilla LSTM neural networks}
+      \field{volume}{275}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{pages}{167\bibrangedash 179}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.neucom.2017.05.063
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Wu2018 - Remaining Useful Life Estimation of Engineered Systems Using Vanilla LSTM Neural Networks.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0925231217309505
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0925231217309505
+      \endverb
+      \keyw{Long short-term memory neural network,Remaining useful life estimation,Prognostics and health management,Dynamic differential feature}
+    \endentry
+    \entry{Park2020}{article}{}
+      \name{author}{5}{}{%
+        {{hash=01572461e678bde6e5cbaaf58be4aff1}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Kyungnam},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3f033ade1c65b56c71e1c4c0ae5f4b94}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Yohwan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=71f1094bb53b8e9f053857ca9cec291d}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Won},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f9c2a8957106822d5bf006ae784f361a}{%
+           family={Ryu},
+           familyi={R\bibinitperiod},
+           given={Hee-Yeon},
+           giveni={H\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=09e94f10272e271b21456e5c0e5327f2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Hongseok},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3e3ba3c15c793207b8b6b0aec8ed50b}
+      \strng{fullhash}{35ea3a46d339efb850c467c15c250def}
+      \strng{bibnamehash}{35ea3a46d339efb850c467c15c250def}
+      \strng{authorbibnamehash}{35ea3a46d339efb850c467c15c250def}
+      \strng{authornamehash}{d3e3ba3c15c793207b8b6b0aec8ed50b}
+      \strng{authorfullhash}{35ea3a46d339efb850c467c15c250def}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{month}{1}
+      \field{title}{LSTM-Based Battery Remaining Useful Life Prediction with Multi-Channel Charging Profiles}
+      \field{volume}{PP}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2020.2968939
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Park2020 - LSTM Based Battery Remaining Useful Life Prediction with Multi Channel Charging Profiles.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Little1996}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=6a71219a261c5c0c8432046c23bc3034}{%
+           family={Little},
+           familyi={L\bibinitperiod},
+           given={W.\bibnamedelimi A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=069e72f89d40481cb92c7d7e36ee1729}{%
+           family={Cabrera},
+           familyi={C\bibinitperiod},
+           given={Blas},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f3bb922bc36875a8d214cd037001ad89}{%
+           family={Gutfreund},
+           familyi={G\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=2881636dd69267c26ee9b7279184f5aa}{%
+           family={Kresin},
+           familyi={K\bibinitperiod},
+           given={Vladimir},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston, MA}%
+      }
+      \list{publisher}{1}{%
+        {Springer US}%
+      }
+      \strng{namehash}{6a71219a261c5c0c8432046c23bc3034}
+      \strng{fullhash}{6a71219a261c5c0c8432046c23bc3034}
+      \strng{bibnamehash}{6a71219a261c5c0c8432046c23bc3034}
+      \strng{authorbibnamehash}{6a71219a261c5c0c8432046c23bc3034}
+      \strng{authornamehash}{6a71219a261c5c0c8432046c23bc3034}
+      \strng{authorfullhash}{6a71219a261c5c0c8432046c23bc3034}
+      \strng{editorbibnamehash}{b13c6e12f7adbc53450a2bafc9103b3d}
+      \strng{editornamehash}{b13c6e12f7adbc53450a2bafc9103b3d}
+      \strng{editorfullhash}{b13c6e12f7adbc53450a2bafc9103b3d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{From High-Temperature Superconductivity to Microminiature Refrigeration}
+      \field{isbn}{978-1-4613-0411-1}
+      \field{title}{The Existence of Persistent States in the Brain}
+      \field{year}{1996}
+      \field{dateera}{ce}
+      \field{pages}{145\bibrangedash 164}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/978-1-4613-0411-1_12
+      \endverb
+    \endentry
+    \entry{Hopfield1982}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9358686fc958d08cb3cffdebe832f513}{%
+           family={Hopfield},
+           familyi={H\bibinitperiod},
+           given={J\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {National Academy of Sciences}%
+      }
+      \strng{namehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{fullhash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{bibnamehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{authorbibnamehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{authornamehash}{9358686fc958d08cb3cffdebe832f513}
+      \strng{authorfullhash}{9358686fc958d08cb3cffdebe832f513}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0027-8424}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{8}
+      \field{title}{Neural networks and physical systems with emergent collective computational abilities}
+      \field{volume}{79}
+      \field{year}{1982}
+      \field{dateera}{ce}
+      \field{pages}{2554\bibrangedash 2558}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1073/pnas.79.8.2554
+      \endverb
+      \verb{eprint}
+      \verb https://www.pnas.org/content/79/8/2554.full.pdf
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Hopfield1982 - Neural Networks and Physical Systems with Emergent Collective Computational Abilities.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.pnas.org/content/79/8/2554
+      \endverb
+      \verb{url}
+      \verb https://www.pnas.org/content/79/8/2554
+      \endverb
+    \endentry
+    \entry{Lecun1998}{article}{}
+      \name{author}{4}{}{%
+        {{hash=c7a5b066431b979612b716532b228554}{%
+           family={Lecun},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=bbfb0f3936c83b7b099561e6f0e32ef3}{%
+           family={Bottou},
+           familyi={B\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=419350ebbeb4eba5351469f378dee007}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=00f962380d25c4d7f23fa6c7e926c3ed}{%
+           family={Haffner},
+           familyi={H\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{b6d74898cd05e64723d2470a4ea9f956}
+      \strng{fullhash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{bibnamehash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{authorbibnamehash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \strng{authornamehash}{b6d74898cd05e64723d2470a4ea9f956}
+      \strng{authorfullhash}{4dd3ca3cdc8023700c28169734d6ad61}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the IEEE}
+      \field{number}{11}
+      \field{title}{Gradient-based learning applied to document recognition}
+      \field{volume}{86}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{pages}{2278\bibrangedash 2324}
+      \range{pages}{47}
+      \verb{doi}
+      \verb 10.1109/5.726791
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Lecun1998 - Gradient Based Learning Applied to Document Recognition.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Elman1990}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d5a20a1ebd7891ecfcfd79254de20395}{%
+           family={Elman},
+           familyi={E\bibinitperiod},
+           given={Jeffrey\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{fullhash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{bibnamehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{authorbibnamehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{authornamehash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \strng{authorfullhash}{d5a20a1ebd7891ecfcfd79254de20395}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Time underlies many interesting human behaviors. Thus, the question of how to represent time in connectionist models is very important. One approach is to represent time implicitly by its effects on processing rather than explicitly (as in a spatial representation). The current report develops a proposal along these lines first described by Jordan (1986) which involves the use of recurrent links in order to provide networks with a dynamic memory. In this approach, hidden unit patterns are fed back to themselves; the internal representations which develop thus reflect task demands in the context of prior internal states. A set of simulations is reported which range from relatively simple problems (temporal version of XOR) to discovering syntactic/semantic features for words. The networks are able to learn interesting internal representations which incorporate task demands with memory demands; indeed, in this approach the notion of memory is inextricably bound up with task processing. These representations reveal a rich structure, which allows them to be highly context-dependent, while also expressing generalizations across classes of items. These representations suggest a method for representing lexical categories and the type/token distinction.}
+      \field{issn}{0364-0213}
+      \field{journaltitle}{Cognitive Science}
+      \field{number}{2}
+      \field{title}{Finding structure in time}
+      \field{volume}{14}
+      \field{year}{1990}
+      \field{dateera}{ce}
+      \field{pages}{179\bibrangedash 211}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1016/0364-0213(90)90002-E
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Elman1990 - Finding Structure in Time.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/036402139090002E
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/036402139090002E
+      \endverb
+    \endentry
+    \entry{Jordan1997}{incollection}{}
+      \name{author}{1}{}{%
+        {{hash=8a36116840c7ee55901618c95fd08a58}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Michael\bibnamedelima I.},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=d0981a1398b1aabe29935ee38d616039}{%
+           family={Donahoe},
+           familyi={D\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ecbb3b314bcf62bf8b4a366b64e36f9f}{%
+           family={{Packard Dorsel}},
+           familyi={P\bibinitperiod},
+           given={Vivian},
+           giveni={V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{fullhash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{bibnamehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{authorbibnamehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{authornamehash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{authorfullhash}{8a36116840c7ee55901618c95fd08a58}
+      \strng{editorbibnamehash}{ca3452b693bbf6e67927e2d102fa1305}
+      \strng{editornamehash}{ca3452b693bbf6e67927e2d102fa1305}
+      \strng{editorfullhash}{ca3452b693bbf6e67927e2d102fa1305}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{ABSTRACT A theory of learned sequential behavior is presented, with a focus on coarticulatory phenomena in speech. The theory is implemented as a recurrent parallel distributed processing network that is trained via a generalized error-correcting algorithm. The basic idea underlying the theory is that both serial order and coarticulatory overlap can be represented in terms of relative levels of activation in a network if a clear distinction is made between the state of the network and the output of the network.}
+      \field{booktitle}{Neural-Network Models of Cognition}
+      \field{issn}{0166-4115}
+      \field{series}{Advances in Psychology}
+      \field{title}{Chapter 25 - Serial Order: A Parallel Distributed Processing Approach}
+      \field{volume}{121}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{pages}{471\bibrangedash 495}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/S0166-4115(97)80111-2
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Jordan1997 - Chapter 25 Serial Order_ a Parallel Distributed Processing Approach.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0166411597801112
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0166411597801112
+      \endverb
+    \endentry
+    \entry{Yan2007}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=42f440b77dadf4e9040471e98c3e3c40}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Jihong},
+           giveni={J\bibinitperiod}}}%
+        {{hash=abbb65a25c6b3ee2d53e6f535c44654c}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Pengxiang},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{fullhash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{bibnamehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{authorbibnamehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{authornamehash}{4a99795f0dcccf0ded5281826759e04d}
+      \strng{authorfullhash}{4a99795f0dcccf0ded5281826759e04d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ASME Conference Proceedings}
+      \field{month}{1}
+      \field{title}{Blade Material Fatigue Assessment Using Elman Neural Networks}
+      \field{volume}{2007}
+      \field{year}{2007}
+      \verb{doi}
+      \verb 10.1115/IMECE2007-43311
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Yan2007 - Blade Material Fatigue Assessment Using Elman Neural Networks.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Kramti2018}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=1a603c8a4660cdac1a1deea8f0916433}{%
+           family={Kramti},
+           familyi={K\bibinitperiod},
+           given={Sharaf\bibnamedelima Eddine},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=0bb440dc83e1e010f5470f7ab5c4859a}{%
+           family={Ben\bibnamedelima Ali},
+           familyi={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Jaouher},
+           giveni={J\bibinitperiod}}}%
+        {{hash=60787cd24d1763a4104bbd489c9a8278}{%
+           family={Saidi},
+           familyi={S\bibinitperiod},
+           given={Lotfi},
+           giveni={L\bibinitperiod}}}%
+        {{hash=88d0283c88b994ea36dce31635db8c76}{%
+           family={Sayadi},
+           familyi={S\bibinitperiod},
+           given={Mounir},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a0a547dcb639e372a587d255343f7b0d}{%
+           family={Bechhoefer},
+           familyi={B\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{0d2425339d4cb91adf73e8c53e681130}
+      \strng{fullhash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \strng{bibnamehash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \strng{authorbibnamehash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \strng{authornamehash}{0d2425339d4cb91adf73e8c53e681130}
+      \strng{authorfullhash}{cf07dcb2e2d91a40d4f9ae32d4a5fd42}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 5th International Conference on Control, Decision and Information Technologies (CoDIT)}
+      \field{title}{Direct Wind Turbine Drivetrain Prognosis Approach Using Elman Neural Network}
+      \field{year}{2018}
+      \field{pages}{859\bibrangedash 864}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/CoDIT.2018.8394926
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Kramti2018 - Direct Wind Turbine Drivetrain Prognosis Approach Using Elman Neural Network.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Bai2018}{article}{}
+      \name{author}{3}{}{%
+        {{hash=46866596e404b7745d45fdb1cbff0a01}{%
+           family={Bai},
+           familyi={B\bibinitperiod},
+           given={Shaojie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0288715a83a3349e44f9292c5c2149f7}{%
+           family={Kolter},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi Zico},
+           giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=9025300f43a193cfed8e10e924f2a117}{%
+           family={Koltun},
+           familyi={K\bibinitperiod},
+           given={Vladlen},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a3778cabb3cde60fd94e137dc83c5a8}
+      \strng{fullhash}{3a3778cabb3cde60fd94e137dc83c5a8}
+      \strng{bibnamehash}{3a3778cabb3cde60fd94e137dc83c5a8}
+      \strng{authorbibnamehash}{3a3778cabb3cde60fd94e137dc83c5a8}
+      \strng{authornamehash}{3a3778cabb3cde60fd94e137dc83c5a8}
+      \strng{authorfullhash}{3a3778cabb3cde60fd94e137dc83c5a8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling}
+      \field{volume}{abs/1803.01271}
+      \field{year}{2018}
+      \verb{eprint}
+      \verb 1803.01271
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Bai2018 - An Empirical Evaluation of Generic Convolutional and Recurrent Networks for Sequence Modeling.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1803.01271
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1803.01271
+      \endverb
+    \endentry
+    \entry{Saxena2008}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=477a5b32cf08fc019fe8db24615704fd}{%
+           family={Saxena},
+           familyi={S\bibinitperiod},
+           given={Abhinav},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0fc2c4bb5ec281edaa46cdf20808a650}{%
+           family={Goebel},
+           familyi={G\bibinitperiod},
+           given={Kai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=fa03fced46f536db3ede61916fcf8f6c}{%
+           family={Simon},
+           familyi={S\bibinitperiod},
+           given={Don},
+           giveni={D\bibinitperiod}}}%
+        {{hash=1b29d608541190fb04571b251e8c1c9e}{%
+           family={Eklund},
+           familyi={E\bibinitperiod},
+           given={Neil},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{5409dd67fea73b791e672d5040639597}
+      \strng{fullhash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{bibnamehash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{authorbibnamehash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \strng{authornamehash}{5409dd67fea73b791e672d5040639597}
+      \strng{authorfullhash}{82dc3e1a5c77e4a73fb4ec36691324b3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2008 International Conference on Prognostics and Health Management}
+      \field{title}{Damage propagation modeling for aircraft engine run-to-failure simulation}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/PHM.2008.4711414
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Saxena2008 - Damage Propagation Modeling for Aircraft Engine Run to Failure Simulation.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Fink2020}{article}{}
+      \name{author}{6}{}{%
+        {{hash=7a50e056a5c0e39c00ca554c5674b65f}{%
+           family={Fink},
+           familyi={F\bibinitperiod},
+           given={Olga},
+           giveni={O\bibinitperiod}}}%
+        {{hash=dbb923b2eb3740d28592b75b64ac32c9}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Qin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=19b8f2c47c4e3ba0c4cb0cc07ceb422a}{%
+           family={Svensén},
+           familyi={S\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aeb08ed05b35016772ae2140aa82e13d}{%
+           family={Dersin},
+           familyi={D\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=145dc8cfd0cfd69c050220d807c26799}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Wan-Jui},
+           giveni={W\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=87faebfc68aa0e42ea6e0f4ea2a07630}{%
+           family={Ducoffe},
+           familyi={D\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{65e6a138d7069ce3a5f72fea8bafca4c}
+      \strng{fullhash}{a40d7210d07d499da1f260e4394361db}
+      \strng{bibnamehash}{a40d7210d07d499da1f260e4394361db}
+      \strng{authorbibnamehash}{a40d7210d07d499da1f260e4394361db}
+      \strng{authornamehash}{65e6a138d7069ce3a5f72fea8bafca4c}
+      \strng{authorfullhash}{a40d7210d07d499da1f260e4394361db}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0952-1976}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{title}{Potential, challenges and future directions for deep learning in prognostics and health management applications}
+      \field{volume}{92}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{103678}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.engappai.2020.103678
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Fink2020 - Potential, Challenges and Future Directions for Deep Learning in Prognostics and Health Management Applications.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0952197620301184
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0952197620301184
+      \endverb
+      \keyw{Deep learning,Prognostics and health management,GAN,Domain adaptation,Fleet PHM,Deep reinforcement learning,Physics-induced machine learning}
+    \endentry
+    \entry{Tinga2019}{inbook}{}
+      \name{author}{2}{}{%
+        {{hash=0ddc58f84e4100f0630449a062a53c4b}{%
+           family={Tinga},
+           familyi={T\bibinitperiod},
+           given={Tiedo},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c23ccc19595c51b02d4aa257855b7a62}{%
+           family={Loendersloot},
+           familyi={L\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=2f345ca68a3dfbfac70f81c26432cfce}{%
+           family={Lughofer},
+           familyi={L\bibinitperiod},
+           given={Edwin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2ec2c63522fad2b646dc912c8941d03e}{%
+           family={Sayed-Mouchaweh},
+           familyi={S\bibinithyphendelim M\bibinitperiod},
+           given={Moamar},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{8b8c200a95ef21b47fbfa12da9da8c02}
+      \strng{fullhash}{8b8c200a95ef21b47fbfa12da9da8c02}
+      \strng{bibnamehash}{8b8c200a95ef21b47fbfa12da9da8c02}
+      \strng{authorbibnamehash}{8b8c200a95ef21b47fbfa12da9da8c02}
+      \strng{authornamehash}{8b8c200a95ef21b47fbfa12da9da8c02}
+      \strng{authorfullhash}{8b8c200a95ef21b47fbfa12da9da8c02}
+      \strng{editorbibnamehash}{8c08773fa487ac05c74941d1c9375202}
+      \strng{editornamehash}{8c08773fa487ac05c74941d1c9375202}
+      \strng{editorfullhash}{8c08773fa487ac05c74941d1c9375202}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Predictive Maintenance in Dynamic Systems: Advanced Methods, Decision Support Tools and Real-World Applications}
+      \field{isbn}{978-3-030-05645-2}
+      \field{title}{Physical Model-Based Prognostics and Health Monitoring to Enable Predictive Maintenance}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{313\bibrangedash 353}
+      \range{pages}{41}
+      \verb{doi}
+      \verb 10.1007/978-3-030-05645-2_11
+      \endverb
+    \endentry
+    \entry{Timothy2009}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4fa4380c60a3b2795c3c564cfd3efda8}{%
+           family={Timothy},
+           familyi={T\bibinitperiod},
+           given={Fallon},
+           giveni={F\bibinitperiod}}}%
+        {{hash=299ecb63044d99c60b1e4d7d34e3e154}{%
+           family={Devinder},
+           familyi={D\bibinitperiod},
+           given={Mahal},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5810a1d0464b7f392a9d31f38387d458}{%
+           family={Iain},
+           familyi={I\bibinitperiod},
+           given={Hebden},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{a75ad31bde423b2c7fa7ec9062c3ae54}
+      \strng{fullhash}{a75ad31bde423b2c7fa7ec9062c3ae54}
+      \strng{bibnamehash}{a75ad31bde423b2c7fa7ec9062c3ae54}
+      \strng{authorbibnamehash}{a75ad31bde423b2c7fa7ec9062c3ae54}
+      \strng{authornamehash}{a75ad31bde423b2c7fa7ec9062c3ae54}
+      \strng{authorfullhash}{a75ad31bde423b2c7fa7ec9062c3ae54}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-90-481-2745-0}
+      \field{month}{1}
+      \field{title}{F-35 Joint Strike Fighter Structural Prognosis and Health Management an Overview}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-90-481-2746-7_68
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Timothy2009 - F 35 Joint Strike Fighter Structural Prognosis and Health Management an Overview.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Akrim}{unpublished}{}
+      \name{author}{1}{}{%
+        {{hash=776c1d5b96e9025eb1f9c75490428d9c}{%
+           family={Akrim},
+           familyi={A\bibinitperiod},
+           given={Anass},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{fullhash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{bibnamehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{authorbibnamehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{authornamehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{authorfullhash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Description Algorithm}
+    \endentry
+    \entry{Paris1963}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b7e0bb562104e02793f1bcadc780e6bc}{%
+           family={Paris},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3bcfae5cafa428073b9cca9a20f52597}{%
+           family={Erdogan},
+           familyi={E\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{fullhash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{bibnamehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{authorbibnamehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{authornamehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{authorfullhash}{d727c87a207e5d6e2d45172fd8d08507}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Basic Engineering}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{A Critical Analysis of Crack Propagation Laws}
+      \field{volume}{85}
+      \field{year}{1963}
+      \field{dateera}{ce}
+      \field{pages}{528\bibrangedash 533}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1115/1.3656900
+      \endverb
+    \endentry
+    \entry{Liu2019a}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e0074c08a42c7d104f4869768e2f5e50}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chien-Liang},
+           giveni={C\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=6494dbe2979cd3b11e0406a5a402695a}{%
+           family={Hsaio},
+           familyi={H\bibinitperiod},
+           given={Wen-Hoar},
+           giveni={W\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=a8a5638c23b206cd976d7f59b2fb3005}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Yao-Chung},
+           giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{fullhash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{bibnamehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{authorbibnamehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{authornamehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{authorfullhash}{37170fefb7afd99c043be4edcbe54219}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Industrial Electronics}
+      \field{number}{6}
+      \field{title}{Time Series Classification With Multivariate Convolutional Neural Network}
+      \field{volume}{66}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{4788\bibrangedash 4797}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/TIE.2018.2864702
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Liu2019a - Time Series Classification with Multivariate Convolutional Neural Network.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Xiao2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e276ae26977a9b2e37343fd9ee050e70}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{fullhash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{bibnamehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{authorbibnamehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{authornamehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{authorfullhash}{e276ae26977a9b2e37343fd9ee050e70}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{stat.ML}
+      \field{eprinttype}{arXiv}
+      \field{month}{3}
+      \field{title}{A Probabilistic Machine Learning Approach to Detect Industrial Plant Faults}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{eprint}
+      \verb 1603.05770
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Xiao2016 - A Probabilistic Machine Learning Approach to Detect Industrial Plant Faults.pdf:PDF
+      \endverb
+      \keyw{stat.ML,stat.AP}
+    \endentry
+    \entry{Bengio1994}{article}{}
+      \name{author}{3}{}{%
+        {{hash=419350ebbeb4eba5351469f378dee007}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=fba0c25dc264271a2cad9bf44bc364b3}{%
+           family={Simard},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3b982eeab60ed3073c2e0601198b970a}{%
+           family={Frasconi},
+           familyi={F\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{1}{%
+        {United States}%
+      }
+      \strng{namehash}{5a77b4bc004e923d5e8c5809bb1d15cc}
+      \strng{fullhash}{5a77b4bc004e923d5e8c5809bb1d15cc}
+      \strng{bibnamehash}{5a77b4bc004e923d5e8c5809bb1d15cc}
+      \strng{authorbibnamehash}{5a77b4bc004e923d5e8c5809bb1d15cc}
+      \strng{authornamehash}{5a77b4bc004e923d5e8c5809bb1d15cc}
+      \strng{authorfullhash}{5a77b4bc004e923d5e8c5809bb1d15cc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issue}{2}
+      \field{journaltitle}{IEEE transactions on neural networks}
+      \field{title}{Learning long-term dependencies with gradient descent is difficult.}
+      \field{volume}{5}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{pages}{157\bibrangedash 66}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/72.279181
+      \endverb
+    \endentry
+    \entry{Hochreiter1997}{article}{}
+      \name{author}{2}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod}}}%
+        {{hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{fullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{bibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorbibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authornamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorfullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0899-7667}
+      \field{journaltitle}{Neural Computation}
+      \field{month}{11}
+      \field{number}{8}
+      \field{title}{{Long Short-Term Memory}}
+      \field{volume}{9}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{pages}{1735\bibrangedash 1780}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.1162/neco.1997.9.8.1735
+      \endverb
+      \verb{eprint}
+      \verb https://direct.mit.edu/neco/article-pdf/9/8/1735/813796/neco.1997.9.8.1735.pdf
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Hochreiter1997 - Long Short Term Memory.pdf:PDF
+      \endverb
+    \endentry
+    \entry{Wu2016}{article}{}
+      \name{author}{31}{}{%
+        {{hash=1fc7a40d6072b1bb1d4e56d14ef88e2f}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Yonghui},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=29ea22df63f174ac629e9ef100b40484}{%
+           family={Schuster},
+           familyi={S\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c0d10aaf985cebf8d0497e1828f9313f}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhifeng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=c636f146591d51579a8119b777394878}{%
+           family={Le},
+           familyi={L\bibinitperiod},
+           given={Quoc\bibnamedelima V.},
+           giveni={Q\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=e34c5aa67281924804d54d88e58ca38a}{%
+           family={Norouzi},
+           familyi={N\bibinitperiod},
+           given={Mohammad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3e02b95f1e35ef8d397835766063a915}{%
+           family={Macherey},
+           familyi={M\bibinitperiod},
+           given={Wolfgang},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8c2ce3e06666676855e01e5bb2466d92}{%
+           family={Krikun},
+           familyi={K\bibinitperiod},
+           given={Maxim},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2923de2da7f9b32b957552e414b6bc16}{%
+           family={Cao},
+           familyi={C\bibinitperiod},
+           given={Yuan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=841cd6340c46b48aff116aaace5177f6}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Qin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=15662c2bdf7c38938fe27c84d2f821fe}{%
+           family={Macherey},
+           familyi={M\bibinitperiod},
+           given={Klaus},
+           giveni={K\bibinitperiod}}}%
+        {{hash=76d78fa8d6bcc0a03c768f284b7445b2}{%
+           family={Klingner},
+           familyi={K\bibinitperiod},
+           given={Jeff},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2f77a417cb674d5f294913225ae20e42}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={Apurva},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b76c4102bf39f677ea9c0f7c2a5f236a}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Melvin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6026405c5af9112230e8ff8bf18dd043}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Xiaobing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=540fcd72e1fa4bbed46604f4e6cff817}{%
+           family={Kaiser},
+           familyi={K\bibinitperiod},
+           given={Łukasz},
+           giveni={Ł\bibinitperiod}}}%
+        {{hash=353c4a3aa4878af27170be1cfd53bd8a}{%
+           family={Gouws},
+           familyi={G\bibinitperiod},
+           given={Stephan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cc6590b280716ad064718f8d18f2a53f}{%
+           family={Kato},
+           familyi={K\bibinitperiod},
+           given={Yoshikiyo},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ea1d04e9781edc1ab4ccafb0d8ff5179}{%
+           family={Kudo},
+           familyi={K\bibinitperiod},
+           given={Taku},
+           giveni={T\bibinitperiod}}}%
+        {{hash=fc6dcce1f2845b14d1315cb56f430b85}{%
+           family={Kazawa},
+           familyi={K\bibinitperiod},
+           given={Hideto},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7970dc920ecd23f635158e89bed903aa}{%
+           family={Stevens},
+           familyi={S\bibinitperiod},
+           given={Keith},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d115e2de1127519c117a7252205efcdb}{%
+           family={Kurian},
+           familyi={K\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=98e48fd2ef83c15cb4e696e6243eef05}{%
+           family={Patil},
+           familyi={P\bibinitperiod},
+           given={Nishant},
+           giveni={N\bibinitperiod}}}%
+        {{hash=f27ec46ccd272a021fd78bdac92dd490}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=2b3412c48bab46f41faab78455fce0e1}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Cliff},
+           giveni={C\bibinitperiod}}}%
+        {{hash=dd794e3fc42625216f13506936f9efea}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b137e608b42835dfb224061b97b8aba4}{%
+           family={Riesa},
+           familyi={R\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fbb9f043628eafbecb00f2bfc6ae71bf}{%
+           family={Rudnick},
+           familyi={R\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=494b568c5dc85ba8f3f409635f9c5f25}{%
+           family={Vinyals},
+           familyi={V\bibinitperiod},
+           given={Oriol},
+           giveni={O\bibinitperiod}}}%
+        {{hash=3d11e6f2a0d0a1183b2cf62996525afc}{%
+           family={Corrado},
+           familyi={C\bibinitperiod},
+           given={Greg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=cc840f3c806989f01823d8e1ef19c2e7}{%
+           family={Hughes},
+           familyi={H\bibinitperiod},
+           given={Macduff},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4aecfb0cc2e1e3b7899129fa2a94e2b8}{%
+           family={Dean},
+           familyi={D\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{efb78d75edae4c7c2772249ec014241a}
+      \strng{fullhash}{60578079489d2f4fd3110ab834fa69f3}
+      \strng{bibnamehash}{efb78d75edae4c7c2772249ec014241a}
+      \strng{authorbibnamehash}{efb78d75edae4c7c2772249ec014241a}
+      \strng{authornamehash}{efb78d75edae4c7c2772249ec014241a}
+      \strng{authorfullhash}{60578079489d2f4fd3110ab834fa69f3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.CL}
+      \field{eprinttype}{arXiv}
+      \field{month}{9}
+      \field{title}{Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{eprint}
+      \verb 1609.08144
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Wu2016 - Google's Neural Machine Translation System_ Bridging the Gap between Human and Machine Translation.pdf:PDF
+      \endverb
+      \keyw{cs.CL,cs.AI,cs.LG}
+    \endentry
+    \entry{Rana2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6412908abe037e98fe71d8146d197406}{%
+           family={Rana},
+           familyi={R\bibinitperiod},
+           given={Rajib},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{6412908abe037e98fe71d8146d197406}
+      \strng{fullhash}{6412908abe037e98fe71d8146d197406}
+      \strng{bibnamehash}{6412908abe037e98fe71d8146d197406}
+      \strng{authorbibnamehash}{6412908abe037e98fe71d8146d197406}
+      \strng{authornamehash}{6412908abe037e98fe71d8146d197406}
+      \strng{authorfullhash}{6412908abe037e98fe71d8146d197406}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.HC}
+      \field{eprinttype}{arXiv}
+      \field{month}{12}
+      \field{title}{Gated Recurrent Unit (GRU) for Emotion Classification from Noisy Speech}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{eprint}
+      \verb 1612.07778
+      \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Rana2016 - Gated Recurrent Unit (GRU) for Emotion Classification from Noisy Speech.pdf:PDF
+      \endverb
+      \keyw{cs.HC}
+    \endentry
+    \entry{Sayyad}{article}{}
+      \name{author}{1}{}{%
+        {{hash=006efdc77f6c129190c8c74a3775c2f8}{%
+           family={Sayyad},
+           familyi={S\bibinitperiod},
+           given={Rehan\bibnamedelima Ahmed},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{fullhash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{bibnamehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{authorbibnamehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{authornamehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{authorfullhash}{006efdc77f6c129190c8c74a3775c2f8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Medium}
+      \field{title}{How to Use Convolutional Neural Networks for Time Series Classification}
+      \verb{urlraw}
+      \verb https://medium.com/@Rehan_Sayyad/how-to-use-convolutional-neural-networks-for-time-series-classification-80575131a474
+      \endverb
+      \verb{url}
+      \verb https://medium.com/@Rehan_Sayyad/how-to-use-convolutional-neural-networks-for-time-series-classification-80575131a474
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

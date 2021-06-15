@@ -1,0 +1,21 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[1] Config.pm:314> INFO - Logfile is 'final-report.blg'
+[582] biber-MSWIN64:340> INFO - === 
+[789] Biber.pm:415> INFO - Reading 'final-report.bcf'
+[1154] Biber.pm:952> INFO - Found 34 citekeys in bib section 0
+[1201] Biber.pm:4340> INFO - Processing section 0
+[1277] Biber.pm:4531> INFO - Looking for bibtex format file 'references_final_report.bib' for section 0
+[1442] bibtex.pm:1689> INFO - LaTeX decoding ...
+[1646] bibtex.pm:1494> INFO - Found BibTeX data source 'references_final_report.bib'
+[1944] Utils.pm:411> ERROR - Name "L. Xu, S. F. Yuan, J. Chen, Q. Bao" has too many commas, skipping entry 'Xu2018'
+[1944] Utils.pm:395> WARN - Entry with key 'Xu2018' in section '0' is cited and found but not created (likely due to sourcemap)
+[1979] Utils.pm:395> WARN - Entry 'Liu2019' (references_final_report.bib): Invalid format '6-9 Dec. 2019' of date field 'date' - ignoring
+[1980] Utils.pm:395> WARN - Entry 'Liu2019' (references_final_report.bib): Invalid format '6-9 Dec. 2019' of date field 'eventdate' - ignoring
+[2509] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2509] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2509] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[2509] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[2617] bbl.pm:654> INFO - Writing 'final-report.bbl' with encoding 'UTF-8'
+[2664] bbl.pm:757> INFO - Output to final-report.bbl
+[2665] Biber.pm:128> INFO - WARNINGS: 3
+[2666] Biber.pm:132> INFO - ERRORS: 1

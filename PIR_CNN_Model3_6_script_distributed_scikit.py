@@ -1,10 +1,8 @@
-#pip install keras-tcn --no-dependencies
-
 # Import
-import pandas as pd
 import numpy as np
+import pandas as pd
 import json
-from mpi4py import MPI
+#from mpi4py import MPI
 import random
 
 import keras
@@ -14,7 +12,12 @@ from keras.models import *
 from keras.layers import *
 from keras.optimizers import *
 from keras.initializers import *
+from kerastuner.tuners import *
+from kerastuner import HyperModel
+from keras.wrappers.scikit_learn import KerasClassifier
 from tcn import *
+
+from sklearn.model_selection import GridSearchCV
 
 from datetime import datetime
 
@@ -76,12 +79,12 @@ def get_dataset(sequence_length, batch_size):
     data_test_df['RUL_bin'] = pd.cut(data_test_df['RUL'], bins=bins, labels=labels)
 
     # build data sequences
-    data_train_group = [data_train_df for _, data_train_df in data_train_df.groupby('ID')]
-    random.shuffle(data_train_group)
-    data_train_df_random = pd.concat(data_train_group)
+    #data_train_group = [data_train_df for _, data_train_df in data_train_df.groupby('ID')]
+    #random.shuffle(data_train_group)
+    #data_train_df_random = pd.concat(data_train_group)
 
-    data_train = data_train_df_random[data_train_df_random.ID <= 8000]
-    data_val = data_train_df_random[data_train_df_random.ID > 8000]
+    data_train = data_train_df[data_train_df.ID <= 100]
+    data_val = data_train_df[data_train_df.ID > 9900]
     data_test = data_test_df
 
     #prepare data
@@ -129,23 +132,31 @@ def get_dataset(sequence_length, batch_size):
     )
 
 
-def get_compiled_model(input_shape, output_shape):
+def get_compiled_model():
+    input_shape = (30, 3)
+    output_shape = 20
+
     # build model
     input_layer = Input(shape=input_shape)
-    x = TCN(nb_filters=30, kernel_size=5, nb_stacks=1, dilations=[2 ** i for i in range(6)], padding='causal',
+    x = TCN(nb_filters=30, kernel_size=5,
+                nb_stacks=1, dilations=[2 ** i for i in range(6)], padding='causal',
                 use_skip_connections=True, dropout_rate=0.1, return_sequences=False,
                 activation='relu', kernel_initializer='he_normal', use_batch_norm=False, use_layer_norm=False,
                 use_weight_norm=True, name='TCN')(input_layer)
     x = Dense(output_shape)(x)
     x = Activation('softmax')(x)
     output_layer = x
+
     model = Model(input_layer, output_layer)
 
     # compile model
-    opt = Adam(learning_rate=0.0001)
-    model.compile(loss='sparse_categorical_crossentropy', optimizer=opt, metrics=['SparseCategoricalAccuracy'])
+    model.compile(
+        optimizer=keras.optimizers.Adam(0.0001),
+        loss='sparse_categorical_crossentropy',
+        metrics=['SparseCategoricalAccuracy'])
 
     return model
+
 
 def get_saved_compiled_model():
     # load model from file
@@ -159,9 +170,16 @@ def get_saved_compiled_model():
 
     # compile model
     opt = Adam(learning_rate=0.0001)
-    loadedModel.compile(loss='sparse_categorical_crossentropy', optimizer=opt, metrics=['SparseCategoricalAccuracy'])
+    loadedModel.compile(loss='sparse_categorical_crossentropy', optimizer=opt, metrics=['sparse_categorical_accuracy'])
 
     return loadedModel
+
+
+# Load training, validation and test data
+batch_size = 4096
+sequence_length = 30
+train_dataset, val_dataset, test_dataset = get_dataset(
+    sequence_length=sequence_length, batch_size=batch_size)
 
 
 # Create a MirroredStrategy.
@@ -172,8 +190,11 @@ print("Number of devices: {}".format(strategy.num_replicas_in_sync))
 with strategy.scope():
     # Everything that creates variables should be under the strategy scope.
     # In general this is only model construction & `compile()`.
-    #model = get_compiled_model(input_shape=(30, 3), output_shape=20)
-    model = get_saved_compiled_model()
+    model_CV = KerasClassifier(build_fn=get_compiled_model, epochs=5, 
+                           batch_size=batch_size, verbose=2)
+
+    model = get_compiled_model()
+
 
 # train model
 dateTimeObj = datetime.now()
@@ -193,9 +214,26 @@ es = keras.callbacks.EarlyStopping(monitor='sparse_categorical_accuracy', min_de
 mc = keras.callbacks.ModelCheckpoint(model_path + '_weights_epoch_{epoch}.h5', monitor='sparse_categorical_accuracy', mode='max', 
                                      save_weights_only=True, save_best_only=False)
 
-# Train the model on all available devices.
-train_dataset, val_dataset, test_dataset = get_dataset(sequence_length=30, batch_size=4096)
-history = model.fit(train_dataset, epochs=500, verbose=2, validation_data=val_dataset, callbacks = [es,mc])
+# define the grid search parameters
+kernel_size = [2, 4, 8, 16]
+
+param_grid = dict(kernel_size=kernel_size)
+
+grid = GridSearchCV(estimator=model_CV, param_grid=param_grid, n_jobs=-1, cv=3)
+
+# Load training, validation and test data
+train_dataset, val_dataset, test_dataset = get_dataset(sequence_length=30, batch_size=batch_size)
+
+# run model
+grid_result = grid.fit(train_dataset, validation_data=val_dataset, callbacks = [es,mc])
+
+# print results
+print(f'Best Accuracy for {grid_result.best_score_} using {grid_result.best_params_}')
+means = grid_result.cv_results_['mean_test_score']
+stds = grid_result.cv_results_['std_test_score']
+params = grid_result.cv_results_['params']
+for mean, stdev, param in zip(means, stds, params):
+    print(f' mean={mean:.#4}, std={stdev:.4} using {param}')
 
 # save learning history
 np.save(model_path + '_history.npy', history.history)
