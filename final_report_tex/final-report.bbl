@@ -286,7 +286,7 @@
       \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Wu2015 - Prognostics and Health Management_ a Review on Data Driven Approaches.pdf:PDF
       \endverb
     \endentry
-    \entry{Akrim2021}{article}{}
+    \entry{Akrim2021}{unpublished}{}
       \name{author}{4}{}{%
         {{hash=776c1d5b96e9025eb1f9c75490428d9c}{%
            family={Akrim},
@@ -377,39 +377,6 @@
       \endverb
       \verb{url}
       \verb https://hal-supelec.archives-ouvertes.fr/hal-00778377
-      \endverb
-    \endentry
-    \entry{Xu2018}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{hash=bebdf27fd0875262e4aefc49d54aa17b}{%
-           family={Bao},
-           familyi={B\bibinitperiod},
-           given={L.\bibnamedelimi Xu;\bibnamedelimb S.\bibnamedelimi F.\bibnamedelimi Yuan;\bibnamedelimb J.\bibnamedelimi Chen;\bibnamedelima Q.},
-           giveni={L\bibinitperiod\bibinitdelim X\bibinitperiod\bibinitdelim S\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
-      }
-      \strng{namehash}{bebdf27fd0875262e4aefc49d54aa17b}
-      \strng{fullhash}{bebdf27fd0875262e4aefc49d54aa17b}
-      \strng{bibnamehash}{bebdf27fd0875262e4aefc49d54aa17b}
-      \strng{authorbibnamehash}{bebdf27fd0875262e4aefc49d54aa17b}
-      \strng{authornamehash}{bebdf27fd0875262e4aefc49d54aa17b}
-      \strng{authorfullhash}{bebdf27fd0875262e4aefc49d54aa17b}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{7th Asia-Pacific Workshop on Structural Health Monitoring}
-      \field{journaltitle}{7th Asia-Pacific Workshop on Structural Health Monitoring}
-      \field{title}{Deep learning based fatigue crack diagnosis of aircraft structures}
-      \field{year}{2018}
-      \field{dateera}{ce}
-      \verb{file}
-      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Xu2018 - Deep Learning Based Fatigue Crack Diagnosis of Aircraft Structures.pdf:PDF
-      \endverb
-      \verb{urlraw}
-      \verb https://www.ndt.net/search/docs.php3?id=24093
-      \endverb
-      \verb{url}
-      \verb https://www.ndt.net/search/docs.php3?id=24093
       \endverb
     \endentry
     \entry{Li2018}{article}{}
@@ -1093,41 +1060,70 @@
       \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Saxena2008 - Damage Propagation Modeling for Aircraft Engine Run to Failure Simulation.pdf:PDF
       \endverb
     \endentry
-    \entry{Paris1963}{article}{}
-      \name{author}{2}{}{%
-        {{hash=b7e0bb562104e02793f1bcadc780e6bc}{%
-           family={Paris},
-           familyi={P\bibinitperiod},
-           given={P.},
+    \entry{Fink2020}{article}{}
+      \name{author}{6}{}{%
+        {{hash=7a50e056a5c0e39c00ca554c5674b65f}{%
+           family={Fink},
+           familyi={F\bibinitperiod},
+           given={Olga},
+           giveni={O\bibinitperiod}}}%
+        {{hash=dbb923b2eb3740d28592b75b64ac32c9}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Qin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=19b8f2c47c4e3ba0c4cb0cc07ceb422a}{%
+           family={Svensén},
+           familyi={S\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=aeb08ed05b35016772ae2140aa82e13d}{%
+           family={Dersin},
+           familyi={D\bibinitperiod},
+           given={Pierre},
            giveni={P\bibinitperiod}}}%
-        {{hash=3bcfae5cafa428073b9cca9a20f52597}{%
-           family={Erdogan},
-           familyi={E\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
+        {{hash=145dc8cfd0cfd69c050220d807c26799}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Wan-Jui},
+           giveni={W\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=87faebfc68aa0e42ea6e0f4ea2a07630}{%
+           family={Ducoffe},
+           familyi={D\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
       }
-      \strng{namehash}{d727c87a207e5d6e2d45172fd8d08507}
-      \strng{fullhash}{d727c87a207e5d6e2d45172fd8d08507}
-      \strng{bibnamehash}{d727c87a207e5d6e2d45172fd8d08507}
-      \strng{authorbibnamehash}{d727c87a207e5d6e2d45172fd8d08507}
-      \strng{authornamehash}{d727c87a207e5d6e2d45172fd8d08507}
-      \strng{authorfullhash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{namehash}{65e6a138d7069ce3a5f72fea8bafca4c}
+      \strng{fullhash}{a40d7210d07d499da1f260e4394361db}
+      \strng{bibnamehash}{a40d7210d07d499da1f260e4394361db}
+      \strng{authorbibnamehash}{a40d7210d07d499da1f260e4394361db}
+      \strng{authornamehash}{65e6a138d7069ce3a5f72fea8bafca4c}
+      \strng{authorfullhash}{a40d7210d07d499da1f260e4394361db}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Basic Engineering}
-      \field{month}{12}
-      \field{number}{4}
-      \field{title}{A Critical Analysis of Crack Propagation Laws}
-      \field{volume}{85}
-      \field{year}{1963}
+      \field{issn}{0952-1976}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{title}{Potential, challenges and future directions for deep learning in prognostics and health management applications}
+      \field{volume}{92}
+      \field{year}{2020}
       \field{dateera}{ce}
-      \field{pages}{528\bibrangedash 533}
-      \range{pages}{6}
+      \field{pages}{103678}
+      \range{pages}{1}
       \verb{doi}
-      \verb 10.1115/1.3656900
+      \verb 10.1016/j.engappai.2020.103678
       \endverb
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Fink2020 - Potential, Challenges and Future Directions for Deep Learning in Prognostics and Health Management Applications.pdf:PDF
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0952197620301184
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0952197620301184
+      \endverb
+      \keyw{Deep learning,Prognostics and health management,GAN,Domain adaptation,Fleet PHM,Deep reinforcement learning,Physics-induced machine learning}
     \endentry
     \entry{Tinga2019}{inbook}{}
       \name{author}{2}{}{%
@@ -1224,70 +1220,136 @@
       \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Timothy2009 - F 35 Joint Strike Fighter Structural Prognosis and Health Management an Overview.pdf:PDF
       \endverb
     \endentry
-    \entry{Fink2020}{article}{}
-      \name{author}{6}{}{%
-        {{hash=7a50e056a5c0e39c00ca554c5674b65f}{%
-           family={Fink},
-           familyi={F\bibinitperiod},
-           given={Olga},
-           giveni={O\bibinitperiod}}}%
-        {{hash=dbb923b2eb3740d28592b75b64ac32c9}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Qin},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=19b8f2c47c4e3ba0c4cb0cc07ceb422a}{%
-           family={Svensén},
-           familyi={S\bibinitperiod},
-           given={Markus},
-           giveni={M\bibinitperiod}}}%
-        {{hash=aeb08ed05b35016772ae2140aa82e13d}{%
-           family={Dersin},
-           familyi={D\bibinitperiod},
-           given={Pierre},
-           giveni={P\bibinitperiod}}}%
-        {{hash=145dc8cfd0cfd69c050220d807c26799}{%
-           family={Lee},
-           familyi={L\bibinitperiod},
-           given={Wan-Jui},
-           giveni={W\bibinithyphendelim J\bibinitperiod}}}%
-        {{hash=87faebfc68aa0e42ea6e0f4ea2a07630}{%
-           family={Ducoffe},
-           familyi={D\bibinitperiod},
-           given={Melanie},
-           giveni={M\bibinitperiod}}}%
+    \entry{Akrim}{unpublished}{}
+      \name{author}{1}{}{%
+        {{hash=776c1d5b96e9025eb1f9c75490428d9c}{%
+           family={Akrim},
+           familyi={A\bibinitperiod},
+           given={Anass},
+           giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{65e6a138d7069ce3a5f72fea8bafca4c}
-      \strng{fullhash}{a40d7210d07d499da1f260e4394361db}
-      \strng{bibnamehash}{a40d7210d07d499da1f260e4394361db}
-      \strng{authorbibnamehash}{a40d7210d07d499da1f260e4394361db}
-      \strng{authornamehash}{65e6a138d7069ce3a5f72fea8bafca4c}
-      \strng{authorfullhash}{a40d7210d07d499da1f260e4394361db}
+      \strng{namehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{fullhash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{bibnamehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{authorbibnamehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{authornamehash}{776c1d5b96e9025eb1f9c75490428d9c}
+      \strng{authorfullhash}{776c1d5b96e9025eb1f9c75490428d9c}
       \field{sortinit}{2}
       \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0952-1976}
-      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
-      \field{title}{Potential, challenges and future directions for deep learning in prognostics and health management applications}
-      \field{volume}{92}
-      \field{year}{2020}
+      \field{title}{Description Algorithm}
+    \endentry
+    \entry{Paris1963}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b7e0bb562104e02793f1bcadc780e6bc}{%
+           family={Paris},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3bcfae5cafa428073b9cca9a20f52597}{%
+           family={Erdogan},
+           familyi={E\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{fullhash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{bibnamehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{authorbibnamehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{authornamehash}{d727c87a207e5d6e2d45172fd8d08507}
+      \strng{authorfullhash}{d727c87a207e5d6e2d45172fd8d08507}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Basic Engineering}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{A Critical Analysis of Crack Propagation Laws}
+      \field{volume}{85}
+      \field{year}{1963}
       \field{dateera}{ce}
-      \field{pages}{103678}
-      \range{pages}{1}
+      \field{pages}{528\bibrangedash 533}
+      \range{pages}{6}
       \verb{doi}
-      \verb 10.1016/j.engappai.2020.103678
+      \verb 10.1115/1.3656900
+      \endverb
+    \endentry
+    \entry{Liu2019a}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e0074c08a42c7d104f4869768e2f5e50}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chien-Liang},
+           giveni={C\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=6494dbe2979cd3b11e0406a5a402695a}{%
+           family={Hsaio},
+           familyi={H\bibinitperiod},
+           given={Wen-Hoar},
+           giveni={W\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=a8a5638c23b206cd976d7f59b2fb3005}{%
+           family={Tu},
+           familyi={T\bibinitperiod},
+           given={Yao-Chung},
+           giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{fullhash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{bibnamehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{authorbibnamehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{authornamehash}{37170fefb7afd99c043be4edcbe54219}
+      \strng{authorfullhash}{37170fefb7afd99c043be4edcbe54219}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Industrial Electronics}
+      \field{number}{6}
+      \field{title}{Time Series Classification With Multivariate Convolutional Neural Network}
+      \field{volume}{66}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{pages}{4788\bibrangedash 4797}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/TIE.2018.2864702
       \endverb
       \verb{file}
-      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Fink2020 - Potential, Challenges and Future Directions for Deep Learning in Prognostics and Health Management Applications.pdf:PDF
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Liu2019a - Time Series Classification with Multivariate Convolutional Neural Network.pdf:PDF
       \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S0952197620301184
+    \endentry
+    \entry{Xiao2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e276ae26977a9b2e37343fd9ee050e70}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{fullhash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{bibnamehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{authorbibnamehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{authornamehash}{e276ae26977a9b2e37343fd9ee050e70}
+      \strng{authorfullhash}{e276ae26977a9b2e37343fd9ee050e70}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{stat.ML}
+      \field{eprinttype}{arXiv}
+      \field{month}{3}
+      \field{title}{A Probabilistic Machine Learning Approach to Detect Industrial Plant Faults}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{eprint}
+      \verb 1603.05770
       \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S0952197620301184
+      \verb{file}
+      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Xiao2016 - A Probabilistic Machine Learning Approach to Detect Industrial Plant Faults.pdf:PDF
       \endverb
-      \keyw{Deep learning,Prognostics and health management,GAN,Domain adaptation,Fleet PHM,Deep reinforcement learning,Physics-induced machine learning}
+      \keyw{stat.ML,stat.AP}
     \endentry
     \entry{Bengio1994}{article}{}
       \name{author}{3}{}{%
@@ -1592,80 +1654,32 @@
       \endverb
       \keyw{cs.HC}
     \endentry
-    \entry{Liu2019a}{article}{}
-      \name{author}{3}{}{%
-        {{hash=e0074c08a42c7d104f4869768e2f5e50}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Chien-Liang},
-           giveni={C\bibinithyphendelim L\bibinitperiod}}}%
-        {{hash=6494dbe2979cd3b11e0406a5a402695a}{%
-           family={Hsaio},
-           familyi={H\bibinitperiod},
-           given={Wen-Hoar},
-           giveni={W\bibinithyphendelim H\bibinitperiod}}}%
-        {{hash=a8a5638c23b206cd976d7f59b2fb3005}{%
-           family={Tu},
-           familyi={T\bibinitperiod},
-           given={Yao-Chung},
-           giveni={Y\bibinithyphendelim C\bibinitperiod}}}%
-      }
-      \strng{namehash}{37170fefb7afd99c043be4edcbe54219}
-      \strng{fullhash}{37170fefb7afd99c043be4edcbe54219}
-      \strng{bibnamehash}{37170fefb7afd99c043be4edcbe54219}
-      \strng{authorbibnamehash}{37170fefb7afd99c043be4edcbe54219}
-      \strng{authornamehash}{37170fefb7afd99c043be4edcbe54219}
-      \strng{authorfullhash}{37170fefb7afd99c043be4edcbe54219}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Industrial Electronics}
-      \field{number}{6}
-      \field{title}{Time Series Classification With Multivariate Convolutional Neural Network}
-      \field{volume}{66}
-      \field{year}{2019}
-      \field{dateera}{ce}
-      \field{pages}{4788\bibrangedash 4797}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.1109/TIE.2018.2864702
-      \endverb
-      \verb{file}
-      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Liu2019a - Time Series Classification with Multivariate Convolutional Neural Network.pdf:PDF
-      \endverb
-    \endentry
-    \entry{Xiao2016}{article}{}
+    \entry{Sayyad}{article}{}
       \name{author}{1}{}{%
-        {{hash=e276ae26977a9b2e37343fd9ee050e70}{%
-           family={Xiao},
-           familyi={X\bibinitperiod},
-           given={Wei},
-           giveni={W\bibinitperiod}}}%
+        {{hash=006efdc77f6c129190c8c74a3775c2f8}{%
+           family={Sayyad},
+           familyi={S\bibinitperiod},
+           given={Rehan\bibnamedelima Ahmed},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{e276ae26977a9b2e37343fd9ee050e70}
-      \strng{fullhash}{e276ae26977a9b2e37343fd9ee050e70}
-      \strng{bibnamehash}{e276ae26977a9b2e37343fd9ee050e70}
-      \strng{authorbibnamehash}{e276ae26977a9b2e37343fd9ee050e70}
-      \strng{authornamehash}{e276ae26977a9b2e37343fd9ee050e70}
-      \strng{authorfullhash}{e276ae26977a9b2e37343fd9ee050e70}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \strng{namehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{fullhash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{bibnamehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{authorbibnamehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{authornamehash}{006efdc77f6c129190c8c74a3775c2f8}
+      \strng{authorfullhash}{006efdc77f6c129190c8c74a3775c2f8}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprintclass}{stat.ML}
-      \field{eprinttype}{arXiv}
-      \field{month}{3}
-      \field{title}{A Probabilistic Machine Learning Approach to Detect Industrial Plant Faults}
-      \field{year}{2016}
-      \field{dateera}{ce}
-      \verb{eprint}
-      \verb 1603.05770
+      \field{journaltitle}{Medium}
+      \field{title}{How to Use Convolutional Neural Networks for Time Series Classification}
+      \verb{urlraw}
+      \verb https://medium.com/@Rehan_Sayyad/how-to-use-convolutional-neural-networks-for-time-series-classification-80575131a474
       \endverb
-      \verb{file}
-      \verb :G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Xiao2016 - A Probabilistic Machine Learning Approach to Detect Industrial Plant Faults.pdf:PDF
+      \verb{url}
+      \verb https://medium.com/@Rehan_Sayyad/how-to-use-convolutional-neural-networks-for-time-series-classification-80575131a474
       \endverb
-      \keyw{stat.ML,stat.AP}
     \endentry
   \enddatalist
 \endrefsection

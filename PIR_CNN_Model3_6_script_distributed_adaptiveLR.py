@@ -83,7 +83,7 @@ def get_dataset(sequence_length, batch_size):
     #random.shuffle(data_train_group)
     #data_train_df_random = pd.concat(data_train_group)
 
-    data_train = data_train_df[data_train_df.ID <= 100]
+    data_train = data_train_df[data_train_df.ID <= 1000]
     data_val = data_train_df[data_train_df.ID > 9900]
     data_test = data_test_df
 
@@ -135,7 +135,7 @@ def get_dataset(sequence_length, batch_size):
 def build_model(input_shape, output_shape):
     # build model
     input_layer = Input(shape=input_shape)
-    x = TCN(nb_filters=30,
+    x = TCN(nb_filters=35,
                 kernel_size=2,
                 nb_stacks=1,
                 dilations=[2 ** i for i in range(8)],
@@ -179,7 +179,7 @@ with strategy.scope():
     # In general this is only model construction & `compile()`.
     model = build_model(input_shape = (sequence_length, 3), output_shape = 20)
 
-model_directory = 'CNN_Model3_6' + '/' + '100_structures_adaptiveLR_1'
+model_directory = 'CNN_Model3_6' + '/' + '1000_structures_adaptiveLR_1'
 model_path = model_directory + '/' + 'CNN_Model3_6_adaptiveLR_1'
 
 # get model as json string and save to file
@@ -187,7 +187,7 @@ model_as_json = model.to_json()
 with open(model_path + '.json', "w") as json_file:
     json_file.write(model_as_json)
 
-es = keras.callbacks.EarlyStopping(monitor='sparse_categorical_accuracy', min_delta=0, patience=100, verbose=2, mode='max')
+#es = keras.callbacks.EarlyStopping(monitor='sparse_categorical_accuracy', min_delta=0, patience=100, verbose=2, mode='max')
 mc = keras.callbacks.ModelCheckpoint(model_path + '_weights_epoch_{epoch}_val_accuracy_{val_sparse_categorical_accuracy}.h5', monitor='sparse_categorical_accuracy', mode='max', 
                                      save_weights_only=True, save_best_only=True)
 tb = tf.keras.callbacks.TensorBoard(model_directory)
