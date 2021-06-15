@@ -112,3 +112,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# No results
+GRU_model/
+RNN_model/
+CNN_Model1_3/
+CNN_Model3_6/
+models/
