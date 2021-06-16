@@ -359,7 +359,7 @@ Table \ref{tab:variable_parameters_cnn_optimization} lists the variable paramete
 		Number of convolutional layers & $ {2, 4, 6, 8} $ \\
 		Number of filters per layer & $ {15, 20, 25, 30, 35, 40, 45, 50} $ \\
 		Kernel size & $ {3, 6, 9, 12} $ \\
-		Learning rate & $ {10^-2, 10^-3} $
+		Learning rate & $ {10^{-2}, 10^{-3}} $
 	\end{tabular}
 \end{table}
 
@@ -380,15 +380,15 @@ Table \ref{tab:hyperparameters_100_structures} shows the different architectures
 	\centering
 	\caption{Results of the hyperparameter optimization for different sliding window lengths with $ 100 $ training structures}
 	\label{tab:hyperparameters_100_structures}
-	\begin{tabular}{ll}
-		Sliding window size & $ 5 $ \\
+	\begin{tabular}{lllllll}
+		Sliding window size & $ 5 $ & $ 10 $ & $ 15 $ & $ 20 $ & $ 30 $ & $ 40 $ \\
 		\hline
-		Number of convolutional layers & $ 2 $ \\
-		Number of filters per layer & $ 3 $ \\
-		Kernel size & $ 4 $ \\
-		Learning rate & $ 10^{-2} $ \\
+		Number of convolutional layers & $ 4 $ & $ 2 $ & $ 4 $ & $ 2 $ & $ 6 $ & $ 6 $ \\
+		Number of filters per layer & $ 25 $ & $ 35 $ & $ 30 $ & $ 45 $ & $ 20 $ & $ 20 $ \\
+		Kernel size & $ 3 $ & $ 6 $ & $ 9 $ & $ 9 $ & $ 6 $ & $ 3 $ \\
+		Learning rate & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ & $ 3 $ \\
 		\hline
-		Validation accuracy & $ 0.99 $
+		Validation accuracy & $ 0.6984 $ & $ 0.7063 $ & $ 0.7090 $ & $ 0.7139 $ & $ 0.7239 $ & $ 0.7335 $
 	\end{tabular}
 \end{table}
 
