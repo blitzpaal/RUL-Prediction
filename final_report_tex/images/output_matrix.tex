@@ -1,0 +1,12 @@
+\begin{tikzpicture}[every node/.style={anchor=north west,fill=white,minimum width=1.3cm,minimum height=6mm}]
+	\matrix (mA) [draw,matrix of math nodes]
+	{
+		RUL_{bin,N} \\
+		RUL_{bin,N+1} \\
+		\vdots \\
+		RUL_{bin,n} \\
+	};
+
+	\draw[thick,-stealth] ([xshift=-2ex]mA.north west)
+	-- ([xshift=-2ex]mA.south west) node[midway,above,rotate=90] {Time steps $ n $};
+\end{tikzpicture}

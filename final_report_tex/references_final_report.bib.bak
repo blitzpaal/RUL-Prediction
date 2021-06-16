@@ -1,7 +1,7 @@
 % Encoding: UTF-8
 
 @Conference{Xu2018,
-  author       = {L. Xu, S. F. Yuan, J. Chen, Q. Bao},
+  author       = {L. Xu and S. F. Yuan and J. Chen and Q. Bao},
   booktitle    = {7th Asia-Pacific Workshop on Structural Health Monitoring},
   title        = {Deep learning based fatigue crack diagnosis of aircraft structures},
   date         = {2018},
@@ -61,9 +61,9 @@
   year            = {2019},
   pages           = {2965--2971},
   publisher       = {IEEE},
-  date            = {6-9 Dec. 2019},
+  date            = {2019-12-06},
   doi             = {10.1109/SSCI44817.2019.9003163},
-  eventdate       = {6-9 Dec. 2019},
+  eventdate       = {2019-12-06},
   eventtitleaddon = {Xiamen, China},
   file            = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Direct Remaining Useful Life Prediction for RollingBearing Using Temporal Convolutional Networks.pdf:PDF},
   isbn            = {978-1-7281-2486-5},
@@ -282,7 +282,7 @@
   number       = {6},
   pages        = {4788-4797},
   volume       = {66},
-  date         = {2019},
+  date         = {2019-12-06},
   doi          = {10.1109/TIE.2018.2864702},
   file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Liu2019a - Time Series Classification with Multivariate Convolutional Neural Network.pdf:PDF},
   journaltitle = {IEEE Transactions on Industrial Electronics},
@@ -489,6 +489,26 @@ A theory of learned sequential behavior is presented, with a focus on coarticula
   journal = {Medium},
   title   = {How to Use Convolutional Neural Networks for Time Series Classification},
   url     = {https://medium.com/@Rehan_Sayyad/how-to-use-convolutional-neural-networks-for-time-series-classification-80575131a474},
+}
+
+@InCollection{Feurer2019,
+  author    = {Feurer, Matthias and Hutter, Frank},
+  booktitle = {Automated Machine Learning},
+  publisher = {Springer, Cham},
+  title     = {Hyperparameter optimization},
+  year      = {2019},
+  pages     = {3--33},
+  file      = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/1007149.pdf:PDF},
+}
+
+@Misc{You2019,
+  author        = {Kaichao You and Mingsheng Long and Jianmin Wang and Michael I. Jordan},
+  title         = {How Does Learning Rate Decay Help Modern Neural Networks?},
+  year          = {2019},
+  archiveprefix = {arXiv},
+  eprint        = {1908.01878},
+  file          = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/1908.01878.pdf:PDF},
+  primaryclass  = {cs.LG},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
