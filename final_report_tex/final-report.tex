@@ -169,7 +169,7 @@ The Paris-Erdogan Law is applied to an infinite plate as shown in Figure XXX. Th
 	\caption{Training and validation dataset structure}
 	\label{tab:sliding_window_approach}
 	\begin{tabular}{lllllll}
-		$ t $ & $ ID $ & $ cycle $ & $ \epsilon_1 $     & $ \epsilon_2 $     & $ \epsilon_3 $     & $ RUL_{bin} $   \\
+		$ \boldmath{t} $ & $ \boldmath{ID} $ & $ \boldmath{cycle} $ & $ \boldmath{\epsilon_1} $     & $ \boldmath{\epsilon_2} $     & $ \boldmath{\epsilon_3} $     & $ \boldmath{RUL_{bin}} $   \\
 		\hline
 		$ 1 $ & $ 1 $  & $ 0 $     & $ \epsilon_{1,1} $ & $ \epsilon_{2,1} $ &  $ \epsilon_{3,1} $ &  $ RUL_{bin,1} $ \\
 		$ 2 $ & $ 1 $  & $ 500 $   & $ \epsilon_{1,2} $ & $ \epsilon_{2,2} $ & $ \epsilon_{3,2} $ & $ RUL_{bin,2} $ \\
@@ -251,7 +251,9 @@ Besides the general \gls{cnn} architectures \glspl{tcn} (Bai et al. \cite{Bai201
 	\label{fig:tcn_block}
 \end{figure}
 
-% Maybe list the used frameworks (Keras, Tensoflow etc.)(Paul)
+% Maybe list the used frameworks (Keras, Tensoflow etc.) (Paul)
+
+% Maybe write about the execution environment (Used GPUs etc.) (Paul)
 
 \noindent
 \textbf{Metric and loss function}
@@ -321,10 +323,74 @@ Based on the \gls{cnn} architecture of Li et al. \cite{Li2018} which was used fo
 
 A \gls{tcn} architecture template is generated based on the results of Liu et al. \cite{Liu2019} who used the network for \gls{rul} prediction of roller bearings. The architecture consists of multiple \gls{tcn} residual blocks with a dilation increasing with multiples of 2 with the first layer having a dilation of $ d = 1 $. Each block features the same number of filters with an identical kernel size. The next layer after the \gls{tcn} blocks is the dense output layer which has $ 20 $ nodes to match the number of \gls{rul} classes $ C = 20 $. The skip connection layer is activated for all residual blocks.
 
-% Give an overview of the results of the hyperparameter optimisation strategies for the rnn and cnn networks (Paul and Thomas)
+% Give an overview of the results of the hyperparameter optimization strategies for the rnn and cnn networks (Paul and Thomas)
 
 \noindent
-\textbf{Hyperparameter optimisation}
+\textbf{Hyperparameter optimization}
+
+The hyperparameter optimization is performed using random search as described in \ref{sec:methods}. The used training dataset consists of $ 100 $, $ 500 $ or $ 1000 $ structures. For validation always $ 100 $ structures are used. The model selection is based on the accuracy of the models on the validation dataset. Not all available parameters of the networks are considered for the optimization as that would increase the computational effort drastically. The reduction also helps to shift the focus of the optimization on the important parameters and avoid varying parameters which have no or only little influence on the accuracy of the network.
+
+Table \ref{tab:fixed_parameters_cnn_optimization} lists the fixed parameters of the vanilla \gls{cnn} optimization. The sliding window length includes multiple values as the influence of that parameter is studied using by performing multiple optimization runs with different lengths of the sliding window.
+
+\begin{table}[htp]
+	\centering
+	\caption{Fixed parameters for vanilla \gls{cnn} hyperparameter optimization}
+	\label{tab:fixed_parameters_cnn_optimization}
+	\begin{tabular}{ll}
+		\boldmath{Parameter} & \boldmath{Value} \\
+		\hline
+		Batch size & $ 4096 $ \\
+		Sliding window length & $ {5, 10, 15, 20, 30, 40} $ \\
+		Activation function & ReLU \\
+		Padding & Padding with zeros \\
+		Dropout & No dropout
+	\end{tabular}
+\end{table}
+
+Table \ref{tab:variable_parameters_cnn_optimization} lists the variable parameters and their set of possible values for the \gls{cnn} hyperparameter optimization. The chosen range for the parameters is the result of a preliminary analysis to identify meaningful boundaries for them.
+
+\begin{table}[htp]
+	\centering
+	\caption{Variable parameters for vanilla \gls{cnn} hyperparameter optimization}
+	\label{tab:variable_parameters_cnn_optimization}
+	\begin{tabular}{ll}
+		\boldmath{Parameter} & \boldmath{Value set} \\
+		\hline
+		Number of convolutional layers & $ {2, 4, 6, 8} $ \\
+		Number of filters per layer & $ {15, 20, 25, 30, 35, 40, 45, 50} $ \\
+		Kernel size & $ {3, 6, 9, 12} $ \\
+		Learning rate & $ {10^-2, 10^-3} $
+	\end{tabular}
+\end{table}
+
+For the vanilla \gls{cnn} the hyperparameter optimization is performed on $ 100 $, $ 500 $ and $ 1000 $  training structures. For the smallest dataset of $ 100 $ structures the optimization is performed on the full range of different sliding window lengths as listed in Table \ref{tab:variable_parameters_cnn_optimization}. The optimizations on $ 500 $ and $ 1000 $ structures are only performed with a sliding window size of $ N = 30 $. All optimization runs are performed for 500 training epochs and with a total of $ B = 100 $ evaluations.
+
+Figure \ref{fig:influence_sequence_length} shows the achieved maximum validation accuracy after the hyperparameter optimization for different lengths of the sliding window. The accuracy increases approximately linear with size of the sliding window although the absolute value of the improvement remains relatively small. The size of the sliding window can not be increased above a size of $ 40 $ as then the sliding window would be larger than the timeseries of some of the structures. A too big sliding window besides that has the disadvantage that it can only be applied if data is already collected for at least as many timesteps as the sliding window requires. This means that there could be situations in which the first predictions can only be made just before the part fails or in the worst case after it fails. As a result of these considerations and the neglectible difference betwwen the sliding window sizes of $ 30 $ and $ 40 $ a size of $ N = 30 $ is choosen for all further hyperparameter optimizations runs wiht the vanilla \gls{cnn} on $ 500 $ and $ 1000 $ structures.
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{python/influence_sequence_length.pdf}
+	\caption{Hyperparameter optimization for different sliding window sizes for training on $ 100 $ structures}
+	\label{fig:influence_sequence_length}
+\end{figure}
+
+Table \ref{tab:hyperparameters_100_structures} shows the different architectures form the hyperparameter optimization that achieved the best results with the respective sliding window length on $ 100 $ training structures.
+
+\begin{table}[htp]
+	\centering
+	\caption{Results of the hyperparameter optimization for different sliding window lengths with $ 100 $ training structures}
+	\label{tab:hyperparameters_100_structures}
+	\begin{tabular}{ll}
+		Sliding window size & $ 5 $ \\
+		\hline
+		Number of convolutional layers & $ 2 $ \\
+		Number of filters per layer & $ 3 $ \\
+		Kernel size & $ 4 $ \\
+		Learning rate & $ 10^{-2} $ \\
+		\hline
+		Validation accuracy & $ 0.99 $
+	\end{tabular}
+\end{table}
 
 
 
