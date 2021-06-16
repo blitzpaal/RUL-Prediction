@@ -1,0 +1,44 @@
+\def\getangle(#1)(#2)#3{%
+	\begingroup%
+	\pgftransformreset%
+	\pgfmathanglebetweenpoints{\pgfpointanchor{#1}{center}}{\pgfpointanchor{#2}{center}}%
+	\expandafter\xdef\csname angle#3\endcsname{\pgfmathresult}%
+	\endgroup%
+}
+
+\begin{tikzpicture}[every node/.style={anchor=north east,fill=white,minimum width=1.3cm,minimum height=6mm}]
+	\matrix (mA) [draw,matrix of math nodes]
+	{
+		\epsilon_{3,1} & \epsilon_{3,2} &  \cdots &  \epsilon_{3,N}  \\
+		\epsilon_{3,2}  &  \epsilon_{3,3}  &  \cdots &  \epsilon_{3,N+1}  \\
+			\vdots          	& \vdots          	& \ddots & \vdots \\
+		\epsilon_{3,n-N+1}  &  \epsilon_{3,n-N}  &  \cdots &  \epsilon_{3,n}  \\
+	};
+	\matrix (mB) [draw,matrix of math nodes] at ($(mA.south west)+(4.9,1.65)$)
+	{
+		 \epsilon_{2,1}  &  \epsilon_{2,2}  & \cdots &  \epsilon_{2,N}  \\
+		 \epsilon_{2,2}  &  \epsilon_{2,3}  &  \cdots &  \epsilon_{2,N+1}  \\
+		\vdots             & \vdots          	& \ddots & \vdots \\
+		 \epsilon_{2,n-N+1}  &  \epsilon_{2,n-N}  &  \cdots &  \epsilon_{2,n}  \\
+	};
+	\matrix (mC) [draw,matrix of math nodes] at ($(mB.south west)+(4.9,1.65)$)
+	{
+		 \epsilon_{1,1}  &  \epsilon_{1,2}  &  \cdots &  \epsilon_{1,N}  \\
+		 \epsilon_{1,2}  &  \epsilon_{1,3}  &  \cdots &  \epsilon_{1,N+1}  \\
+		\vdots             & \vdots          	& \ddots 	  & \vdots \\
+		 \epsilon_{1,n-N+1}  &  \epsilon_{1,n-N}  &  \cdots &  \epsilon_{1,n}  \\
+	};
+
+	\draw[dashed](mA.north east)--(mC.north east);
+	\draw[dashed](mA.north west)--(mC.north west);
+	\draw[dashed](mA.south east)--(mC.south east);
+	
+	\coordinate (A) at (mC.south east);
+	\coordinate (B) at (mA.south east);
+	\getangle(A)(B)a;
+	\draw[thick,-stealth] ([xshift=2ex]mC.south east) -- ([xshift=2ex]mA.south east) node[midway,below,rotate=\anglea] {Number of features $ k $};
+	\draw[thick,-stealth] ([yshift=-2ex]mC.south west) -- 
+	([yshift=-2ex]mC.south east) node[midway,below] {Sliding window length $ N $};
+	\draw[thick,-stealth] ([xshift=-2ex]mC.north west)
+	-- ([xshift=-2ex]mC.south west) node[midway,above,rotate=90] {Time steps $ n $};
+\end{tikzpicture}
