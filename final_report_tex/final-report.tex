@@ -205,7 +205,23 @@ As it showed promising results in other applications of Deep Learning to \gls{ph
 \end{figure}
 
 
-To prepare the data for the \gls{cnn} and \glspl{rnn} models a sliding window approach was used. This approach maps the \gls{rul} at time $ t_i $ onto the current and past time steps of the input features $ [x_{t-N+1}, x_{t-N+2},..., x_{t-1}, x_t] $ where $ N $ is the length of the sequence. The resulting input matrix therefore has the dimension $ k \times N $ where $ k $ is the number of features.
+To prepare the data for the \gls{cnn} a sliding window approach was used. This approach maps the \gls{rul} at time $ t $ onto the current and past time steps of the input features $ [x_{t-N+1}, x_{t-N+2},..., x_{t-1}, x_t] $ where $ N $ is the length of the sliding window. The resulting input matrix therefore has the dimension $ (n-N) \times N \times k $ where $ n $ is the number of samples and $ k $ is the number of features. Figure \ref{fig:input_matrix} shows an example of how the time series data of the strain gauges from Table \ref{tab:sliding_window_approach} is mapped to the input matrix.
+
+\begin{figure}[htp]
+	\centering
+	\input{images/input_matrix.tex}
+	\caption{Input matrix for the neural networks}
+	\label{fig:input_matrix}
+\end{figure}
+
+The output matrix shown in Figure \ref{fig:output_matrix} is only one dimensional. It is only composed of the \gls{rul} bins which are mapped to the corresponding rows in the input matrix the dimension therefore is $ (n-N) $.
+
+\begin{figure}[htp]
+	\centering
+	\input{images/output_matrix.tex}
+	\caption{Input matrix for the neural networks}
+	\label{fig:output_matrix}
+\end{figure}
 
 As an input for the different models, datasets had to be normalized. While a specific layer was added at the beggining of \gls{cnn} and \gls{tcn} architectures to do so, the preprocessed data had to be normalized before being fed to the \glspl{rnn} models.
 
@@ -352,10 +368,10 @@ All \glspl{rnn} architectures were based on the same template. The dataset being
 \noindent
 \subsection{Hyperparameters optimization}
 
-The hyperparameter optimization is performed using random search as described in \ref{sec:methods}. The used training dataset consists of $ 100 $, $ 500 $ or $ 1000 $ structures. For validation always $ 100 $ structures are used. The model selection is based on the accuracy of the models on the validation dataset. Not all available parameters of the networks are considered for the optimization as that would increase the computational effort drastically. The reduction also helps to shift the focus of the optimization on the important parameters and avoid varying parameters which have no or only little influence on the accuracy of the network.
+The hyperparameter optimization is performed using random search as described in \ref{sec:methods}. The used training dataset consists of $ 100 $, $ 500 $ or $ 1000 $ structures. For validation always $ 100 $ structures different to the training structures are used. The model selection is based on the accuracy of the models on the validation dataset. Not all available parameters of the networks are considered for the optimization as that would increase the computational effort drastically. The reduction also helps to shift the focus of the optimization on the important parameters and avoid varying parameters which have no or only little influence on the accuracy of the network.
 
 \subsubsection{\gls{cnn} and \gls{tcn} hyperparameters optimization}
-Table \ref{tab:fixed_parameters_cnn_optimization} lists the fixed parameters of the vanilla \gls{cnn} optimization. The sliding window length includes multiple values as the influence of that parameter is studied using by performing multiple optimization runs with different lengths of the sliding window.
+Table \ref{tab:fixed_parameters_cnn_optimization} lists the fixed parameters of the vanilla \gls{cnn} optimization. The sliding window length includes multiple values as the influence of that parameter is studied by performing multiple optimization runs with different lengths of the sliding window.
 
 \begin{table}[htp]
 	\centering
@@ -390,20 +406,20 @@ Table \ref{tab:variable_parameters_cnn_optimization} lists the variable paramete
 
 For the vanilla \gls{cnn} the hyperparameter optimization is performed on $ 100 $, $ 500 $ and $ 1000 $  training structures. For the smallest dataset of $ 100 $ structures the optimization is performed on the full range of different sliding window lengths as listed in Table \ref{tab:variable_parameters_cnn_optimization}. The optimizations on $ 500 $ and $ 1000 $ structures are only performed with a sliding window size of $ N = 30 $. All optimization runs are performed for 500 training epochs and with a total of $ B = 100 $ evaluations.
 
-Figure \ref{fig:influence_sequence_length} shows the achieved maximum validation accuracy after the hyperparameter optimization for different lengths of the sliding window. The accuracy increases approximately linear with size of the sliding window although the absolute value of the improvement remains relatively small. The size of the sliding window can not be increased above a size of $ 40 $ as then the sliding window would be larger than the timeseries of some of the structures. A too big sliding window besides that has the disadvantage that it can only be applied if data is already collected for at least as many timesteps as the sliding window requires. This means that there could be situations in which the first predictions can only be made just before the part fails or in the worst case after it fails. As a result of these considerations and the neglectible difference betwwen the sliding window sizes of $ 30 $ and $ 40 $ a size of $ N = 30 $ is choosen for all further hyperparameter optimizations runs wiht the vanilla \gls{cnn} on $ 500 $ and $ 1000 $ structures.
+Figure \ref{fig:influence_sequence_length_cnn} shows the achieved maximum validation accuracy after the hyperparameter optimization for different lengths of the sliding window. The accuracy increases approximately linear with size of the sliding window although the absolute value of the improvement remains relatively small. The size of the sliding window can not be increased above a size of $ 40 $ as then the sliding window would be larger than the timeseries of some of the structures. A too big sliding window besides that has the disadvantage that it can only be applied if data is already collected for at least as many timesteps as the sliding window requires. This means that there could be situations in which the first predictions can only be made just before the part fails or in the worst case after it fails. As a result of these considerations and the neglectible difference betwwen the sliding window sizes of $ 30 $ and $ 40 $ a size of $ N = 30 $ is choosen for all further hyperparameter optimizations runs wiht the vanilla \gls{cnn} on $ 500 $ and $ 1000 $ structures.
 
 \begin{figure}[htp]
 	\centering
-	\includegraphics[width=0.35\textwidth]{python/influence_sequence_length.pdf}
-	\caption{Hyperparameter optimization for different sliding window sizes for training on $ 100 $ structures}
-	\label{fig:influence_sequence_length}
+	\includegraphics[width=0.35\textwidth]{python/influence_sequence_length_cnn.pdf}
+	\caption{Vanilla \gls{cnn} hyperparameter optimization for different sliding window sizes for training on $ 100 $ structures}
+	\label{fig:influence_sequence_length_cnn}
 \end{figure}
 
 Table \ref{tab:hyperparameters_100_structures} shows the different architectures form the hyperparameter optimization that achieved the best results with the respective sliding window length on $ 100 $ training structures. There is no clear trend for the network architecture in relation to the sliding window size. This is backed by the fact that the 2nd and 3rd best networks for each respective hyperparameter optimization can have significantly different architectures to the best one. This observations lead to the conclusion that there are many different network architectures that can lead equal results.
 
 \begin{table}[htp]
 	\centering
-	\caption{Results of the hyperparameter optimization for different sliding window lengths with $ 100 $ training structures}
+	\caption{Best models of the vanilla \gls{cnn} hyperparameter optimization for different sliding window lengths with training on $ 100 $ structures}
 	\label{tab:hyperparameters_100_structures}
 	\setlength{\tabcolsep}{3pt} % Default value: 6pt
 	\begin{tabular}{p{2.5cm}|llllll}
@@ -418,27 +434,27 @@ Table \ref{tab:hyperparameters_100_structures} shows the different architectures
 	\end{tabular}
 \end{table}
 
-Figure \ref{fig:accuracy_100_structures_random_search} shows the history of the testing and validation accuracy for some of the different sliding window sizes for the training with $ 100 $ structures. There is little to no overfitting of the testing dataset for all of the shown training runs. The $ 500 $ training epochs lead to a sufficient convergence for all the runs.
+Figure \ref{fig:accuracy_100_structures_random_search_cnn} shows the history of the training and validation accuracy for some of the different sliding window sizes for the training with $ 100 $ structures. There is little to no overfitting on the training dataset for all of the shown training runs. The $ 500 $ training epochs lead to a sufficient convergence for all the runs.
 
 \begin{figure}[htp]
 	\centering
-	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_10.pdf}}
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_10_CNN.pdf}}
 	\quad
-	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_20.pdf}}
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_20_CNN.pdf}}
 	\\
-	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_30.pdf}}
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_30_CNN.pdf}}
 	\quad
-	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_40.pdf}}
-	\caption{Training and validation accuarcy for $ 100 $ training structures with different sliding window sizes: (a): $ 10 $, (b): $ 20 $, (c): $ 30 $, (d): $ 40 $}
-	\label{fig:accuracy_100_structures_random_search}
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_40_CNN.pdf}}
+	\caption{Training and validation accuracy for the best model of the vanilla \gls{cnn} hyperparameter optimization on $ 100 $ training structures with a sliding window size of: (a): $ 10 $, (b): $ 20 $, (c): $ 30 $, (d): $ 40 $}
+	\label{fig:accuracy_100_structures_random_search_cnn}
 \end{figure}
 
-The hyperparameter optimizations of the vanilla \gls{cnn} with $ 500 $ training structures and a sliding window size of $ 30 $ leads to an improvement of the validation accuracy. Showing that the network architecture if provided with more data can better learn the relationships within the dataset. An increase of the training dataset to $ 1000 $ structures leads to to further improvement. The choosen network architecture seems to have achieved its maximum performance. Table \ref{tab:hyperparameters_100_500_1000_structures} depicts the best network architecture with the achieved validation accuracy for $ 100 $, $ 500 $ and $ 1000 $ training structures with a sliding window size of $ 30 $. There is not clear trend visible in the network architectures indicating that there are many different possible architectures which achieve the same results. This hypothesis is supported by some of the other architectures created by the hyperparameter optimization which achieve similar results with distinctly different architectures.
+The hyperparameter optimizations of the vanilla \gls{cnn} with $ 500 $ training structures and a sliding window size of $ 30 $ leads to an improvement of the validation accuracy. Showing that the network architecture if provided with more data can better learn the relationships within the dataset. An increase of the training dataset to $ 1000 $ structures leads to to further improvement. This is a result of the lower learning rate of this network which has not fully converged yet (see Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN})  Table \ref{tab:hyperparameters_100_500_1000_structures_CNN} depicts the best network architecture with the achieved validation accuracy for $ 100 $, $ 500 $ and $ 1000 $ training structures with a sliding window size of $ 30 $. There is not clear trend visible in the network architectures indicating that there are many different possible architectures which achieve the same results. This hypothesis is supported by some of the other architectures created by the hyperparameter optimization which achieve similar results with distinctly different architectures.
 
 \begin{table}[htp]
 	\centering
-	\caption{Results of the hyperparameter optimization for different $ 100 $, $ 500 $ and $ 500 $ training structures}
-	\label{tab:hyperparameters_100_500_1000_structures}
+	\caption{Best models of the vanilla \gls{cnn} hyperparameter optimization for $ 100 $, $ 500 $ and $ 1000 $ training structures}
+	\label{tab:hyperparameters_100_500_1000_structures_CNN}
 	\begin{tabular}{p{2.5cm}|llllll}
 		Training structures & $ 100 $ & $ 500 $ & $ 1000 $ \\
 		\hline
@@ -453,9 +469,110 @@ The hyperparameter optimizations of the vanilla \gls{cnn} with $ 500 $ training 
 	\end{tabular}
 \end{table}
 
-Crate figures of training progress with 500 and 1000 structures.
+Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the training history for the best models of the vanilla \gls{cnn} hyperparameter optimization when training on $ 500 $ and $ 1000 $ structures respectively. None of the two models shows significant overfitting on the training dataset. Both models are not yet fully converged and therfore have room for improvement. This potential is exploited in the model fine tuning in section XXX. The training history of the model trained on $ 500 $ epochs shows an instability at around $ 480 $ epochs. Indicating that the learning rate should be reduced which is done in the subsequent model fine tuning.
+
+\begin{figure}[htp]
+	\centering
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_500_structures_random_search_CNN.pdf}}
+	\quad
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_random_search_CNN.pdf}}
+	\caption{Training and validation accuracy for the best model of the vanilla \gls{cnn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
+	\label{fig:accuracy_500_1000_structures_random_search_CNN}
+\end{figure}
+
+
+Table \ref{tab:fixed_parameters_tcn_optimization} lists the fixed parameters of the \gls{tcn} optimization. The sliding window length includes multiple values as the influence of that parameter is studied by performing multiple optimization runs with different lengths of the sliding window.
+
+\begin{table}[htp]
+	\centering
+	\caption{Fixed parameters for \gls{tcn} hyperparameter optimization}
+	\label{tab:fixed_parameters_tcn_optimization}
+	\begin{tabular}{ll}
+		\textbf{Parameter} & \textbf{Value} \\
+		\hline
+		Batch size & $ 4096 $ \\
+		Sliding window length & $ \{10, 15, 20, 30\} $ \\
+		Activation function & ReLU \\
+		Padding & Causal padding \\
+		Normalization & Weight normalization
+	\end{tabular}
+\end{table}
+
+Table \ref{tab:variable_parameters_tcn_optimization} lists the variable parameters and their set of possible values for the \gls{tcn} hyperparameter optimization. The chosen range for the parameters is the result of a preliminary analysis to identify meaningful boundaries for them. The indicated number of layers directly corresponds the the maximum dilation as the dilations rises with multiples of two for each \gls{tcn} block. For e.g. 4 blocks the dilation in the blocks is $ [1, 2, 4, 8] $.
 
 \subsubsection{\gls{rnn}, \gls{lstm} and \gls{gru} hyperparameters optimization}
+\begin{table}[htp]
+	\centering
+	\caption{Variable parameters for \gls{tcn} hyperparameter optimization}
+	\label{tab:variable_parameters_tcn_optimization}
+	\begin{tabular}{ll}
+		\textbf{Parameter} & \textbf{Value set} \\
+		\hline
+		Number of layers & $ \{4, 6, 8, 10\} $ \\
+		Number of filters per layer & $ \{15, 20, 25, 30, 35, 40, 45, 50\} $ \\
+		Kernel size & $ \{3, 6, 9, 12\} $ \\
+		Dropout rate & $ \{0.0, 0.1, 0.2\} $ \\
+		Learning rate & $ \{10^{-2}, 10^{-3}\} $
+	\end{tabular}
+\end{table}
+
+As for the vanilla \gls{cnn} the hyperparameter optimization for the \gls{tcn} is performed on $ 100 $, $ 500 $ and $ 1000 $  training structures. For the smallest dataset of $ 100 $ structures the optimization is performed on the full range of different sliding window lengths as listed in Table \ref{tab:variable_parameters_cnn_optimization}. The optimizations on $ 500 $ and $ 1000 $ structures are only performed with a sliding window size of $ N = 30 $. All optimization runs are performed for 500 training epochs and with a total of $ B = 50 $ evaluations. The evaluations are reduced compared to the \gls{cnn} optimization because of the increased computational effort for the \gls{tcn}.
+
+Figure \ref{fig:influence_sequence_length_tcn} shows the achieved maximum validation accuracy after the hyperparameter optimization for different lengths of the sliding window. There is a significant increase of the accuracy between a length of $ 15 $ and $ 30 $. The other differences seem to be the result of scatter as a result of the training as well as the random search which does lead to different network architectures in each optimization run. To keep a big enough distance to the drop in the accuarcy for windows sizes $ \leq 20 $ a sliding window size of $ N = 30 $ is chosen for all further hyperparameter optimizations with the \gls{tcn} on $ 500 $ and $ 1000 $ structures.
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=0.35\textwidth]{python/influence_sequence_length_tcn.pdf}
+	\caption{\gls{tcn} hyperparameter optimization for different sliding window sizes for training on $ 100 $ structures}
+	\label{fig:influence_sequence_length_tcn}
+\end{figure}
+
+Figure \ref{fig:accuracy_100_structures_random_search_cnn} shows the history of the training and validation accuracy for different sliding window sizes for the training with $ 100 $ structures. There is little to no overfitting on the training dataset for all of the training runs. The $ 500 $ training epochs lead to a sufficient convergence for all the runs.
+
+\begin{figure}[htp]
+	\centering
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_10_TCN.pdf}}
+	\quad
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_15_TCN.pdf}}
+	\\
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_20_TCN.pdf}}
+	\quad
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_30_TCN.pdf}}
+	\caption{Training and validation accuracy for the best model of the \gls{tcn} hyperparameter optimization on $ 100 $ training structures with a sliding window size of: (a): $ 10 $, (b): $ 15 $, (c): $ 20 $, (d): $ 30 $}
+	\label{fig:accuracy_100_structures_random_search_tcn}
+\end{figure}
+
+Performing the hyperparameter optimization of the \gls{tcn} with $ 500 $ and $ 1000 $ structures respectively leads to significant improvements of the validation accuracy. This indicates that the network is able to better learn the relations in the dataset when feed with more data. Table \ref{tab:hyperparameters_100_500_1000_structures_TCN} depicts the best network architecture with the achieved validation accuracy for $ 100 $, $ 500 $ and $ 1000 $ training structures with a sliding window size of $ 30 $. The network architectures are very similar which shows that independent of the used training dataset a similar architecture works best.
+
+\begin{table}[htp]
+	\centering
+	\caption{Best models of the \gls{tcn} hyperparameter optimization for $ 100 $, $ 500 $ and $ 1000 $ training structures}
+	\label{tab:hyperparameters_100_500_1000_structures_TCN}
+	\begin{tabular}{p{2.5cm}|llllll}
+		Training structures & $ 100 $ & $ 500 $ & $ 1000 $ \\
+		\hline
+		Sliding window size & \multicolumn{3}{c}{$ 30 $} \\
+		\hline
+		Number of convolutional layers & $ 8 $ & $ 8 $ & $ 8 $ \\
+		Number of filters per layer & $ 30 $ & $ 25 $ & $ 35 $ \\
+		Kernel size & $ 2 $ & $ 2 $ & $ 2 $ \\
+		Dropout rate & $ 0.0 $ & $ 0.0 $ & $ 0.0 $ \\
+		Learning rate & $ 10^{-3} $ & $ 10^{-2} $ & $ 10^{-2} $ \\
+		\hline
+		Validation accuracy & $ 0.772 $ & $ 0.883 $ & $ 0.908 $
+	\end{tabular}
+\end{table}
+
+Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the training history for the best models of the vanilla \gls{cnn} hyperparameter optimization when training on $ 500 $ and $ 1000 $ structures respectively. None of the two models shows significant overfitting on the training dataset. Both models are not yet fully converged and therfore have room for improvement. This potential is exploited in the model fine tuning in section XXX. The training history of the model trained on $ 500 $ epochs shows an instability at around $ 480 $ epochs. Indicating that the learning rate should be reduced which is done in the subsequent model fine tuning.
+
+\begin{figure}[htp]
+	\centering
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_500_structures_random_search_TCN.pdf}}
+	\quad
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_random_search_TCN.pdf}}
+	\caption{Training and validation accuracy for the best model of the \gls{tcn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
+	\label{fig:accuracy_500_1000_structures_random_search_TCN}
+\end{figure}
 
 Following the samed method used for the \gls{cnn} and \gls{tcn} hyperparameters optimization, fixed parameters were previously set for each architecture, to avoid searching for hyperparameters which would not be relevant in the accuracy improvement. Those fixed parameters are the same for the \gls{rnn}, \gls{lstm} and \gls{gru} architectures, and can be found in Table \ref{tab:fixed_parameters_rnn_optimization}.
 
