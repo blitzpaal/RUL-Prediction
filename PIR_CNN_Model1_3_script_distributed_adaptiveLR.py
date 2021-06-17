@@ -189,7 +189,7 @@ with open(model_path + '.json', "w") as json_file:
     json_file.write(model_as_json)
 
 #es = keras.callbacks.EarlyStopping(monitor='sparse_categorical_accuracy', min_delta=0, patience=100, verbose=2, mode='max')
-mc = keras.callbacks.ModelCheckpoint(model_path + '_weights_epoch_{epoch}_val_accuracy_{val_sparse_categorical_accuracy}.h5', monitor='sparse_categorical_accuracy', mode='max', 
+mc = keras.callbacks.ModelCheckpoint(model_path + '_weights_epoch_{epoch}_val_accuracy_{val_sparse_categorical_accuracy}.h5', monitor='val_sparse_categorical_accuracy', mode='max', 
                                      save_weights_only=True, save_best_only=True)
 tb = tf.keras.callbacks.TensorBoard(model_directory)
 
