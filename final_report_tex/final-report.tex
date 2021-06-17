@@ -162,7 +162,16 @@ For the application of Deep Learning to crack growth for \gls{rul} prediction ba
 
 In a work done by Akrim \cite{Akrim} the Paris-Erdogan Law \cite{Paris1963} was used to create a synthetic dataset of crack growth to train the model. The dataset consists of strain data from virtual strain gauges placed in the area around the crack and the corresponding \gls{rul} of the fuselage panels.
 
-The Paris-Erdogan Law is applied to an infinite plate as shown in Figure XXX. The strain gauges are placed in a 45°-Angle at the positions shown in Table XXX relative to the center of the plate. The crack length in the Paris-Erdogan Law is a function of: $k$ number of cylces, $\Delta \sigma$ stress range, $m, C$ material constants, $a_0$ initial crack length. By calculating the crack growth until the crack length $a$ reaches the critical crack length $a_{crit}=(\frac{K_{IC}}{\Delta \sigma \sqrt{\pi}})^2$ the simulation can determine the \gls{rul} for each simulated cycle. For the simulations the stress range $\Delta \sigma$ is kept constant while the initial crack length $a_0$ and the material parameters $m$ and $C$ are drawn from a normal distribution. $ 10000 $ structures are generated this way to form the training and validation dataset. For the testing dataset 100 structures are generated. The output of theses simulations which form the input for the deep learning models is a table matching the strains from the strain gauges to the \gls{rul} calculated by the simulations. To reduce the dataset the results are only saved to the table every 500 cycles. Table \ref{tab:sliding_window_approach} shows the structure of the generated training and validation dataset. The label $ ID $ denotes the specific structures.
+The Paris-Erdogan Law is applied to an infinite plate with a central horizontal crack. The strain gauges are placed in a 45°-Angle at the positions shown in Figure \ref{fig:strain_gauge_positions} relative to the center of the plate where the crack is located.
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=6cm]{python/strain_gauges_position.pdf}
+	\caption{Position of the strain gauges relative to the crack}
+	\label{fig:strain_gauge_positions}
+\end{figure}
+
+The crack length in the Paris-Erdogan Law is a function of: $k$ number of cylces, $\Delta \sigma$ stress range, $m, C$ material constants, $a_0$ initial crack length. By calculating the crack growth until the crack length $a$ reaches the critical crack length $a_{crit}=(\frac{K_{IC}}{\Delta \sigma \sqrt{\pi}})^2$ the simulation can determine the \gls{rul} for each simulated cycle. For the simulations the stress range $\Delta \sigma$ is kept constant while the initial crack length $a_0$ and the material parameters $m$ and $C$ are drawn from a normal distribution. $ 10000 $ structures are generated this way to form the training and validation dataset. For the testing dataset 100 structures are generated. The output of theses simulations which form the input for the deep learning models is a table matching the strains from the strain gauges to the \gls{rul} calculated by the simulations. To reduce the dataset the results are only saved to the table every 500 cycles. Table \ref{tab:sliding_window_approach} shows the structure of the generated training and validation dataset. The label $ ID $ denotes the specific structures.
 
 \begin{table}[htp]
 	\centering
