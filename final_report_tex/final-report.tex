@@ -500,7 +500,7 @@ Table \ref{tab:fixed_parameters_tcn_optimization} lists the fixed parameters of 
 
 Table \ref{tab:variable_parameters_tcn_optimization} lists the variable parameters and their set of possible values for the \gls{tcn} hyperparameter optimization. The chosen range for the parameters is the result of a preliminary analysis to identify meaningful boundaries for them. The indicated number of layers directly corresponds the the maximum dilation as the dilations rises with multiples of two for each \gls{tcn} block. For e.g. 4 blocks the dilation in the blocks is $ [1, 2, 4, 8] $.
 
-\subsubsection{\gls{rnn}, \gls{lstm} and \gls{gru} hyperparameters optimization}
+
 \begin{table}[htp]
 	\centering
 	\caption{Variable parameters for \gls{tcn} hyperparameter optimization}
@@ -574,6 +574,10 @@ Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the traini
 	\label{fig:accuracy_500_1000_structures_random_search_TCN}
 \end{figure}
 
+
+
+
+\subsubsection{\gls{rnn}, \gls{lstm} and \gls{gru} hyperparameters optimization}
 Following the samed method used for the \gls{cnn} and \gls{tcn} hyperparameters optimization, fixed parameters were previously set for each architecture, to avoid searching for hyperparameters which would not be relevant in the accuracy improvement. Those fixed parameters are the same for the \gls{rnn}, \gls{lstm} and \gls{gru} architectures, and can be found in Table \ref{tab:fixed_parameters_rnn_optimization}.
 
 
@@ -632,7 +636,7 @@ The Random Search strategy were then used to optimize those hyperparameters on $
 \end{table}
 
 
-It then can be then understood that \glspl{rnn} do not need many layers to get a good accuracy compared to \gls{cnn}. The best accuracy can be found with no more than 2 or 3 layers in this case. Indeed, too many layers and cells for this amount of data might lead the model to loose itself, along with the fact that the computational time increases drastically. The Dropout and Recurrent Dropout rates were optimized at 0\%\ meaning that the models did not overfit for this range of structures. This result is better visible on the Fine Tuning in Figure \ref{fig:accuracy_100_structures_fine_tuning_rnn}, \ref{fig:accuracy_500_structures_fine_tuning_rnn} and \ref{fig:accuracy_1000_structures_fine_tuning_rnn}.
+It then can be then understood that \glspl{rnn} do not need many layers to get a good accuracy compared to \gls{cnn}. The best accuracy can be found with no more than 2 or 3 layers in this case. Indeed, too many layers and cells for this amount of data might lead the model to loose itself, along with the fact that the computational time increases drastically. The Dropout and Recurrent Dropout rates were optimized at 0\%\ meaning that the models did not overfit for this range of structures. This result is better visible as the validation accuracy follows the training accuracy on the Fine Tuning in Figure \ref{fig:accuracy_100_structures_fine_tuning_rnn}, \ref{fig:accuracy_500_structures_fine_tuning_rnn} and \ref{fig:accuracy_1000_structures_fine_tuning_rnn}.
 
 
 
@@ -689,9 +693,9 @@ As the hyperparameters were optimized, the resulting models had to be trained wi
 		\hline
 		Type of architecture & \gls{rnn} & \gls{lstm} & \gls{gru}\\
 		\hline
-		Validation accuracy & $0.898$ & $0.850$ & $0.783$\\
+		Validation accuracy & $0.899$ & $0.850$ & $0.783$\\
 		\hline
-		Testing accuracy & $0$ & $0$ & $0$
+		Testing accuracy & $0.84$ & $0.73$ & $0.70$
 	\end{tabular}
 \end{table}
 
@@ -707,7 +711,7 @@ As the hyperparameters were optimized, the resulting models had to be trained wi
 		\hline
 		Validation accuracy & $0.914$ & $0.932$ & $0.964$\\
 		\hline
-		Testing accuracy & $0$ & $0$ & $0$
+		Testing accuracy & $0.90$ & $0.832$ & $0.765$
 	\end{tabular}
 \end{table}
 
@@ -722,9 +726,9 @@ As the hyperparameters were optimized, the resulting models had to be trained wi
 		\hline
 		Type of architecture & \gls{rnn} & \gls{lstm} & \gls{gru}\\
 		\hline
-		Validation accuracy & $0.924$ & $0.861$ & $0.970$\\
+		Validation accuracy & $0.924$ & $0.932$ & $0.970$\\
 		\hline
-		Testing accuracy & $0$ & $0$ & $0$
+		Testing accuracy & $0$ & $0.724$ & $0.75$
 	\end{tabular}
 \end{table}
 
