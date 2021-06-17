@@ -339,7 +339,7 @@ To select the best model after performing the hyperparameter optimization the ac
 \noindent
 \subsection{Fine Tuning}
 
-After the optimum parameters for a model are found the model can be further improved by running more training epochs. To do so the models are trained with \gls{lrdecay)}. The best model from the hyperparameter optimization is taken and trained for a predefined number of epochs on the learning rate which was identified as the best one on the optimization. The learning rate is then lowered before the model is trained again for a fixed number of epochs. This step is repeated until convergence is achieved and no more significant improvements are visible. By using this approach the model in the early stages of training is less likely to get stuck in a local minimum and explores a wider range of possible configurations. As the training comes closer to an optimum the decaying learning rate helps with convergence and avoid oscillations. Besides this common beliefs there are probably more reasons to the effectiveness of \gls{lrdecay)}. According to You et al. \cite{You2019} is the initially large learning rate preventing the network from memorizing noisy data while the decaying learnig rate helps with learning complex patterns in the dataset.
+After the optimum parameters for a model are found the model can be further improved by running more training epochs. To do so the models are trained with \gls{lrdecay}. The best model from the hyperparameter optimization is taken and trained for a predefined number of epochs on the learning rate which was identified as the best one on the optimization. The learning rate is then lowered before the model is trained again for a fixed number of epochs. This step is repeated until convergence is achieved and no more significant improvements are visible. By using this approach the model in the early stages of training is less likely to get stuck in a local minimum and explores a wider range of possible configurations. As the training comes closer to an optimum the decaying learning rate helps with convergence and avoid oscillations. Besides this common beliefs there are probably more reasons to the effectiveness of \gls{lrdecay}. According to You et al. \cite{You2019} is the initially large learning rate preventing the network from memorizing noisy data while the decaying learnig rate helps with learning complex patterns in the dataset.
 
 
 \section{Results}
@@ -445,7 +445,7 @@ Figure \ref{fig:accuracy_100_structures_random_search_cnn} shows the history of 
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_30_CNN.pdf}}
 	\quad
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_40_CNN.pdf}}
-	\caption{Training and validation accuracy for the best model of the vanilla \gls{cnn} hyperparameter optimization on $ 100 $ training structures with a sliding window size of: (a): $ 10 $, (b): $ 20 $, (c): $ 30 $, (d): $ 40 $}
+	\caption{Training and validation accuracy history for the best model of the vanilla \gls{cnn} hyperparameter optimization on $ 100 $ training structures with a sliding window size of: (a): $ 10 $, (b): $ 20 $, (c): $ 30 $, (d): $ 40 $}
 	\label{fig:accuracy_100_structures_random_search_cnn}
 \end{figure}
 
@@ -476,7 +476,7 @@ Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the traini
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_500_structures_random_search_CNN.pdf}}
 	\quad
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_random_search_CNN.pdf}}
-	\caption{Training and validation accuracy for the best model of the vanilla \gls{cnn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
+	\caption{Training and validation accuracy history for the best model of the vanilla \gls{cnn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
 	\label{fig:accuracy_500_1000_structures_random_search_CNN}
 \end{figure}
 
@@ -538,7 +538,7 @@ Figure \ref{fig:accuracy_100_structures_random_search_cnn} shows the history of 
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_20_TCN.pdf}}
 	\quad
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_random_search_30_TCN.pdf}}
-	\caption{Training and validation accuracy for the best model of the \gls{tcn} hyperparameter optimization on $ 100 $ training structures with a sliding window size of: (a): $ 10 $, (b): $ 15 $, (c): $ 20 $, (d): $ 30 $}
+	\caption{Training and validation accuracy history for the best model of the \gls{tcn} hyperparameter optimization on $ 100 $ training structures with a sliding window size of: (a): $ 10 $, (b): $ 15 $, (c): $ 20 $, (d): $ 30 $}
 	\label{fig:accuracy_100_structures_random_search_tcn}
 \end{figure}
 
@@ -570,7 +570,7 @@ Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the traini
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_500_structures_random_search_TCN.pdf}}
 	\quad
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_random_search_TCN.pdf}}
-	\caption{Training and validation accuracy for the best model of the \gls{tcn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
+	\caption{Training and validation accuracy history for the best model of the \gls{tcn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
 	\label{fig:accuracy_500_1000_structures_random_search_TCN}
 \end{figure}
 
@@ -733,7 +733,58 @@ As the hyperparameters were optimized, the resulting models had to be trained wi
 \end{table}
 
 
+% Show the detailed results of the fine tuning of some networks (Paul and Thomas)
+
+For each of the best identified network architectures of the vanilla \gls{cnn} and \gls{tcn} hyperparameter optimizations further training with \gls{lrdecay} is performed to improve the performance. The models are further refined on the same dataset on which the optimization was performed. For the models which were trained on $ 100 $ structures the models with a sliding window length of $ 30 $ are choosen for futher refinement. The optimization runs are started with the learning rate which was used in the hyperparameter optimization for the best model. From there it is decreased in steps of a decade until a learning rate of $ 10^{-5} $ is reached. The models are trained for $ 500 $ epochs with each learning rate. After the fine tuning the models are tested on the testing dataset to evaluate their final performance.
+
+Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training history for the fine tuning on $ 100 $, $ 500 $ and $ 1000 $ structures. The networks show little to now overfitting on the training dataset. There is steady improvement of the accuracy towards convergence except for the training on $ 500 $ structures which shows a steep drop at around $ 500 $ epochs.
+
+\begin{figure}[htp]
+	\centering
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_adaptiveLR_CNN.pdf}}
+	\quad
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_500_structures_adaptiveLR_CNN.pdf}}
+	\\
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_adaptiveLR_CNN.pdf}}
+	\caption{Training and validation accuracy history for the best models of the vanilla \gls{cnn} hyperparameter optimization on (a): $ 100 $, (b): $ 500 $ and (c): $ 1000 $ structures after fine tuning the models with \gls{lrdecay} on the same datasets}
+	\label{fig:accuracy_adaptiveLR_CNN}
+\end{figure}
+
+ The training historys of the \gls{tcn} fine tuning can be seen in Figure \ref{fig:accuracy_adaptiveLR_TCN}. The best model from the hyperparameter optimization on $ 1000 $ structures was not only fine tuned on $ 1000 $ structures but also on the full dataset of $ 9900 $ structures to see if any improvements can be realised (see Figure \ref{fig:accuracy_adaptiveLR_TCN} (d)). During the first phase of training with the highest learning rate there are strong oscillations for all the models. The decrease of the learning rate helps to stabilize the training and for all the models gives a significant rise to the accuracy. In the later stages of the training all the models show a stable convergence. Only the model trained on $ 100 $ structures shows a bit of overfitting on the training dataset while the other models show no such signs. 
+
+\begin{figure}[htp]
+	\centering
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_100_structures_adaptiveLR_TCN.pdf}}
+	\quad
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_500_structures_adaptiveLR_TCN.pdf}}
+	\\
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_adaptiveLR_TCN.pdf}}
+	\quad
+	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_9900_structures_adaptiveLR_TCN.pdf}}
+	\caption{Training and validation accuracy history for the best models of the \gls{tcn} hyperparameter optimization on (a): $ 100 $, (b): $ 500 $, (c): $ 1000 $ and (c): $ 9900 $ structures after fine tuning the models with \gls{lrdecay} on the same datasets}
+	\label{fig:accuracy_adaptiveLR_TCN}
+\end{figure}
+
 % Compare the rnn and cnn results (Paul and Thomas)
+
+As a final validation all the fine tuned models are tested with the testing dataset of $ 100 $ structures. Table \ref{tab:accuracy_testing_rnn_cnn} shows an overview of the achieved accuracy for all \gls{rnn} (Vanilla \gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (Vanilla \glspl{cnn} and \glspl{tcn}).
+
+For the vanilla \gls{cnn} and \gls{tcn} models there is a steady increase in the achieved accuracy on the testing set if the amount of structures for training is increased. The increase in testing accuracy corresponds largely to the increase in validation accuracy. The testing accuracy is in the same order of magnitude as the validation accuracy indicating that the networks generalize well to new sets of data. In general \glspl{tcn} work better than \glspl{cnn} especially on the larger datasets of $ 500 $ and $ 1000 $ structures where the \gls{tcn} achieves close to $ 100 \% $ accuracy. When trained on the complete dataset the \gls{tcn} achieved $ 100 \% $ accuracy on the testing dataset.
+
+\begin{table}[htp]
+	\centering
+	\caption{Accuracy of all fine tuned \gls{rnn} (Vanilla \gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (Vanilla \glspl{cnn} and \glspl{tcn}) on the validation and testing datasets}
+	\label{tab:accuracy_testing_rnn_cnn}
+	\setlength{\tabcolsep}{3pt} % Default value: 6pt
+	\begin{tabular}{p{2.5cm}|lll|llll}
+		Model type & \multicolumn{3}{c|}{Vanilla \gls{cnn}} & \multicolumn{4}{c}{\gls{tcn}} \\
+		\hline
+		Number of training structures & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ & $ 10000 $ \\
+		Validation accuracy & $ 0.783 $ & $ 0.835 $ & $ 0.824 $ & $ 0.814 $ & $ 0.984 $ & $ 0.993 $ & $ 0.991 $ \\
+		Testing accuracy & $ 0.82 $ & $ 0.84 $ & $ 0.84 $ & $ 0.82 $ & $ 0.98 $ & $ 0.99 $ & $ 1.00 $
+	\end{tabular}
+\end{table}
+
 
 \section{Conclusions}
 \label{sec:conclusions}
