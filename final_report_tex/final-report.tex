@@ -641,11 +641,11 @@ It then can be then understood that \glspl{rnn} do not need many layers to get a
 
 
 \subsection{Fine Tuning}
-As the hyperparameters were optimized, the resulting models had to be trained with an adaptative Learning rate to optimize their performance. \gls{lrdecay)} started with a Learning rate of $10^{-2}$, decreasing to $10^{-3}$, $10^{-4}$ and then $10^{-5}$. With each Learning rate, models were trained on a maximum of $500$ epochs which leads to a training with a maximum of 2,000 epochs.
-% Show the detailed results of the fine tuning of some networks (Paul and Thomas)
+
+As the hyperparameters were optimized, the resulting models had to be trained with an adaptative Learning rate to optimize their performance. \gls{lrdecay} started with a Learning rate of $10^{-2}$, decreasing to $10^{-3}$, $10^{-4}$ and then $10^{-5}$. With each Learning rate, models were trained on a maximum of $500$ epochs which leads to a training with a maximum of 2,000 epochs. 
 
 
-
+For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the training can be found in Figures \ref{fig:accuracy_100_structures_fine_tuning_rnn}, \ref{fig:accuracy_500_structures_fine_tuning_rnn} and \ref{fig:accuracy_1000_structures_fine_tuning_rnn}. It can be clearly observed that the adaptative learning rate strategy allows a better training for each model. Once the models trained, they were evaluated on the testing dataset. All the results for the validation accuracy and the testing accuracy can be found in Tables \ref{tab:results_fine_tuning_100_rnn}, \ref{tab:results_fine_tuning_500_rnn} and \ref{tab:results_fine_tuning_1000_rnn}. It can be noticed that the difference between the validation accuracy and the testing accuracy is notable. This could be the classification scaling which gives a larger bandwith on the last classes, while the testing dataset focuses more on the first calsses, which are smaller. This leads to an increasing possibilty of wrong prediction of the \gls{rul} on the testing dataset. One lead to explore would be then to adapt the metric to take into account this evolution of the classes bandwidth.
 
 \begin{figure}[htp]
 	\centering
@@ -654,7 +654,7 @@ As the hyperparameters were optimized, the resulting models had to be trained wi
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/LSTM_100_tuned_acc.png}}
 	\\
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/GRU_100_tuned_acc.png}}
-	\caption{Training and validation accuarcy for $ 100 $ training structures with \gls{lrdecay)}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
+	\caption{Training and validation accuarcy for $ 100 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
 	\label{fig:accuracy_100_structures_fine_tuning_rnn}
 \end{figure}
 
@@ -666,7 +666,7 @@ As the hyperparameters were optimized, the resulting models had to be trained wi
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/LSTM_500_tuned_acc.png}}
 	\\
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/GRU_500_tuned_acc.png}}
-	\caption{Training and validation accuarcy for $ 500 $ training structures with \gls{lrdecay)}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
+	\caption{Training and validation accuarcy for $ 500 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
 	\label{fig:accuracy_500_structures_fine_tuning_rnn}
 \end{figure}
 
@@ -677,7 +677,7 @@ As the hyperparameters were optimized, the resulting models had to be trained wi
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/LSTM_1000_tuned_acc.png}}
 	\\
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/GRU_1000_tuned_acc.png}}
-	\caption{Training and validation accuarcy for $ 1000 $ training structures with \gls{lrdecay)}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
+	\caption{Training and validation accuarcy for $ 1000 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
 	\label{fig:accuracy_1000_structures_fine_tuning_rnn}
 \end{figure}
 
