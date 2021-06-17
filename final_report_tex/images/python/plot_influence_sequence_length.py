@@ -14,7 +14,7 @@ fig, ax = plt.subplots(figsize=(7,5))
 ax.plot(sliding_window_length, val_accuracy, linestyle='-', marker='o', color='k')
 
 ax.set(xlabel='Sliding window length', ylabel='Validation accuracy')
-ax.legend()
+#ax.legend()
 ax.grid()
 
 plt.savefig('influence_sequence_length.pdf', bbox_inches='tight')
