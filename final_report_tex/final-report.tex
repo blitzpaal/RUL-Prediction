@@ -189,33 +189,55 @@ The aim of this work is to predict the \gls{rul} based on current and past infor
 \textbf{Available Dataset}
 
 % Explanation of classification and preparation of dataset (Thomas)
+The provided datasets were separated in two distinguished parts, namely training and testing dataset. The first consists in 10,000 structures with different initial crack. All the models were trained on this dataset using only a part of it, respectively 100, 500 and 1,000 structures. While training, the last 100 structures of the training dataset were used as a validation dataset.
 
-As it showed promising results in other applications of Deep Learning to \gls{phm} (\cite{Liu2019a, Xiao2016}), classification is an interesting alternative to regression for \gls{rul} prediction. Instead of trying to predict an exact \gls{rul} value the goal is to predict the correct \gls{rul} class with a lower and upper bound for the \gls{rul}.
+Then, the 100 structures from the second dataset were used to evaluate the performances of our models.
 
-To prepare the data for the \gls{cnn} a sliding window approach was used. This approach maps the \gls{rul} at time $ t $ onto the current and past time steps of the input features $ [x_{t-N+1}, x_{t-N+2},..., x_{t-1}, x_t] $ where $ N $ is the length of the sliding window. The resulting input matrix therefore has the dimension $ (n-N) \times N \times k $ where $ n $ is the number of samples and $ k $ is the number of features. Figure \ref{fig:input_matrix} shows an example of how the time series data of the strain gauges from Table \ref{tab:sliding_window_approach} is mapped to the input matrix.
 
-\begin{figure}[htp]
-	\centering
-	\input{images/input_matrix.tex}
-	\caption{Input matrix for the neural networks}
-	\label{fig:input_matrix}
-\end{figure}
+As it showed promising results in other applications of Deep Learning to \gls{phm} (\cite{Liu2019a, Xiao2016}), classification is an interesting alternative to regression for \gls{rul} prediction. Instead of trying to predict an exact \gls{rul} value the goal is to predict the correct \gls{rul} class with a lower and upper bound for the \gls{rul}. The generated dataset was composed of 80,000 cycles at most. Therefore the chosen strategy has been to create 20 intervals following a parabolic equation. The last class would be for a \gls{rul} over 80,000 cycles away.
 
-The output matrix shown in Figure \ref{fig:output_matrix} is only one dimensional. It is only composed of the \gls{rul} bins which are mapped to the corresponding rows in the input matrix the dimension therefore is $ (n-N) $.
 
 \begin{figure}[htp]
 	\centering
-	\input{images/output_matrix.tex}
-	\caption{Input matrix for the neural networks}
-	\label{fig:output_matrix}
+	\includegraphics[width=6cm]{RUL_Classification.png}
+	\caption{\gls{rul} classification strategy}
+	\label{fig:RNN-classification}
 \end{figure}
 
-% Add details on the explenation of the RNN Deep Learning models (Thomas)
+
+To prepare the data for the \gls{cnn} and \glspl{rnn} models a sliding window approach was used. This approach maps the \gls{rul} at time $ t_i $ onto the current and past time steps of the input features $ [x_{t-N+1}, x_{t-N+2},..., x_{t-1}, x_t] $ where $ N $ is the length of the sequence. The resulting input matrix therefore has the dimension $ k \times N $ where $ k $ is the number of features.
+
+As an input for the different models, datasets had to be normalized. While a specific layer was added at the beggining of \gls{cnn} and \gls{tcn} architectures to do so, the preprocessed data had to be normalized before being fed to the \glspl{rnn} models.
+
+% Add details on the explanation of the RNN Deep Learning models (Thomas)
 
 \noindent
 \textbf{Recurrent Neural Networks}
 
-The common type of Deep Learning model for time series prediction are \glspl{rnn} \cite{Bai2018}. Standard \glspl{rnn} have some major drawbacks (vanishing/exploding gradient problem) which limit their application \cite{Bengio1994}. \gls{lstm} networks (Hochreiter and Schmidhuber \cite{Hochreiter1997}) avoid this problem and have established themselves as one of the most used Deep Learning model types, especially for \gls{nlp} \cite{Wu2016}. For these reasons \glspl{lstm} will be one of the investigated \gls{rnn} approaches in this project. Another investigated \gls{rnn} approach are the \glspl{gru}. It is a simplified version of the \gls{lstm}. Due to this simplicity it has been gaining in popularity in recent years \cite{Rana2016}. 
+The common type of Deep Learning model for time series prediction are \glspl{rnn} \cite{Bai2018}. Due to their ability to store information within the cell, it can better remember information of a time-dependant data. 
+
+
+\begin{figure}[htp]
+	\centering
+	\includegraphics[width=6cm]{RNN-cell-architecture.png}
+	\caption{RNN cell architecture. a. A simple RNN unit; b. an LSTM unit \cite{Chen2021}}
+	\label{fig:RNN-classification}
+\end{figure}
+
+However, standard \glspl{rnn} have some major drawbacks, such as the vanishing or exploding gradient problem, which limit their application \cite{Bengio1994}. \gls{lstm} networks (Hochreiter and Schmidhuber \cite{Hochreiter1997}) avoid this problem and have established themselves as one of the most used Deep Learning model types, especially for \gls{nlp} \cite{Wu2016}. For these reasons \glspl{lstm} will be one of the investigated \gls{rnn} approaches in this project. Another investigated \gls{rnn} approach is the \glspl{gru}. It is a simplified version of the \gls{lstm}. Due to this simplicity it has been gaining in popularity in recent years \cite{Rana2016}. 
+
+The key idea to \gls{gru} and \gls{lstm} is the memory cell which allows the network to remember information without much loss.
+
+\gls{lstm} architecture consists in an input gate, a forget gate and an output gate. The input gate decides to add new information from the present input to the present cell state scaled by how much it wishes to add them. The forget gate allows the cell to know how to partially forget the previous cell state. Then, the output gate decides what to output from the new celle state.
+
+For the \gls{gru} architecture, only two gates are implemented. The update gate decides the portion of updated candidate needed to calculate the current cell state, which in turn also decides the portion of the previous cell state retained. The relevance gate calculates how relevant the previous information is, and then is used in the candidate for the updated value.
+
+Then, a simple \gls{rnn} architecture will be explored to evaluate the possible benefits of more complex structures. An \gls{rnn} unit only have a tanh layer after combining the cell state and the candidate.
+
+
+
+
+
 
 % Add details on the explenation of the CNN Deep Learning models (Paul)
 
@@ -323,7 +345,9 @@ Based on the \gls{cnn} architecture of Li et al. \cite{Li2018} which was used fo
 
 A \gls{tcn} architecture template is generated based on the results of Liu et al. \cite{Liu2019} who used the network for \gls{rul} prediction of roller bearings. The architecture consists of multiple \gls{tcn} residual blocks with a dilation increasing with multiples of 2 with the first layer having a dilation of $ d = 1 $. Each block features the same number of filters with an identical kernel size. The next layer after the \gls{tcn} blocks is the dense output layer which has $ 20 $ nodes to match the number of \gls{rul} classes $ C = 20 $. The skip connection layer is activated for all residual blocks.
 
-% Give an overview of the results of the hyperparameter optimization strategies for the rnn and cnn networks (Paul and Thomas)
+All \glspl{rnn} architectures were based on the same template. The dataset being noramlized before being fed to the models, there were no need for a specific layer of normalization. A flexible number of layers were implemented in the networks, from 1 hidden layer to a maximum of 3. Each layer includes from 32 to 256 units using a scaling by power of 2. A possible dropout and recurrent dropout could also be added for each layer, with a possibility of 0\% or 10\% for each. At the end of the architecture, a dense layer with 20 units were added in order to match the number of \gls{rul} classes $ C = 20 $.  
+
+% Give an overview of the results of the hyperparameter optimisation strategies for the rnn and cnn networks (Paul and Thomas)
 
 \noindent
 \textbf{Hyperparameter optimization}
@@ -449,7 +473,7 @@ Crate figures of training progress with 500 and 1000 structures.
 % Give an outlook for future research on the topic
 
 
-
+\newpage
 \printbibliography
 
 \end{document}
