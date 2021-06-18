@@ -393,7 +393,7 @@ Following the same method used for the \gls{cnn} and \gls{tcn} hyperparameter op
 
 \begin{table}[htp]
 	\centering
-	\caption{Fixed parameters for \gls{rnn} hyperparameters optimization}
+	\caption{Fixed parameters for \gls{rnn}, \gls{lstm} and \gls{gru} hyperparameter optimization}
 	\label{tab:fixed_parameters_rnn_optimization}
 	\begin{tabular}{ll}
 		\textbf{Parameter} & \textbf{Value} \\
@@ -410,7 +410,7 @@ Once those parameters fixed, usefull hyperparameters were identified. These are 
 
 \begin{table}[htp]
 	\centering
-	\caption{Variable parameters for \gls{rnn} hyperparameter optimization}
+	\caption{Variable parameters for \gls{rnn}, \gls{lstm} and \gls{gru} hyperparameter optimization}
 	\label{tab:variable_parameters_rnn_optimization}
 	\begin{tabular}{ll}
 		\textbf{Parameter} & \textbf{Value set} \\
@@ -697,10 +697,6 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the t
 	\label{fig:accuracy_1000_structures_fine_tuning_rnn}
 \end{figure}
 
-
-
-
-
 It can be observed little to no overfitting in each training. In addition, some training history show an unstable improvement, with even a decreasing accuracy for some learning rates. This could have an impact on the final accuracy. Nevertheless, it seems that decreasing the learning rate improves the stability of the training.
 
 Regarding the final validation and testing accuracies, there is a significant difference between 100 and 500 structures. The different models increased both their validation and testing accuracies, even though the differences between 500 and 1000 structures are less notable. The best improvement is noticed with \gls{gru}, reaching 97\%\ for the validation accuracy for 1000 structures.
@@ -775,7 +771,7 @@ For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achi
 		Model type & \multicolumn{3}{c|}{\gls{rnn}} & \multicolumn{3}{c|}{\gls{lstm}} &  \multicolumn{3}{c}{\gls{gru}}\\
 		\hline
 		Number of training structures & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ \\
-		Validation accuracy & $ 0.899 $ & $ 0.914 $ & $ 0.891 $ & $ 0.850 $ & $ 0.932 $ & $ 0.932 $ & $ 0.783 $ & $ 0.964 $ & $ 0.970 $ \\
+		Validation accuracy & $ 0.90 $ & $ 0.91 $ & $ 0.89 $ & $ 0.85 $ & $ 0.93 $ & $ 0.93 $ & $ 0.78 $ & $ 0.96 $ & $ 0.97 $ \\
 		Testing accuracy & $ 0.84 $ & $ 0.90 $ & $ 0.78 $ & $ 0.73 $ & $ 0.83 $ & $ 0.72 $ & $ 0.70 $ & $ 0.77 $ & $ 0.75 $
 	\end{tabular}
 
@@ -786,9 +782,11 @@ For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achi
 \label{sec:conclusions_outlook}
 
 % Give an overview of the general results of the study
-All choosen models could successfully be trained on the available dataset and achieve an accuracy of at least $ 70 \% $ on the testing dataset. It usually was the case that more available training data leads to a better performance of the models. The best performance in general was achieved by \gls{tcn} models. Confirming the recent results of other researchers like Bai et al. \cite{Bai2018} and Li et al. \cite{Li2018}. This again questions the general practice to use \gls{rnn} models as a first choice for time series prediction while \gls{cnn} models should only be used for image classification and related tasks. The \gls{tcn} models when trained on more than $ 500 $ structures achieved closed to $ 100 \% $ accuracy confirming their excellent suitability to time series prediction problems. Thus, a lead to explore would be a hybrid model between an \gls{gru} and a \gls{tcn} architecture, to improve the different patterns to learn in the data.
+All choosen models could successfully be trained on the available dataset and achieve an accuracy of at least $ 70 \% $ on the testing dataset. It usually was the case that more available training data leads to a better performance of the models. The best performance in general was achieved by \gls{tcn} models. Confirming the recent results of other researchers like Bai et al. \cite{Bai2018} and Li et al. \cite{Li2018}. This again questions the general practice to use \gls{rnn} models as a first choice for time series prediction while \gls{cnn} models should only be used for image classification and related tasks. The \gls{tcn} models when trained on more than $ 500 $ structures achieved closed to $ 100 \% $ accuracy confirming their excellent suitability to time series prediction problems.
 
-The good results achieved on this dataset should come at no surprise as the dataset is synthetic without the flaws of real world data. There is no noise in the data which would never be the case in reality. The virtual strain gauges are always placed at the exact same location while in reality there is always a position tolerance when placing them on a structure.
+The \gls{rnn} models, especially the \gls{gru} ones, achieved good performances on the validation dataset while when testing them on the testing dataset there is a significant drop in performance. This might be the result of the testing dataset beeing focused on short \gls{rul} values closer to the failure of the plates. In this area there are many different classes because of the parabolic distribution for the class boundaries. The \glspl{gru} seem to have troubles generalising to this area while they might work very well on the classes with the bigger \gls{rul} values. Thus, a lead to explore would be a hybrid model between a \gls{gru} and \gls{tcn} architecture, to improve the learning of the different patterns in the data.
+
+The generally good results achieved on this dataset should come at no surprise as the dataset is synthetic without the flaws of real world data. There is no noise in the data which would never be the case in reality. The virtual strain gauges are always placed at the exact same location while in reality there is always a position tolerance when placing them on a structure.
 
 % Write about to much data etc.
 
