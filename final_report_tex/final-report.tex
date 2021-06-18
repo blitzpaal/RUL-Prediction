@@ -120,9 +120,9 @@ Email: anass.akrim@univ-tlse3.fr}
 
 This paper aims to compare Deep Learning models to predict the \gls{rul} of a structure. These models are the following: the \gls{cnn} family with a \gls{cnn} and a \gls{tcn} architecture, the \glspl{rnn} family with a \gls{rnn}, a \glspl{lstm} and a \glspl{gru} architecture. 
 
-The dataset consists in simulations of the crack growth on plates, based on the Paris-Erdogan law. The training dataset is composed of 10,000 structures while the testing dataset is composed of 100 structures. Each architecture is optimized and trained on respectively 100, 500 and 1,000 structures from the taining dataset. At the end, the different models are compared on their evaluation on the testing dataset, on the basis of a metric which is the accuracy in our case.
+The dataset consists in simulations of the crack growth on plates, based on the Paris-Erdogan law. The training dataset is composed of 10,000 structures while the testing dataset is composed of 100 structures. Each architecture is optimized and trained on respectively 100, 500 and 1,000 structures from the training dataset. At the end, the different models are compared on their evaluation on the testing dataset, on the basis of a metric which is the accuracy in our case.
 
-In order to optimize the architectures, a first step is to identify the fixed parameters, which do not have a significant impact on the accuracy, and the variable ones.  The variable hyperparameters are optimized with a Random Search Strategy for 100 and 500 structures for the \gls{rnn} family, the architure used for 1,000 structures being the one from the 500 structures optimization. For the \gls{cnn} family, the variable hyperparameters are optimized for 100, 500 and 1,000 structures. The optimized models are then trained with an adaptative learning rate on the three numbers of structures. The results show that within the \glspl{rnn} family, \gls{gru} gives the best result, while within the \glspl{cnn} family, the \gls{tcn} is the best model. Then, the results show that \gls{tcn} gives a better performance than \gls{gru} with an accuracy reaching $98$\%\ for 1,000 structures.
+In order to optimize the architectures, a first step is to identify the fixed parameters, which do not have a significant impact on the accuracy, and the variable ones.  The variable hyperparameters are optimized with a Random Search Strategy for 100 and 500 structures for the \gls{rnn} family, the architure used for 1,000 structures being the one from the 500 structures optimization. For the \gls{cnn} family, the variable hyperparameters are optimized for 100, 500 and 1,000 structures. The optimized models are then trained with an adaptative learning rate on the three numbers of structures. The results show that within the \glspl{rnn} family, \gls{gru} gives the best result, while within the \glspl{cnn} family, the \gls{tcn} is the best model. Then, the results show that \gls{tcn} gives a better performance than \gls{gru} with an accuracy reaching $99$\%\ for 1,000 structures.
 
 \end{abstract}
 
@@ -152,7 +152,7 @@ Deep Learning has shown some impressive results when applied to \gls{rul} predic
 
 Within the available Deep Learning models there are two algorithms which are promising for \gls{rul} prediction: \glspl{rnn} (Little \cite{Little1996} and Hopfield  \cite{Hopfield1982}) and \glspl{cnn} (Lecun et al. \cite{Lecun1998}) \cite{Akrim2021}.
 
-\glspl{rnn} are the common Deep Learning approach for time-dependent relationships and have therefore also achieved great interest in the \gls{phm} domain \cite{Akrim2021}. Pioneers models were developed such as \glspl{erm} \cite{Elman1990} or Jordan Networks \cite{Jordan1997}, outperforming traditional \glspl{mlp} for sequence-prediction \cite{Akrim2021}. These algorithms were then widely explored by several researchers. Among them can be cited Yan et al. \cite{Yan2007} for their work on material degradation evaluation and life prediction in 2007, and Kramti et al. \cite{Kramti2018} for having used \glspl{erm} for high-speed shaft bearing prognostics based on vibration signals \cite{Akrim2021}.
+\glspl{rnn} are the common Deep Learning approach for time-dependent relationships and have therefore also achieved great interest in the \gls{phm} domain \cite{Akrim2021}. Pioneering models were developed such as \glspl{erm} \cite{Elman1990} or Jordan Networks \cite{Jordan1997}, outperforming traditional \glspl{mlp} for sequence-prediction \cite{Akrim2021}. These algorithms were then widely explored by several researchers. Among them can be cited Yan et al. \cite{Yan2007} for their work on material degradation evaluation and life prediction in 2007, and Kramti et al. \cite{Kramti2018} for having used \glspl{erm} for high-speed shaft bearing prognostics based on vibration signals \cite{Akrim2021}.
 
 An emerging type of Deep Learning network for time-dependent relationships are \glspl{cnn} which might be able to outperform \glspl{rnn} \cite{Bai2018}. In one of the first applications of \glspl{cnn} to \gls{phm} Li et al. suggested that \glspl{cnn} can be used to obtain \gls{rul} prognoses for machinery \cite{Li2018}. The model was applied to the C-MAPSS dataset \cite{Saxena2008} and outperformed state-of-the-art prognostics approaches including \gls{rnn} and \gls{lstm} models.
 
@@ -177,7 +177,7 @@ The Paris-Erdogan Law is applied to an infinite plate with a central horizontal 
 	\label{fig:strain_gauge_positions}
 \end{figure}
 
-The crack length in the Paris-Erdogan Law is a function of: $k$ number of cylces, $\Delta \sigma$ stress range, $m, C$ material constants, $a_0$ initial crack length. By calculating the crack growth until the crack length $a$ reaches the critical crack length $a_{crit}=(\frac{K_{IC}}{\Delta \sigma \sqrt{\pi}})^2$ the simulation can determine the \gls{rul} for each simulated cycle. For the simulations the stress range $\Delta \sigma$ is kept constant while the initial crack length $a_0$ and the material parameters $m$ and $C$ are drawn from a normal distribution. $ 10000 $ structures are generated this way to form the training and validation dataset. For the testing dataset 100 structures are generated. The output of theses simulations which form the input for the deep learning models is a table matching the strains from the strain gauges to the \gls{rul} calculated by the simulations. To reduce the dataset the results are only saved to the table every 500 cycles. Table \ref{tab:sliding_window_approach} shows the structure of the generated training and validation dataset. The label $ ID $ denotes the specific structure.
+The crack length in the Paris-Erdogan Law is a function of: $k$ number of cylces, $\Delta \sigma$ stress range, $m, C$ material constants, $a_0$ initial crack length. By calculating the crack growth until the crack length $a$ reaches the critical crack length $a_{crit}=(\frac{K_{IC}}{\Delta \sigma \sqrt{\pi}})^2$ the simulation can determine the \gls{rul} for each simulated cycle. For the simulations the stress range $\Delta \sigma$ is kept constant while the initial crack length $a_0$ and the material parameters $m$ and $C$ are drawn from a normal distribution. $ 10000 $ structures are generated this way to form the training and validation dataset. For the testing dataset 100 structures are generated. The output of these simulations which form the input for the Deep Learning models is a table matching the strains from the strain gauges to the \gls{rul} calculated by the simulations. To reduce the dataset the results are only saved to the table every 500 cycles. Table \ref{tab:sliding_window_approach} shows the structure of the generated training and validation dataset. The label $ ID $ denotes the specific structure.
 
 \begin{table}[htp]
 	\centering
@@ -195,7 +195,7 @@ The crack length in the Paris-Erdogan Law is a function of: $k$ number of cylces
 	\end{tabular}
 \end{table}
 
-The aim of this work is to predict the \gls{rul} based on current and past information from the 3 strain gauges using deep learning models. Different Deep Learning model architectures are to be used for that. The developed models must be trained and optimized before a comparison between them is made.
+The aim of this work is to predict the \gls{rul} based on current and past information from the 3 strain gauges using Deep Learning models. Different Deep Learning model architectures are to be used for that. The developed models must be trained and optimized before a comparison between them is made.
 
 \section{Methods}
 \label{sec:methods}
@@ -204,7 +204,7 @@ The aim of this work is to predict the \gls{rul} based on current and past infor
 \label{sec:available_dataset}
 
 % Explanation of classification and preparation of dataset (Thomas)
-The provided datasets were separated in two distinguished parts, namely training and testing dataset. The first consists in 10,000 structures with different initial crack lengths. Most of the models were trained on this dataset using only a part of it, respectively $ 100 $, $ 500 $ and $ 1000 $ structures. While training, the last $ 100 $ structures of the training dataset were used as a validation dataset.
+The provided datasets were separated into two distinguished parts, namely training and testing dataset. The first consists in 10 000 structures with different initial crack lengths. Most of the models were trained on this dataset using only a part of it, respectively $ 100 $, $ 500 $ and $ 1 000 $ structures. While training, the last $ 100 $ structures of the training dataset were used as a validation dataset.
 
 Then, the 100 structures from the second dataset were used to evaluate the performances of our models.
 
@@ -245,7 +245,7 @@ As an input for the different models, datasets had to be normalized. While a spe
 \subsection{Recurrent Neural Networks}
 \label{sec:recurrent_neural_networks}
 
-The common type of Deep Learning model for time series prediction are \glspl{rnn} \cite{Bai2018}. Due to their ability to store information within the cell, it can better remember information of a time-dependant data. 
+The common type of Deep Learning model for time series prediction are \glspl{rnn} \cite{Bai2018}. Due to their ability to store information within the cell, it can better remember information of time-dependant data. 
 
 
 \begin{figure}[htp]
@@ -286,7 +286,7 @@ The common \gls{cnn} models deal with 2-Dimensional data as input such as pictur
 	\label{fig:1D_cnn_architecture}
 \end{figure}
 
-Besides the general \gls{cnn} architectures \glspl{tcn} (Bai et al. \cite{Bai2018}) are investigated in this work. A \gls{tcn} is a specific \gls{cnn} architecture that tries to replicate some of the best practices for \gls{cnn} architectures. As depicted in Fig. \ref{fig:tcn_architecture} a \gls{tcn} is composed of multiple layers which include dilation. The dilation for each layer can be set arbitrary but it is common practice to use multiples of $ 2 $ for it. Through dilation \glspl{tcn} can increase their receptive field and therefore capture relationships over longer time sequences. One \gls{tcn} layer is composed of a \gls{tcn} residual block (see Figure \ref{fig:tcn_block} (a)). One block consists of two dilated convolutional layers. The activation function for the layers is always the ReLu function. The residual blocks include dropout and normalization layers between the convolutional layers. The blocks also include an optional skip connection with a 1x1 convolutional layer. Figure \ref{fig:tcn_block} (b) shows an exemplary \gls{tcn} block with a kernel size of $ k = 3 $ and a dilation of $ d = 1 $. For more details on \glspl{tcn} see \cite{Bai2018}.
+Besides the general \gls{cnn} architectures \glspl{tcn} (Bai et al. \cite{Bai2018}) are investigated in this work. A \gls{tcn} is a specific \gls{cnn} architecture that tries to replicate some of the best practices for \gls{cnn} architectures. As depicted in Fig. \ref{fig:tcn_architecture} a \gls{tcn} is composed of multiple layers which include dilation. The dilation for each layer can be set arbitrarily but it is common practice to use multiples of $ 2 $ for it. Through dilation \glspl{tcn} can increase their receptive field and therefore capture relationships over longer time sequences. One \gls{tcn} layer is composed of a \gls{tcn} residual block (see Figure \ref{fig:tcn_block} (a)). One block consists of two dilated convolutional layers. The activation function for the layers is always the ReLu function. The residual blocks include dropout and normalization layers between the convolutional layers. The blocks also include an optional skip connection with a 1x1 convolutional layer. Figure \ref{fig:tcn_block} (b) shows an exemplary \gls{tcn} block with a kernel size of $ k = 3 $ and a dilation of $ d = 1 $. For more details on \glspl{tcn} see \cite{Bai2018}.
 
 \begin{figure}[htp]
 	\centering
@@ -314,31 +314,31 @@ Besides the general \gls{cnn} architectures \glspl{tcn} (Bai et al. \cite{Bai201
 To evaluate the performance of developed models a metric is needed. As the networks are used to perform classification instead of regression the accuracy metric is used. This metric calculates how many of the predictions made with the dataset are correct (e.g. the right \gls{rul} range is predicted)
 
 \begin{equation}
-	\label{eq:categorical-cross-entrophy}
+	\label{eq:accuracy_metric}
 	Accuracy = \frac{Number \: of \: correct \: predictions}{Total \: number \: of \: predictions}.
 \end{equation}
 
 This metric is applied during training and validation to compare different models against each other. The final assessment of the models is made by applying the accuracy metric to the testing dataset.
 
-The used loss function which is used as the objective function for minimization by the backpropagation algorithm is the categorical crossentrophy loss function
+The used loss function which is used as the objective function for minimization by the backpropagation algorithm is the categorical crossentropy loss function
 
 \begin{equation}
 	\label{eq:categorical-cross-entrophy}
 	CE = -log(\frac{e^{s_p}}{\sum_{j}^{C} e^{s_j}})	
 \end{equation}
 
-where $ s_j $ is the output of the network for Class $ j $ with $ s_p $ beeing the positive class.
+where $ s_j $ is the output of the network for Class $ j $ with $ s_p $ beeing the output for the positive class.
 
 % Details on the hyperparameter optimization strategies (how the models are trained and how their parameters are optimised) (Paul)
 
 \subsection{Hyperparameter Optimization}
-\label{sec:hyperparameter_optimization}
+\label{sec:hyperparameter_optimization_method}
 
-To optimize the proposed network architectures a hyperparameter optimization is performed. The hyperparameters include the parameters for the training process (Learning rate and batch size), network parameters (Dropout rate, activation funciton etc.) and the network architecture itself (number of layers, size of the layers etc.).
+To optimize the proposed network architectures a hyperparameter optimization is performed. The hyperparameters include the parameters for the training process (Learning rate and batch size), network parameters (Dropout rate, activation function etc.) and the network architecture itself (number of layers, size of the layers etc.).
 
 There are different strategies for hyperparameter optimization which can be divided in Model-Free and Model-Based approaches. For this study only Model-Free approaches are considered as they are more common and easier to apply. The two common approaches are grid search and random search \cite{Feurer2019}. 
 
-For grid search the user defines a discrete number of values for each parameter. The algorithm then tries out all possible combinations of these sets of values. This quickly leads to an exesive amount of training runs that need to be done as the number of possible combinations $ B $ grows exponentially with the dimensionality $ d $ of the search space. If the number of values per parameter is $ n = 3 $ and the dimensionality is just $ d = 5 $ the number of combinations already equals $ B = n^d = 243 $.
+For grid search the user defines a discrete number of values for each parameter. The algorithm then tries out all possible combinations of these sets of values. This quickly leads to an excessive amount of training runs that need to be done as the number of possible combinations $ B $ grows exponentially with the dimensionality $ d $ of the search space. If the number of values per parameter is $ n = 3 $ and the dimensionality is just $ d = 5 $ the number of combinations already equals $ B = n^d = 243 $.
 
 Random search works with a fixed number of evaluations where for each evaluation a value randomly is selected from a predefined set of values for each parameter. The set of values can either be continuous with a lower and upper bound for the values or a discrete set of predefined values. Random search works better than grid search when some parameters are more important than others, which is a property that holds true in many cases \cite{Feurer2019}. Figure \ref{fig:grid_search_random_search} illustrates this property for one important and one unimportant parameter. With a fixed amount of $ B $ evaluations random search can evaluate up to $ B $ different values for each parameter. Whereas grid search is limited to $ B^{1/N} $ values per parameter. It is expected that the networks in this study behave like most networks with regard to the varying importance of the hyperparameters and therefore random search is choosen for hyperparameter optimization.
 
@@ -354,7 +354,7 @@ To select the best model after performing the hyperparameter optimization the ac
 \subsection{Fine Tuning}
 \label{sec:fine_tuning}
 
-After the optimum parameters for a model are found the model can be further improved by running more training epochs. To do so the models are trained with \gls{lrdecay}. The best model from the hyperparameter optimization is taken and trained for a predefined number of epochs on the learning rate which was identified as the best one on the optimization. The learning rate is then lowered before the model is trained again for a fixed number of epochs. This step is repeated until convergence is achieved and no more significant improvements are visible. By using this approach the model in the early stages of training is less likely to get stuck in a local minimum and explores a wider range of possible configurations. As the training comes closer to an optimum the decaying learning rate helps with convergence and avoid oscillations. Besides this common beliefs there are probably more reasons to the effectiveness of \gls{lrdecay}. According to You et al. \cite{You2019} is the initially large learning rate preventing the network from memorizing noisy data while the decaying learnig rate helps with learning complex patterns in the dataset.
+After the optimum parameters for a model are found the model can be further improved by running more training epochs. To do so the models are trained with \gls{lrdecay}. The best model from the hyperparameter optimization is taken and trained for a predefined number of epochs on the learning rate which was identified as the best one on the optimization. The learning rate is then lowered before the model is trained again for a fixed number of epochs. This step is repeated until convergence is achieved and no more significant improvements are visible. By using this approach the model in the early stages of training is less likely to get stuck in a local minimum and explores a wider range of possible configurations. As the training comes closer to an optimum the decaying learning rate helps with convergence and avoid oscillations. Besides this common beliefs there are probably more reasons to the effectiveness of \gls{lrdecay}. According to You et al. \cite{You2019} is the initially large learning rate preventing the network from memorizing noisy data while the decaying learning rate helps with learning complex patterns in the dataset.
 
 
 \section{Results}
@@ -365,7 +365,7 @@ After the optimum parameters for a model are found the model can be further impr
 \subsection{Model architectures}
 \label{sec:model_architectures}
 
-All \glspl{rnn} architectures were based on the same template. The dataset being noramlized before being fed to the models, there were no need for a specific layer of normalization. A flexible number of layers were implemented in the networks, as well as the number of cells in each layer, scaled by a power of 2. A possible dropout and recurrent dropout could also be added for each layer. At the end of the architecture, a dense layer with 20 units were added in order to match the number of \gls{rul} classes $ C = 20 $.  
+All \glspl{rnn} architectures were based on the same template. The dataset being normalized before being fed to the models, there were no need for a specific layer of normalization. A flexible number of layers were implemented in the networks, as well as the number of cells in each layer, scaled by a power of 2. A possible dropout and recurrent dropout could also be added for each layer. At the end of the architecture, a dense layer with 20 units were added in order to match the number of \gls{rul} classes $ C = 20 $.  
 
 Based on the \gls{cnn} architecture of Li et al. \cite{Li2018} which was used for aero-engine \gls{rul} prediction a 1D-\gls{cnn} architecture is generated. The first layer of the architecture is for layer normalization. Afterwards a flexible number of 1D-convolutional layers is added which all have the same number of filters and an identical kernel size. The output of the convolutional layers is flattend before the final dense output layer which has $ 20 $ nodes to match the number of \gls{rul} classes $ C = 20 $. As an example Figure \ref{fig:cnn_architecture_1000_structures} shows the final architecture after the hyperparameter optimization with 1000 training structures.
 
@@ -381,14 +381,14 @@ A \gls{tcn} architecture template is generated based on the results of Liu et al
 % Give an overview of the results of the hyperparameter optimisation strategies for the rnn and cnn networks (Paul and Thomas)
 
 \subsection{Hyperparameter optimization}
-\label{sec:hyperparameter_optimization}
+\label{sec:hyperparameter_optimization_results}
 
 The hyperparameter optimization is performed using random search as described in \ref{sec:methods}. The used training dataset consists of $ 100 $, $ 500 $ or $ 1000 $ structures. For validation always $ 100 $ structures different to the training structures are used. The model selection is based on the accuracy of the models on the validation dataset. Not all available parameters of the networks are considered for the optimization as that would increase the computational effort drastically. The reduction also helps to shift the focus of the optimization on the important parameters and avoid varying parameters which have no or only little influence on the accuracy of the network.
 
 \subsubsection{\gls{rnn}, \gls{lstm} and \gls{gru} hyperparameters optimization}
 \label{sec:rnn_hyperparameter_optimization}
 
-Following the same method used for the \gls{cnn} and \gls{tcn} hyperparameters optimization, fixed parameters were previously set for each architecture, to avoid searching for hyperparameters which would not be relevant in the accuracy improvement. Those fixed parameters are the same for the \gls{rnn}, \gls{lstm} and \gls{gru} architectures, and can be found in Table \ref{tab:fixed_parameters_rnn_optimization}.
+Following the same method used for the \gls{cnn} and \gls{tcn} hyperparameter optimization, fixed parameters were previously set for each architecture, to avoid searching for hyperparameters which would not be relevant in the accuracy improvement. Those fixed parameters are the same for the \gls{rnn}, \gls{lstm} and \gls{gru} architectures, and can be found in Table \ref{tab:fixed_parameters_rnn_optimization}.
 
 
 \begin{table}[htp]
@@ -406,7 +406,7 @@ Following the same method used for the \gls{cnn} and \gls{tcn} hyperparameters o
 \end{table}
 
 
-Once those parameters fixed, usefull hyperparameters were identified. These are the ones which can have a significant impact on the accuracy improvement. They were identified on $ 100 $ structures, and then reused for $ 500 $ structures. Due to a lack of time, only the best architecture identified from the optimization on $ 500 $ structures was used to train on $ 1000 $ structures, and then evaluate the performance. It appeared that the variable hyperparameters to try were the same for \gls{rnn}, \gls{lstm} and \gls{gru}. They can be found in Table \ref{tab:variable_parameters_rnn_optimization}.
+Once those parameters fixed, usefull hyperparameters were identified. These are the ones which can have a significant impact on accuracy improvement. They were identified on $ 100 $ structures, and then reused for $ 500 $ structures. Due to a lack of time, only the best architecture identified from the optimization on $ 500 $ structures was used to train on $ 1000 $ structures, and then evaluate the performance. It appeared that the variable hyperparameters to try were the same for \gls{rnn}, \gls{lstm} and \gls{gru}. They can be found in Table \ref{tab:variable_parameters_rnn_optimization}.
 
 \begin{table}[htp]
 	\centering
@@ -423,7 +423,7 @@ Once those parameters fixed, usefull hyperparameters were identified. These are 
 	\end{tabular}
 \end{table}
 
-The Random Search strategy were then used to optimize those hyperparameters on $ 100 $ structures and $ 500 $ structures, with a fixed sliding window size of $30$. The Learning Rate is not reported for the Fine Tuning will use an adaptative Learning Rate strategy to optimize the performance of the final training. The results of hyperparameters optimization can be found in Table \ref{tab:results_parameters_rnn_optimization} for both \gls{rnn}, \gls{lstm} and \gls{gru}.
+The Random Search strategy were then used to optimize those hyperparameters on $ 100 $ structures and $ 500 $ structures, with a fixed sliding window size of $30$. The learning rate is not reported for the Fine Tuning will use an adaptative Learning Rate strategy to optimize the performance of the final training. The results of hyperparameters optimization can be found in Table \ref{tab:results_parameters_rnn_optimization} for both \gls{rnn}, \gls{lstm} and \gls{gru}.
 
 \begin{table}[htp]
 	\centering
@@ -484,7 +484,7 @@ Table \ref{tab:variable_parameters_cnn_optimization} lists the variable paramete
 
 For the 1D-\gls{cnn} the hyperparameter optimization is performed on $ 100 $, $ 500 $ and $ 1000 $  training structures. For the smallest dataset of $ 100 $ structures the optimization is performed on the full range of different sliding window lengths as listed in Table \ref{tab:variable_parameters_cnn_optimization}. The optimizations on $ 500 $ and $ 1000 $ structures are only performed with a sliding window size of $ N = 30 $. All optimization runs are performed for 500 training epochs and with a total of $ B = 100 $ evaluations.
 
-Figure \ref{fig:influence_sequence_length_cnn} shows the achieved maximum validation accuracy after the hyperparameter optimization for different lengths of the sliding window. The accuracy increases approximately linear with size of the sliding window although the absolute value of the improvement remains relatively small. The size of the sliding window can not be increased above a size of $ 40 $ as then the sliding window would be larger than the timeseries of some of the structures. A too big sliding window besides that has the disadvantage that it can only be applied if data is already collected for at least as many timesteps as the sliding window requires. This means that there could be situations in which the first predictions can only be made just before the part fails or in the worst case after it fails. As a result of these considerations and the neglectible difference betwwen the sliding window sizes of $ 30 $ and $ 40 $ a size of $ N = 30 $ is choosen for all further hyperparameter optimizations runs wiht the 1D-\gls{cnn} on $ 500 $ and $ 1000 $ structures.
+Figure \ref{fig:influence_sequence_length_cnn} shows the achieved maximum validation accuracy after the hyperparameter optimization for different lengths of the sliding window. The accuracy increases approximately linearly with size of the sliding window although the absolute value of the improvement remains relatively small. The size of the sliding window can not be increased above a size of $ 40 $ as then the sliding window would be larger than the timeseries of some of the structures. A too big sliding window besides that has the disadvantage that it can only be applied if data is already collected for at least as many timesteps as the sliding window requires. This means that there could be situations in which the first predictions can only be made just before the part fails or in the worst case after it fails. As a result of these considerations and the neglectible difference betwwen the sliding window sizes of $ 30 $ and $ 40 $ a size of $ N = 30 $ is choosen for all further hyperparameter optimizations runs wiht the 1D-\gls{cnn} on $ 500 $ and $ 1000 $ structures.
 
 \begin{figure}[htp]
 	\centering
@@ -493,7 +493,7 @@ Figure \ref{fig:influence_sequence_length_cnn} shows the achieved maximum valida
 	\label{fig:influence_sequence_length_cnn}
 \end{figure}
 
-Table \ref{tab:hyperparameters_100_structures} shows the different architectures form the hyperparameter optimization that achieved the best results with the respective sliding window length on $ 100 $ training structures. There is no clear trend for the network architecture in relation to the sliding window size. This is backed by the fact that the 2nd and 3rd best networks for each respective hyperparameter optimization can have significantly different architectures to the best one. This observations lead to the conclusion that there are many different network architectures that can lead equal results.
+Table \ref{tab:hyperparameters_100_structures} shows the different architectures from the hyperparameter optimization that achieved the best results with the respective sliding window length on $ 100 $ training structures. There is no clear trend for the network architecture in relation to the sliding window size. This is backed by the fact that the 2nd and 3rd best networks for each respective hyperparameter optimization can have significantly different architectures to the best one. This observation leads to the conclusion that there are many different network architectures that can give equal results.
 
 \begin{table}[htp]
 	\centering
@@ -656,12 +656,12 @@ Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the traini
 \subsection{Fine Tuning}
 \label{sec:fine_tuning_results}
 
-As the hyperparameters were optimized, the resulting models had to be trained with an adaptative Learning rate to optimize their performance. The models are further refined on the same dataset on which the optimization was performed. \gls{lrdecay} starts with a learning rate of $10^{-2}$ or $10^{-3}$ depending on which value was choosen in the hyperparameter optimization, decreasing to $10^{-3}$, $10^{-4}$ and then $10^{-5}$. With each Learning rate, models were trained on a maximum of $ 500 $ epochs which leads to a training with a maximum of $ 2 000 $ epochs. After the fine tuning the models are tested on the testing dataset to evaluate their final performance.
+As the hyperparameters were optimized, the resulting models had to be trained with an adaptative learning rate to optimize their performance. The models are further refined on the same dataset on which the optimization was performed. \gls{lrdecay} starts with a learning rate of $10^{-2}$ or $10^{-3}$ depending on which value was choosen in the hyperparameter optimization, decreasing to $10^{-3}$, $10^{-4}$ and then $10^{-5}$. With each learning rate, models were trained on a maximum of $ 500 $ epochs which leads to a training with a maximum of $ 2 000 $ epochs. After the fine tuning the models are tested on the testing dataset to evaluate their final performance.
 
 \subsubsection{\gls{rnn}, \gls{lstm} and \gls{gru} fine tuning}
 \label{sec:rnn_fine_tuning_results}
 
-For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the training can be found in Figures \ref{fig:accuracy_100_structures_fine_tuning_rnn}, \ref{fig:accuracy_500_structures_fine_tuning_rnn} and \ref{fig:accuracy_1000_structures_fine_tuning_rnn}. It can be clearly observed that the adaptative learning rate strategy allows a better training for each model. Once the models trained, they were evaluated on the testing dataset. All the results for the validation accuracy and the testing accuracy can be found in Tables \ref{tab:results_fine_tuning_100_rnn}, \ref{tab:results_fine_tuning_500_rnn} and \ref{tab:results_fine_tuning_1000_rnn}. It can be noticed that the difference between the validation accuracy and the testing accuracy is notable. This could be the classification scaling which gives a larger bandwith on the last classes, while the testing dataset focuses more on the first calsses, which are smaller. This leads to an increasing possibilty of wrong prediction of the \gls{rul} on the testing dataset. One lead to explore would be then to adapt the metric to take into account this evolution of the classes bandwidth.
+For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the training can be found groupes by the number of structures in Figures \ref{fig:accuracy_100_structures_fine_tuning_rnn}, \ref{fig:accuracy_500_structures_fine_tuning_rnn} and \ref{fig:accuracy_1000_structures_fine_tuning_rnn}. It can be clearly observed that the adaptative learning rate strategy allows a better training for each model. Once the models trained, they were evaluated on the testing dataset. All the results for the validation accuracy and the testing accuracy can be found in Table \ref{tab:accuracy_testing_rnn_cnn}.  
 
 \begin{figure}[htp]
 	\centering
@@ -697,51 +697,15 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the t
 	\label{fig:accuracy_1000_structures_fine_tuning_rnn}
 \end{figure}
 
-\begin{table}[htp]
-	\centering
-	\caption{Results of the fine tunning for $ 100 $ structures}
-	\label{tab:results_fine_tuning_100_rnn}
-	\begin{tabular}{p{2.5cm}|lll}
-		Training structures & \multicolumn{3}{c}{$ 100 $} \\
-		\hline
-		Type of architecture & \gls{rnn} & \gls{lstm} & \gls{gru}\\
-		\hline
-		Validation accuracy & $0.899$ & $0.850$ & $0.783$\\
-		\hline
-		Testing accuracy & $0.84$ & $0.73$ & $0.70$
-	\end{tabular}
-\end{table}
 
-\begin{table}[htp]
-	\centering
-	\caption{Results of the fine tunning for $ 500 $ structures}
-	\label{tab:results_fine_tuning_500_rnn}
-	\begin{tabular}{p{2.5cm}|lll}
-		Training structures & \multicolumn{3}{c}{$ 500 $} \\
-		\hline
-		Type of architecture & \gls{rnn} & \gls{lstm} & \gls{gru}\\
-		\hline
-		Validation accuracy & $0.914$ & $0.932$ & $0.964$\\
-		\hline
-		Testing accuracy & $0.90$ & $0.832$ & $0.765$
-	\end{tabular}
-\end{table}
 
-\begin{table}[htp]
-	\centering
-	\caption{Results of the fine tunning for $ 1,000 $ structures}
-	\label{tab:results_fine_tuning_1000_rnn}
-	\begin{tabular}{p{2.5cm}|lll}
-		Training structures & \multicolumn{3}{c}{$ 1,000 $} \\
-		\hline
-		Type of architecture & \gls{rnn} & \gls{lstm} & \gls{gru}\\
-		\hline
-		Validation accuracy & $0.891$ & $0.932$ & $0.970$\\
-		\hline
-		Testing accuracy & $0.78$ & $0.724$ & $0.75$
-	\end{tabular}
-\end{table}
 
+
+It can be observed little to no overfitting in each training. In addition, some training history show an unstable improvement, with even a decreasing accuracy for some learning rates. This could have an impact on the final accuracy. Nevertheless, it seems that decreasing the learning rate improves the stability of the training.
+
+Regarding the final validation and testing accuracies, there is a significant difference between 100 and 500 structures. The different models increased both their validation and testing accuracies, even though the differences between 500 and 1000 structures are less notable. The best improvement is noticed with \gls{gru}, reaching 97\%\ for the validation accuracy for 1000 structures.
+
+However, a huge difference is observed between the validation and the testing accuracy. This could be due to the metric used. As the scaling for the classification follows a parabolic equation, the first classes are narrower than the last classes. Studying the distribution of the different \gls{rul} to predict in the testing dataset might show that they are more present in the first classes than for the training dataset, which is then more difficult to predict. A possible solution might be then to choose another metric which would take into account this distibution of the \gls{rul} classes.
 
 % Show the detailed results of the fine tuning of some networks (Paul and Thomas)
 
@@ -750,7 +714,7 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the t
 
 For each of the best identified network architectures of the 1D-\gls{cnn} and \gls{tcn} hyperparameter optimizations further training with \gls{lrdecay} is performed to improve the performance. For the models which were optimized on $ 100 $ structures the models with a sliding window length of $ 30 $ are choosen for futher refinement.
 
-Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training history for the fine tuning on $ 100 $, $ 500 $ and $ 1000 $ structures. The networks show little to now overfitting on the training dataset. There is steady improvement of the accuracy towards convergence except for the training on $ 500 $ structures which shows a steep drop at around $ 500 $ epochs.
+Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training history for the fine tuning on $ 100 $, $ 500 $ and $ 1000 $ structures. The networks show little to no overfitting on the training dataset. There is steady improvement of the accuracy towards convergence except for the training on $ 500 $ structures which shows a steep drop at around $ 500 $ epochs.
 
 \begin{figure}[htp]
 	\centering
@@ -785,7 +749,10 @@ Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training history for the fi
 
 As a final validation all the fine tuned models are tested with the testing dataset of $ 100 $ structures. Table \ref{tab:accuracy_testing_rnn_cnn} shows an overview of the achieved accuracy for all \gls{rnn} (\gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (1D-\glspl{cnn} and \glspl{tcn}).
 
-For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achieved accuracy on the testing set if the amount of structures for training is increased. The increase in testing accuracy corresponds largely to the increase in validation accuracy. The testing accuracy is in the same order of magnitude as the validation accuracy indicating that the networks generalize well to new sets of data. In general \glspl{tcn} work better than \glspl{cnn} especially on the larger datasets of $ 500 $ and $ 1000 $ structures where the \gls{tcn} achieves close to $ 100 \% $ accuracy. When trained on the complete dataset the \gls{tcn} achieved $ 100 \% $ accuracy on the testing dataset.
+
+It can be noticed that for \glspl{rnn} models, the difference between the validation accuracy and the testing accuracy is notable. The networks have difficulties to generalize the patterns learned to new sets of data. But, as previously analysed, this could be also the classification scaling which gives a larger bandwith on the last classes, while the testing dataset might focus more on the first classes, which are smaller. This leads to an increasing possibilty of wrong prediction of the \gls{rul} on the testing dataset. One lead to explore would be then to adapt the metric to take into account this evolution of the classes bandwidth. Nonetheless, \glspl{gru} seem to work better for the validation accuracy on larger datasets, reaching 97\%\ on 1000 structures.
+
+For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achieved accuracy on the testing set if the amount of structures for training is increased. The increase in testing accuracy corresponds largely to the increase in validation accuracy. The testing accuracy is in the same order of magnitude as the validation accuracy indicating that the networks generalize well to new sets of data. In general \glspl{tcn} work better than 1D-\glspl{cnn} especially on the larger datasets of $ 500 $ and $ 1000 $ structures where the \gls{tcn} achieves close to $ 100 \% $ accuracy. When trained on the complete dataset the \gls{tcn} achieved $ 100 \% $ accuracy on the testing dataset.
 
 % Update results in table below
 
@@ -808,8 +775,8 @@ For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achi
 		Model type & \multicolumn{3}{c|}{\gls{rnn}} & \multicolumn{3}{c|}{\gls{lstm}} &  \multicolumn{3}{c}{\gls{gru}}\\
 		\hline
 		Number of training structures & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ \\
-		Validation accuracy & $ 0.78 $ & $ 0.83 $ & $ 0.84 $ & $ 0.81 $ & $ 0.98 $ & $ 0.99 $ & $ 0.78 $ & $ 0.85 $ & $ 0.824 $ \\
-		Testing accuracy & $ 0.82 $ & $ 0.84 $ & $ 0.84 $ & $ 0.82 $ & $ 0.98 $ & $ 0.99 $ & $ 0.73 $ & $ 0.83 $ & $ 0.82 $
+		Validation accuracy & $ 0.899 $ & $ 0.914 $ & $ 0.891 $ & $ 0.850 $ & $ 0.932 $ & $ 0.932 $ & $ 0.783 $ & $ 0.964 $ & $ 0.970 $ \\
+		Testing accuracy & $ 0.84 $ & $ 0.90 $ & $ 0.78 $ & $ 0.73 $ & $ 0.83 $ & $ 0.72 $ & $ 0.70 $ & $ 0.77 $ & $ 0.75 $
 	\end{tabular}
 
 \end{table}
@@ -819,9 +786,9 @@ For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achi
 \label{sec:conclusions_outlook}
 
 % Give an overview of the general results of the study
-All choosen models could successfully be trained on the available dataset and achieve an accuracy of at least $ 70 \% $ on the testing dataset. It usually was the case that more available training data leads to a better performance of the models. The best performance in general was achieved by \gls{tcn} models. Confirming the recent results of other researchers like Bai et al. \cite{Bai2018} and Li et al. \cite{Li2018}. This again questions the general practice to use \gls{rnn} models as a first choice for time series prediction while \gls{cnn} models should only be used for image classification and related tasks. The \gls{tcn} models when trained on more than $ 500 $ structures achieved closed to $ 100 \% $ accuracy confirming their excellent suitability to time series prediction problems.
+All choosen models could successfully be trained on the available dataset and achieve an accuracy of at least $ 70 \% $ on the testing dataset. It usually was the case that more available training data leads to a better performance of the models. The best performance in general was achieved by \gls{tcn} models. Confirming the recent results of other researchers like Bai et al. \cite{Bai2018} and Li et al. \cite{Li2018}. This again questions the general practice to use \gls{rnn} models as a first choice for time series prediction while \gls{cnn} models should only be used for image classification and related tasks. The \gls{tcn} models when trained on more than $ 500 $ structures achieved closed to $ 100 \% $ accuracy confirming their excellent suitability to time series prediction problems. Thus, a lead to explore would be a hybrid model between an \gls{gru} and a \gls{tcn} architecture, to improve the different patterns to learn in the data.
 
-The good results achieved on this dataset should come at no surprise as the dataset is synthetic without the flaws of real word data. There is no noise in the data which would never be the case in reality. The virtual strain gauges are always placed at the exact same location while in reality there is always a position tolerance when placing them on a structure.
+The good results achieved on this dataset should come at no surprise as the dataset is synthetic without the flaws of real world data. There is no noise in the data which would never be the case in reality. The virtual strain gauges are always placed at the exact same location while in reality there is always a position tolerance when placing them on a structure.
 
 % Write about to much data etc.
 
