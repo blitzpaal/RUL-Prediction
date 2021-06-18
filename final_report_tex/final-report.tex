@@ -117,7 +117,11 @@ Email: anass.akrim@univ-tlse3.fr}
 \begin{abstract}
 	
 % At the end update abstract
-This paper aims to compare Deep Learning models to predict the \gls{rul} of a structure. These models are separated into two families: \glspl{cnn} and \glspl{rnn}. Once implemented, their hyperparameters are optimized and the models are compared on the basis of a metric.
+This paper aims to compare Deep Learning models to predict the \gls{rul} of a structure. These models are the following: the \gls{cnn} family with a \gls{cnn} and a \gls{tcn} architecture, the \glspl{rnn} family with a \gls{rnn}, a \glspl{lstm} and a \glspl{gru} architecture. 
+
+The dataset consists in simulations of the crack growth on plates, based on the Paris-Erdogan law. The training dataset is composed of 10,000 structures while the testing dataset is composed of 100 structures. Each architecture is optimized and trained on respectively 100, 500 and 1,000 structures from the taining dataset. At the end, the different models are compared on their evaluation on the testing dataset, on the basis of a metric which is the accuracy in our case.
+
+In order to optimize the architectures, a first step is to identify the fixed parameters, which do not have a significant impact on the accuracy, and the variable ones.  The variable hyperparameters are optimized with a Random Search Strategy for 100 and 500 structures for the \gls{rnn} family, the architure used for 1,000 structures being the one from the 500 structures optimization. For the \gls{cnn} family, the variable hyperparameters are optimized for 100, 500 and 1,000 structures. The optimized models are then trained with an adaptative learning rate on the three numbers of structures. The results show that within the \glspl{rnn} family, \gls{gru} gives the best result, while within the \glspl{cnn} family, the \gls{tcn} is the best model. Then, the results show that \gls{tcn} gives a better performance than \gls{gru} with an accuracy reaching $98$\%\ for 1,000 structures.
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
@@ -735,9 +739,9 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the t
 		\hline
 		Type of architecture & \gls{rnn} & \gls{lstm} & \gls{gru}\\
 		\hline
-		Validation accuracy & $0.924$ & $0.932$ & $0.970$\\
+		Validation accuracy & $0.891$ & $0.932$ & $0.970$\\
 		\hline
-		Testing accuracy & $0$ & $0.724$ & $0.75$
+		Testing accuracy & $0.78$ & $0.724$ & $0.75$
 	\end{tabular}
 \end{table}
 
