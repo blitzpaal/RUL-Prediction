@@ -9,7 +9,7 @@ val_accuracy = np.array([0.754811764, 0.747607946, 0.780011714, 0.771783829])
 #p_1 = np.poly1d(np.polyfit(wallThickness,displacement[0],3))
 
 # Plot the diagram.
-fig, ax = plt.subplots(figsize=(7,5))
+fig, ax = plt.subplots(figsize=(5,3))
 
 ax.plot(sliding_window_length, val_accuracy, linestyle='-', marker='o', color='k')
 
