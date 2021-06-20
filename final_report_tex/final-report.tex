@@ -79,7 +79,7 @@
 \begin{document}
 %
 % paper title
-% Titles are generally ized except for words such as a, an, and, as,
+% Titles are generally capitalized except for words such as a, an, and, as,
 % at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
@@ -118,11 +118,13 @@ Email: anass.akrim@univ-tlse3.fr}
 
 This paper aims to compare Deep Learning models to predict the \gls{rul} of a structure. The investigated models are the following: the \gls{cnn} family with the 1D-\gls{cnn} and \gls{tcn} architectures and the \gls{rnn} family with the \gls{rnn}, \glspl{lstm} and \glspl{gru} architectures.
 
-The dataset for training and testing consists in simulations of the crack growth in plates, based on the Paris-Erdogan law. The training dataset is composed of $ 10\,000 $ structures while the testing dataset is composed of $ 100 $ structures. Each architecture is optimized and trained on respectively $ 100 $, $ 500 $ and $ 1000 $ structures from the training dataset. At the end, the different models are evaluated and compared on the testing dataset on the basis of the accuracy metric.
+The dataset for training and testing consists in simulations of the crack growth in plates, based on the Paris-Erdogan law. The training and validation dataset is composed of 10\,000 structures while the testing dataset is composed of 100 structures. Each architecture is optimized and trained on respectively 100, 500 and 1000 structures from the training dataset. At the end, the different models are evaluated and compared on the testing dataset on the basis of the accuracy metric.
 
-In order to optimize the architectures, the first step is to identify the fixed parameters which do not have a significant impact on the accuracy, and the variable ones which should be optimized. The variable hyperparameters are optimized with a Random Search Strategy on $ 100 $ and $ 500 $ structures for the \gls{rnn} family. For the \gls{cnn} family, the models are optimized on $ 100 $, $ 500 $ and $ 1000 $ structures. The optimized models are then fine tuned with an adaptive learning rate. The results show that within the \gls{rnn} family \glspl{gru} make the best predictions while within the \gls{cnn} family \glspl{tcn} do so.
+In order to optimize the architectures, the first step is to identify the fixed parameters which do not have a significant impact on the accuracy, and the variable ones which should be optimized. The variable hyperparameters are optimized with a Random Search Strategy on 100 and 500 structures for the \gls{rnn} family. For the \gls{cnn} family, the models are optimized on 100, 500 and 1000 structures. The optimized models are then fine tuned with an adaptive learning rate. The results show that within the \gls{rnn} family \glspl{gru} make the best predictions while within the \gls{cnn} family \glspl{tcn} do so.
 
-Both the \gls{gru} and \gls{tcn} models show a validation accuracy of $ \geq 95 \% $ when trained on $ 500 $ or $ 1000 $ structures. But the \gls{tcn} outperforms all other models on the testing dataset where it reaches $ 99 \% $ accuracy after being trained on $ 1000 $ structures.
+Both the \gls{gru} and \gls{tcn} models show a validation accuracy of greater than 95\% when trained on 500 or 1000 structures. But the \gls{tcn} outperforms all other models on the testing dataset where it reaches 99\% accuracy after being trained on 1000 structures.
+
+All results of this study as well as the created code is available publicly at \url{https://github.com/blitzpaal/RUL-Prediction}.
 
 \end{abstract}
 
@@ -260,8 +262,6 @@ For the \gls{gru} architecture, only two gates are implemented. The update gate 
 
 A simple \gls{rnn} architecture will also be explored to evaluate the possible benefits of more complex architectures such as \glspl{lstm} and \glspl{gru}. A \gls{rnn} unit only has a tanh layer after combining the cell state and the candidate.
 
-% Add details on the explenation of the CNN Deep Learning models (Paul)
-
 \subsection{Convolutional Neural Networks}
 \label{sec:convolutional_neural_networks}
 
@@ -293,10 +293,6 @@ Besides the 1D-\gls{cnn} architecture \glspl{tcn} (Bai et al. \cite{Bai2018}) ar
 	\caption{\gls{tcn} block elements: (a): Generic \gls{tcn} block, (b): Example for a \gls{tcn} block \cite{Bai2018}}
 	\label{fig:tcn_block}
 \end{figure}
-
-% Maybe list the used frameworks (Keras, Tensoflow etc.) (Paul)
-
-% Maybe write about the execution environment (Used GPUs etc.) (Paul)
 
 \subsection{Metric and loss function}
 \label{sec:metric_and_loss_function}
@@ -363,8 +359,6 @@ Based on the \gls{cnn} architecture of Li et al. \cite{Li2018} which was used fo
 \end{figure}
 
 A \gls{tcn} architecture template is generated based on the results of Liu et al. \cite{Liu2019} who used the network for \gls{rul} prediction of roller bearings. The architecture consists of multiple \gls{tcn} residual blocks with the dilation increasing with multiples of $ 2 $ for each additional layer. The first layer has a dilation of $ d = 1 $. Each \gls{tcn} block features the same number of filters with an identical kernel size. The layer after the \gls{tcn} blocks is the dense output layer which has $ 20 $ nodes to match the number of \gls{rul} classes $ C = 20 $. The skip connection layer is activated for all \gls{tcn} residual blocks.
-
-% Give an overview of the results of the hyperparameter optimisation strategies for the rnn and cnn networks (Paul and Thomas)
 
 \subsection{Hyperparameter optimization}
 \label{sec:hyperparameter_optimization_results}
@@ -675,7 +669,6 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} models the results of the training h
 	\label{fig:accuracy_100_structures_fine_tuning_rnn}
 \end{figure}
 
-
 \begin{figure}[htp]
 	\centering
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/RNN_500_tuned_acc.png}}
@@ -754,7 +747,7 @@ For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achi
 	\begin{tabular}{p{2.5cm}|lll|llll}
 		Model type & \multicolumn{3}{c|}{1D-\gls{cnn}} & \multicolumn{4}{c}{\gls{tcn}} \\
 		\hline
-		Number of training structures & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ & $ 10000 $ \\
+		Number of training structures & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ & $ 9\,900 $ \\
 		Validation accuracy & $ 0.78 $ & $ 0.84 $ & $ 0.82 $ & $ 0.81 $ & $ 0.98 $ & $ 0.99 $ & $ 0.99 $ \\
 		Testing accuracy & $ 0.82 $ & $ 0.84 $ & $ 0.84 $ & $ 0.82 $ & $ 0.98 $ & $ 0.99 $ & $ 1.00 $ \\
 		\multicolumn{8}{c}{}
@@ -774,19 +767,17 @@ For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achi
 \section{Conclusions and outlook}
 \label{sec:conclusions_outlook}
 
-The aim of this study to predict the \gls{rul} of pre cracked plates based on strain gauges data with Deep Learning methods could be achieved. All investigated models were successfully trained on the available dataset and achieved an accuracy of at least $ 70 \% $ on the testing dataset. It usually was the case that more available training data leads to a better performance of the models. The best performance in general was achieved by \gls{tcn} models. Confirming the recent results of other researchers like Bai et al. \cite{Bai2018} and Li et al. \cite{Li2018}. This again questions the general practice to use \gls{rnn} models as a first choice for time series prediction while \gls{cnn} models should only be used for image classification and related tasks. The \gls{tcn} models when trained on more than $ 500 $ structures achieved closed to $ 100 \% $ accuracy confirming their excellent suitability to time series prediction problems.
+The aim of this study to predict the \gls{rul} of pre cracked plates based on strain gauges data with Deep Learning methods could be achieved. All investigated models were successfully trained on the available dataset and achieved an accuracy of at least $ 70 \% $ on the testing dataset. It usually was the case that more available training data lead to a better performance of the models. The best performance in general was achieved by \gls{tcn} models. Confirming the good results with \glspl{tcn} of other researchers like Bai et al. \cite{Bai2018} and Li et al. \cite{Li2018}. This result again questions the general practice to use \gls{rnn} models as the first choice for time series prediction while \gls{cnn} models should be used for image classification and related tasks. The \gls{tcn} models when trained on more than $ 500 $ structures achieved closed to $ 100 \% $ accuracy confirming their excellent suitability to time series prediction problems.
 
-The \gls{rnn} models, especially the \gls{gru} ones, achieved good performances on the validation dataset while when testing them on the testing dataset there is a significant drop in performance. This might be the result of the testing dataset beeing focused on short \gls{rul} values closer to the failure of the plates. In this area there are many different classes because of the parabolic distribution for the class boundaries. The \glspl{gru} seem to have troubles generalising to this area while they might work very well on the classes with the bigger \gls{rul} values. Thus, a lead to explore would be a hybrid model between a \gls{gru} and \gls{tcn} architecture, to improve the learning of the different patterns in the data.
+The \gls{rnn} models, especially the \glspl{gru}, achieved good performances on the validation dataset while when tested on the testing dataset there is a significant drop in performance. This might be the result of the testing dataset being focused on short \gls{rul} values close to failure of the plates. In this area there are many different \gls{rul} classes because of the parabolic distribution of the class boundaries. The \glspl{gru} seem to have troubles generalizing to this area while they might work very well on the classes with bigger \gls{rul} values. Thus, a lead to explore would be a hybrid model combining a \gls{gru} and \gls{tcn} architecture, to improve learning of the different patterns in the data.
 
-The generally good results achieved on this dataset should come at no surprise as the dataset is synthetic without the flaws of real world data. There is no noise in the data which would never be the case in reality. The virtual strain gauges are always placed at the exact same location while in reality there is always a position tolerance when placing them on a structure. The synthetic dataset can also provide the model with amounts of data which are not available in reality. Especially the amount of data available until the end of life of the structures.
+The in general good results achieved on this dataset should come at no surprise as the dataset is synthetic without the flaws of real world data. There is no noise in the data which would never be the case in reality. The virtual strain gauges are always placed at the exact same location on the plates while in reality there is always a position tolerance when placing them on a structure. The synthetic dataset can also provide the models with amounts of data which are not available in reality. Especially the amount of data available until the \gls{eol} of the structures.
 
-Fur further research it is important to train and test the models on noisy data and focus on improving their accuracy when trained on smaller datasets, e.g. on $ 100 $ structures, which do rarely include the end of life of the structure.
+Fur further research it is important to train and test the models on noisy data and focus on improving their accuracy when trained on smaller datasets, e.g. on $ 100 $ structures. This smaller datasets should also include less data towards the \gls{eol} of the structures.
 
-Right now the models are restricted to a fixed sliding window length. They therefore can not use less but also not more of the available data than dictated by the window size. A possible solution to consider for this problem would be to use a much larger sliding window together with zero padding when not enough data to fill the window is available. This way the networks could use all of the past data independently of the length of the currently available time series of the structure.
+Right now the models are restricted to a fixed sliding window size. They therefore can not use less but also not more of the available data than dictated by the sliding window size. A possible solution to consider for this problem would be to use a much larger sliding window together with zero padding when not enough data to fill the window is available. This way the networks could use all of the available past and current data independently of the sliding window size and the length of the currently available time series of the structure.
 
-\newpage
+%\newpage
 \printbibliography
 
 \end{document}
-
-
