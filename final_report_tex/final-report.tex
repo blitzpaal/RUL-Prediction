@@ -531,7 +531,7 @@ The hyperparameter optimization of the 1D-\gls{cnn} with $ 500 $ training struct
 	\end{tabular}
 \end{table}
 
-Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the training history of the best models of the 1D-\gls{cnn} hyperparameter optimization when training with $ 500 $ and $ 1000 $ structures respectively. None of the two models shows significant overfitting on the training dataset. Both models are not yet fully converged and therfore have room for improvement. This potential is exploited in the model fine tuning in section \ref{sec:cnn_fine_tuning_results}. The training history of the model trained on $ 500 $ structures shows an instability at around $ 480 $ epochs. Indicating that the learning rate should be reduced which is done in the subsequent model fine tuning.
+Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the training history of the best models of the 1D-\gls{cnn} hyperparameter optimization when training with $ 500 $ and $ 1000 $ structures respectively. None of the two models shows significant overfitting on the training dataset. Both models are not yet fully converged and therefore have room for improvement. This potential is exploited in the model fine tuning in section \ref{sec:cnn_fine_tuning_results}. The training history of the model trained on $ 500 $ structures shows an instability at around $ 480 $ epochs. Indicating that the learning rate should be reduced which is done in the subsequent model fine tuning.
 
 \begin{figure}[htp]
 	\centering
@@ -622,11 +622,7 @@ Figure \ref{fig:accuracy_100_structures_random_search_cnn} shows the history of 
 	\label{fig:accuracy_100_structures_random_search_tcn}
 \end{figure}
 
-Performing the hyperparameter optimization of the \gls{tcn} with $ 500 $ and $ 1000 $ structures respectively leads to significant improvements of the validation accuracy. This indicates that the network is able to better learn the relations in the dataset when feed with more data. Table \ref{tab:hyperparameters_100_500_1000_structures_TCN} depicts the best network architecture together with the achieved validation accuracy for $ 100 $, $ 500 $ and $ 1000 $ training structures with a sliding window size of $ 30 $. As for the trainings performed on 
-
-Write about networks architecture here. With reference to the one of the different sliding windows and 100 structures
-
- The network architectures are very similar which shows that independent of the used training dataset a similar architecture works best.
+Performing the hyperparameter optimization of the \gls{tcn} with $ 500 $ and $ 1000 $ structures respectively leads to significant improvements of the validation accuracy. This indicates that the network is able to better learn the relations in the dataset when feed with more data. Table \ref{tab:hyperparameters_100_500_1000_structures_TCN} depicts the best network architecture together with the achieved validation accuracy for $ 100 $, $ 500 $ and $ 1000 $ training structures with a sliding window size of $ 30 $. The resulting architectures are very similar to those depicted in Table \ref{tab:hyperparameters_100_structures_tcn} from the hyperparameter optimization performed on $ 100 $ structures with different sliding window sizes. Again featuring $ 8 $ \gls{tcn} residual blocks, a kernel size of $ 2 $ and no dropout. Indicating that there is a convergence to an optimal model architecture independent of the used training dataset.
 
 \begin{table}[htp]
 	\centering
@@ -647,27 +643,26 @@ Write about networks architecture here. With reference to the one of the differe
 	\end{tabular}
 \end{table}
 
-Figure \ref{fig:accuracy_500_1000_structures_random_search_CNN} shows the training history for the best models of the 1D-\gls{cnn} hyperparameter optimization when training on $ 500 $ and $ 1000 $ structures respectively. None of the two models shows significant overfitting on the training dataset. Both models are not yet fully converged and therfore have room for improvement. This potential is exploited in the model fine tuning in section \ref{sec:cnn_fine_tuning_results}. The training history of the model trained on $ 500 $ epochs shows an instability at around $ 480 $ epochs. Indicating that the learning rate should be reduced which is done in the subsequent model fine tuning.
+Figure \ref{fig:accuracy_500_1000_structures_random_search_TCN} shows the training history of the best models of the \gls{tcn} hyperparameter optimization when training with $ 500 $ and $ 1000 $ structures respectively. None of the two models shows a sign of overfitting on the training dataset. Both models are not yet fully converged and therefore have room for improvement. This potential is exploited in the model fine tuning in section \ref{sec:tcn_fine_tuning_results}. Both training histories show instabilities during draining, indicating that the learning rate should be reduced which is done in the subsequent model fine tuning.
 
 \begin{figure}[htp]
 	\centering
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_500_structures_random_search_TCN.pdf}}
 	\quad
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_random_search_TCN.pdf}}
-	\caption{Training and validation accuracy history for the best model of the \gls{tcn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
+	\caption{Training and validation accuracy history for the best models of the \gls{tcn} hyperparameter optimization on (a): $ 500 $ and (b): $ 1000 $ training structures}
 	\label{fig:accuracy_500_1000_structures_random_search_TCN}
 \end{figure}
-
 
 \subsection{Fine Tuning}
 \label{sec:fine_tuning_results}
 
-As the hyperparameters were optimized, the resulting models had to be trained with an adaptative learning rate to optimize their performance. The models are further refined on the same dataset on which the optimization was performed. \gls{lrdecay} starts with a learning rate of $10^{-2}$ or $10^{-3}$ depending on which value was choosen in the hyperparameter optimization, decreasing to $10^{-3}$, $10^{-4}$ and then $10^{-5}$. With each learning rate, models were trained on a maximum of $ 500 $ epochs which leads to a training with a maximum of $ 2000 $ epochs. After the fine tuning the models are tested on the testing dataset to evaluate their final performance.
+As the hyperparameters are optimized, the resulting models are trained with an adaptative learning rate (\gls{lrdecay}) to optimize their performance. The models are further refined on the same dataset on which the optimization was performed. \gls{lrdecay} starts with a learning rate of $10^{-2}$ or $10^{-3}$ depending on which value was chosen in the hyperparameter optimization, decreasing to $10^{-3}$, $10^{-4}$ and then $10^{-5}$. With each learning rate, the models were trained for $ 500 $ epochs which leads to maximum of $ 2000 $ training epochs. After the fine tuning the models are tested on the testing dataset to evaluate their final performance.
 
 \subsubsection{\gls{rnn}, \gls{lstm} and \gls{gru} fine tuning}
 \label{sec:rnn_fine_tuning_results}
 
-For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the training can be found grouped by the number of structures in Figures \ref{fig:accuracy_100_structures_fine_tuning_rnn}, \ref{fig:accuracy_500_structures_fine_tuning_rnn} and \ref{fig:accuracy_1000_structures_fine_tuning_rnn}. It can be clearly observed that the adaptative learning rate strategy (\gls{lrdecay}) allows a better training for each model. Once the models trained, they were evaluated on the testing dataset. All the results for the validation accuracy and the testing accuracy can be found in Table \ref{tab:accuracy_testing_rnn_cnn}.  
+For the \gls{rnn}, \gls{lstm} and \gls{gru} models the results of the training history can be found grouped by the number of structures in Figures \ref{fig:accuracy_100_structures_fine_tuning_rnn}, \ref{fig:accuracy_500_structures_fine_tuning_rnn} and \ref{fig:accuracy_1000_structures_fine_tuning_rnn}. It can be clearly observed that the \gls{lrdecay} strategy allows a better training for each model. Once the models are trained, they are evaluated on the testing dataset. All the results for the validation and testing accuracy can be found in Table \ref{tab:accuracy_testing_rnn_cnn}.  
 
 \begin{figure}[htp]
 	\centering
@@ -676,7 +671,7 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the t
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/LSTM_100_tuned_acc.png}}
 	\\
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/GRU_100_tuned_acc.png}}
-	\caption{Training and validation accuarcy for $ 100 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
+	\caption{Training and validation accuracy history for $ 100 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
 	\label{fig:accuracy_100_structures_fine_tuning_rnn}
 \end{figure}
 
@@ -688,7 +683,7 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the t
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/LSTM_500_tuned_acc.png}}
 	\\
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/GRU_500_tuned_acc.png}}
-	\caption{Training and validation accuarcy for $ 500 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
+	\caption{Training and validation accuracy history for $ 500 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
 	\label{fig:accuracy_500_structures_fine_tuning_rnn}
 \end{figure}
 
@@ -699,24 +694,22 @@ For the \gls{rnn}, \gls{lstm} and \gls{gru} the results for the history of the t
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/LSTM_1000_tuned_acc.png}}
 	\\
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{fine_tuning/GRU_1000_tuned_acc.png}}
-	\caption{Training and validation accuarcy for $ 1000 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
+	\caption{Training and validation accuracy history for $ 1000 $ training structures with \gls{lrdecay}: (a): \gls{rnn}, (b): \gls{lstm}, (c): \gls{gru}}
 	\label{fig:accuracy_1000_structures_fine_tuning_rnn}
 \end{figure}
 
-It can be observed little to no overfitting in each training. In addition, some training history show an unstable improvement, with even a decreasing accuracy for some learning rates. This could have an impact on the final accuracy. Nevertheless, it seems that decreasing the learning rate improves the stability of the training.
+Little to no overfitting can be observed in each training. In addition, some training historys show an unstable improvement, with even a decreasing accuracy after some learning rate changes. This could have an impact on the final accuracy. Nevertheless, it seems that decreasing the learning rate improves the stability of the training.
 
-Regarding the final validation and testing accuracies, there is a significant difference between 100 and 500 structures. The different models increased both their validation and testing accuracies, even though the differences between 500 and 1000 structures are less notable. The best improvement is noticed with \gls{gru}, reaching 97\%\ for the validation accuracy for 1000 structures.
+Regarding the final validation and testing accuracies, there is a significant difference between $ 100 $ and $ 500 $ training structures. The different models increased both their validation and testing accuracies, even though the differences between $ 500 $ and $ 1000 $ structures are less notable. The highest improvement is noticed with the \gls{gru} model, reaching $ 97 \% $ validation accuracy with $ 1000 $ training structures.
 
-However, a huge difference is observed between the validation and the testing accuracy. This could be due to the metric used. As the scaling for the classification follows a parabolic equation, the first classes are narrower than the last classes. Studying the distribution of the different \gls{rul} to predict in the testing dataset might show that they are more present in the first classes than for the training dataset, which is then more difficult to predict. A possible solution might be then to choose another metric which would take into account this distibution of the \gls{rul} classes.
-
-% Show the detailed results of the fine tuning of some networks (Paul and Thomas)
+However, a huge difference is observed between the validation and the testing accuracy. This could be due to the accuracy metric used. As the boundaries for the classification follow a parabolic equation, the first classes are narrower than the last classes. Studying the distribution of the different \gls{rul} classes to predict in the testing dataset in the training dataset might show that they are less present in the training dataset. This makes it more difficult to predict these classes in the testing dataset. A possible solution might be to choose another metric which would take into account this uneven distribution of the \gls{rul} classes.
 
 \subsubsection{1D-\gls{cnn} and \gls{tcn} fine tuning}
 \label{sec:cnn_fine_tuning_results}
 
-For each of the best identified network architectures of the 1D-\gls{cnn} and \gls{tcn} hyperparameter optimizations further training with \gls{lrdecay} is performed to improve the performance. For the models which were optimized on $ 100 $ structures the models with a sliding window length of $ 30 $ are chosen for further refinement.
+For each of the best identified network architectures of the 1D-\gls{cnn} and \gls{tcn} hyperparameter optimizations further training with \gls{lrdecay} is performed to improve their performance. Out of the models which were optimized on $ 100 $ structures the models with a sliding window size of $ 30 $ are chosen for further refinement.
 
-Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training history for the fine tuning on $ 100 $, $ 500 $ and $ 1000 $ structures. The networks show little to no overfitting on the training dataset. There is steady improvement of the accuracy towards convergence except for the training on $ 500 $ structures which shows a steep drop at around $ 500 $ epochs.
+Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training histories for the fine tuning on $ 100 $, $ 500 $ and $ 1000 $ structures. The networks show little to no overfitting on the training dataset. There is steady improvement of the accuracy towards convergence except for the training on $ 500 $ structures which shows a steep drop of the accuracy at around $ 500 $ epochs.
 
 \begin{figure}[htp]
 	\centering
@@ -729,7 +722,7 @@ Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training history for the fi
 	\label{fig:accuracy_adaptiveLR_CNN}
 \end{figure}
 
- The training histories of the \gls{tcn} fine tuning can be seen in Figure \ref{fig:accuracy_adaptiveLR_TCN}. The best model from the hyperparameter optimization on $ 1000 $ structures was not only fine tuned on $ 1000 $ structures but also on the full dataset of $ 9900 $ structures to see if any improvements can be realised (see Figure \ref{fig:accuracy_adaptiveLR_TCN} (d)). During the first phase of training with the highest learning rate there are strong oscillations for all the models. The decrease of the learning rate helps to stabilize the training and for all the models gives a significant rise to the accuracy. In the later stages of the training all the models show a stable convergence. Only the model trained on $ 100 $ structures shows a bit of overfitting on the training dataset while the other models show no such signs. 
+ The training histories of the \gls{tcn} fine tuning can be seen in Figure \ref{fig:accuracy_adaptiveLR_TCN}. The best model from the hyperparameter optimization on $ 1000 $ structures was not only fine tuned on $ 1000 $ structures but also on the full dataset of $ 9900 $ structures to see if any improvements can be realized when using much more training data (see Figure \ref{fig:accuracy_adaptiveLR_TCN} (d)). During the first phase of training with the highest learning rate there are strong oscillations of the accuracy for all the models. The first decrease of the learning rate helps to stabilize the training and for all the models gives a significant rise to the accuracy. In the later stages of the training all the models show a stable convergence. Only the model trained on $ 100 $ structures shows a bit of overfitting on the training dataset while the other models show no such signs. 
 
 \begin{figure}[htp]
 	\centering
@@ -740,27 +733,22 @@ Figure \ref{fig:accuracy_adaptiveLR_CNN} depicts the training history for the fi
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_1000_structures_adaptiveLR_TCN.pdf}}
 	\quad
 	\subfloat[][]{\includegraphics[width=0.23\textwidth]{python/accuracy_9900_structures_adaptiveLR_TCN.pdf}}
-	\caption{Training and validation accuracy history for the best models of the \gls{tcn} hyperparameter optimization on (a): $ 100 $, (b): $ 500 $, (c): $ 1000 $ and (c): $ 9900 $ structures after fine tuning the models with \gls{lrdecay} on the same datasets}
+	\caption{Training and validation accuracy history for the best models of the \gls{tcn} hyperparameter optimization on (a): $ 100 $, (b): $ 500 $, (c): $ 1000 $ and (d): $ 9900 $ structures after fine tuning the models with \gls{lrdecay} on the same datasets}
 	\label{fig:accuracy_adaptiveLR_TCN}
 \end{figure}
 
 \subsubsection{Model comparison}
 \label{sec:model_comparison}
 
-% Compare the rnn and cnn results (Paul and Thomas)
+As a final validation all the fine tuned models are tested with the testing dataset of $ 100 $ structures. Table \ref{tab:accuracy_testing_rnn_cnn} shows an overview of the achieved accuracy for all \gls{rnn} (\gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (1D-\gls{cnn} and \gls{tcn}).
 
-As a final validation all the fine tuned models are tested with the testing dataset of $ 100 $ structures. Table \ref{tab:accuracy_testing_rnn_cnn} shows an overview of the achieved accuracy for all \gls{rnn} (\gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (1D-\glspl{cnn} and \glspl{tcn}).
+It can be noticed that for \gls{rnn} models, the difference between the validation accuracy and the testing accuracy is notable. The networks have difficulties to generalize the patterns learned to new sets of data. But, as previously analysed in section \ref{sec:rnn_fine_tuning_results}, this could also be the result of the \gls{rul} classification which gives a larger bandwidth to the last classes and therefore leads to an imbalance of the training dataset towards the classes with higher \gls{rul} values. The testing dataset meanwhile focuses on the first classes, which are smaller. This imbalance leads to an increasing possibility of wrong predictions of the \gls{rul} on the testing dataset. One lead to explore would be to adapt the accuracy metric to take into account this imbalance of the training and testing data. Nonetheless, \glspl{gru} seem to work better on large datasets, reaching $ 97 \% $ validation accuracy when trained on  $ 1000 $ structures.
 
-
-It can be noticed that for \glspl{rnn} models, the difference between the validation accuracy and the testing accuracy is notable. The networks have difficulties to generalize the patterns learned to new sets of data. But, as previously analysed, this could be also the classification scaling which gives a larger bandwith on the last classes, while the testing dataset might focus more on the first classes, which are smaller. This leads to an increasing possibilty of wrong prediction of the \gls{rul} on the testing dataset. One lead to explore would be then to adapt the metric to take into account this evolution of the classes bandwidth. Nonetheless, \glspl{gru} seem to work better for the validation accuracy on larger datasets, reaching 97\%\ on $1000$ structures.
-
-For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achieved accuracy on the testing set if the amount of structures for training is increased. The increase in testing accuracy corresponds largely to the increase in validation accuracy. The testing accuracy is in the same order of magnitude as the validation accuracy indicating that the networks generalize well to new sets of data. In general \glspl{tcn} work better than 1D-\glspl{cnn} especially on the larger datasets of $ 500 $ and $ 1000 $ structures where the \gls{tcn} achieves close to $ 100 \% $ accuracy. When trained on the complete dataset the \gls{tcn} achieved $ 100 \% $ accuracy on the testing dataset.
-
-% Update results in table below
+For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achieved accuracy on the testing dataset if the amount of structures for training is increased. The increase in testing accuracy corresponds largely to the increase in validation accuracy. The testing accuracy is in the same order of magnitude as the validation accuracy indicating that the networks generalize well to new sets of data. In general \glspl{tcn} work better than 1D-\glspl{cnn}, especially on the larger datasets of $ 500 $ and $ 1000 $ structures where the \glspl{tcn} achieve close to $ 100 \% $ accuracy. When trained on the complete dataset of $ 9900 $ training structures the \gls{tcn} achieved $ 100 \% $ accuracy on the testing dataset.
 
 \begin{table}[htp]
 	\centering
-	\caption{Accuracy of all fine tuned \gls{rnn} (\gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (1D-\glspl{cnn} and \glspl{tcn}) on the validation and testing datasets}
+	\caption{Accuracy of all fine tuned \gls{rnn} (\gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (1D-\gls{cnn} and \gls{tcn}) on the validation and testing datasets}
 	\label{tab:accuracy_testing_rnn_cnn}
 	\setlength{\tabcolsep}{3pt} % Default value: 6pt
 	\begin{tabular}{p{2.5cm}|lll|llll}
