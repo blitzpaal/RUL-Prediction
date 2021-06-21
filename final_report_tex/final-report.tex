@@ -84,7 +84,7 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{REMAINING USEFUL LIFE PREDICTIONS WITH DEEP LEARNING METHODS}
+\title{Remaining Useful Life Prediction With Deep Learning Methods}
 
 % for over three affiliations, or if they all won't fit within the width
 % of the page, use this alternative format:
@@ -116,13 +116,15 @@ Email: anass.akrim@univ-tlse3.fr}
 % in the abstract
 \begin{abstract}
 
+With the increasing availability of data for \gls{phm} data driven approaches become more and more interesting. Deep Learning is one of these approaches. As Deep Learning has shown great success in other domains such as \gls{nlp} and image classification it is a promising prospect for \gls{phm}.
+
 This paper aims to compare Deep Learning models to predict the \gls{rul} of a structure. The investigated models are the following: the \gls{cnn} family with the 1D-\gls{cnn} and \gls{tcn} architectures and the \gls{rnn} family with the \gls{rnn}, \glspl{lstm} and \glspl{gru} architectures.
 
 The dataset for training and testing consists in simulations of the crack growth in plates, based on the Paris-Erdogan law. The training and validation dataset is composed of 10\,000 structures while the testing dataset is composed of 100 structures. Each architecture is optimized and trained on respectively 100, 500 and 1000 structures from the training dataset. At the end, the different models are evaluated and compared on the testing dataset on the basis of the accuracy metric.
 
-In order to optimize the architectures, the first step is to identify the fixed parameters which do not have a significant impact on the accuracy, and the variable ones which should be optimized. The variable hyperparameters are optimized with a Random Search Strategy on 100 and 500 structures for the \gls{rnn} family. For the \gls{cnn} family, the models are optimized on 100, 500 and 1000 structures. The optimized models are then fine tuned with an adaptive learning rate. The results show that within the \gls{rnn} family \glspl{gru} make the best predictions while within the \gls{cnn} family \glspl{tcn} do so.
+%In order to optimize the architectures, the first step is to identify the fixed parameters which do not have a significant impact on the accuracy, and the variable ones which should be optimized. The variable hyperparameters are optimized with a Random Search Strategy on 100 and 500 structures for the \gls{rnn} family. For the \gls{cnn} family, the models are optimized on 100, 500 and 1000 structures. The optimized models are then fine tuned with an adaptive learning rate. The results show that within the \gls{rnn} family \glspl{gru} make the best predictions while within the \gls{cnn} family \glspl{tcn} do so.
 
-Both the \gls{gru} and \gls{tcn} models show a validation accuracy of greater than 95\% when trained on 500 or 1000 structures. But the \gls{tcn} outperforms all other models on the testing dataset where it reaches 99\% accuracy after being trained on 1000 structures.
+Both the \gls{gru} and \gls{tcn} models show a validation accuracy of greater than 95\% when trained on 500 or 1000 structures. But the \gls{tcn} outperforms all other models on the testing dataset where it reaches 100\% accuracy after being trained on 1000 structures.
 
 All results of this study as well as the created code is available publicly at \url{https://github.com/blitzpaal/RUL-Prediction}.
 
@@ -166,7 +168,7 @@ The synthetic dataset matches strain gauge data to \gls{rul} values. The use of 
 The aim of this study is to predict the \gls{rul} of precracked plates based on strain gauge measurements using Deep Learning. 
 For the application of Deep Learning to crack growth for \gls{rul} prediction based on strain gauge measurements no relevant results in the literature could be found. This study attempts to fill this research gap.
 
-In a work done by Akrim \cite{Akrim} the Paris-Erdogan Law \cite{Paris1963} was used to create a synthetic dataset of crack growth to train the model. The dataset consists of strain data from virtual strain gauges placed in the area around the crack and the corresponding \gls{rul} of the plates.
+In our work the Paris-Erdogan Law \cite{Paris1963} was used to create a synthetic dataset of crack growth to train the model. The dataset consists of strain data from virtual strain gauges placed in the area around the crack and the corresponding \gls{rul} of the plates.
 
 The Paris-Erdogan Law is applied to an infinite plate with a central horizontal crack. The strain gauges are placed in a 45°-Angle at the positions shown in Figure \ref{fig:strain_gauge_positions} relative to the center of the plate where the crack is located.
 
@@ -191,7 +193,7 @@ The crack length in the Paris-Erdogan Law is a function of the number of cylces 
 		$ 3 $ & $ 1 $  & $ 1000 $  & $ \epsilon_{1,3} $ & $ \epsilon_{2,3} $ & $ \epsilon_{3,3} $ & $ RUL_3 $ \\
 		$ 4 $ & $ 1 $  & $ 1500 $  & $ \epsilon_{1,4} $ & $ \epsilon_{2,4} $ & $ \epsilon_{3,4} $ & $ RUL_4 $ \\
 		\vdots & \vdots & \vdots & \vdots & \vdots &\vdots & \vdots \\
-		$ n $ & $ 10000 $  & $ N_{f,10000} $  & $ \epsilon_{1,5} $ & $ \epsilon_{2,5} $ & $ \epsilon_{3,5} $ & $ RUL_5 $
+		$ n $ & $ 10\,000 $  & $ N_{f,10\,000} $  & $ \epsilon_{1,n} $ & $ \epsilon_{2,n} $ & $ \epsilon_{3,n} $ & $ RUL_n $
 	\end{tabular}
 \end{table}
 
@@ -209,7 +211,7 @@ As it showed promising results in other applications of Deep Learning to \gls{ph
 
 \begin{figure}[htp]
 	\centering
-	\subfloat[][]{\includegraphics[width=0.35\textwidth]{classification_model.pdf}}
+	\subfloat[][]{\includegraphics[width=0.45\textwidth]{classification_model.pdf}}
 	\\
 	\subfloat[][]{\includegraphics[width=0.45\textwidth]{python/RUL_classification.pdf}}
 	\caption{(a): Neural network model output for \gls{rul} classification, (b): Boundaries between the \gls{rul} classes (The dots represent the boundaries)}
@@ -256,8 +258,6 @@ The key idea to \glspl{gru} and \glspl{lstm} is the memory cell which allows the
 
 The \gls{lstm} architecture consists of an input gate, a forget gate and an output gate. The input gate decides to add new information from the present input to the present cell state scaled by how much it wishes to add them. The forget gate allows the cell to know how to partially forget the previous cell state. Then, the output gate decides what to output from the new cell state.
 
-% What is the candidate?
-
 For the \gls{gru} architecture, only two gates are implemented. The update gate decides the portion of updated candidate needed to calculate the current cell state, which in turn also decides the portion of the previous cell state retained. The relevance gate calculates how relevant the previous information is, and then is used in the candidate for the updated value.
 
 A simple \gls{rnn} architecture will also be explored to evaluate the possible benefits of more complex architectures such as \glspl{lstm} and \glspl{gru}. A \gls{rnn} unit only has a tanh layer after combining the cell state and the candidate.
@@ -301,8 +301,10 @@ To evaluate the performance of developed models a metric is needed. As the netwo
 
 \begin{equation}
 	\label{eq:accuracy_metric}
-	Accuracy = \frac{Number \: of \: correct \: predictions}{Total \: number \: of \: predictions}.
+	\mathrm{Accuracy} = \frac{1}{N} \sum_{i=1}^{N} 1 (\hat{y}_i = y_i)
 \end{equation}
+
+where $ N $ is the number of samples with $ \hat{y} $ being the prediction and $ y $ the target value.
 
 This metric is applied during training and validation to compare different models against each other. The final assessment of the models is made by applying the accuracy metric to the testing dataset.
 
@@ -393,8 +395,8 @@ Once those parameters are fixed, useful hyperparameters are identified. These ar
 	\begin{tabular}{ll}
 		\textbf{Parameter} & \textbf{Value set} \\
 		\hline
-		Number of hidden layers & $ \{1, 2, 3\} $ \\
-		Number of cells per layer & $ \{32, 64, 128, 256\} $ \\
+		Hidden layers & $ \{1, 2, 3\} $ \\
+		Cells per layer & $ \{32, 64, 128, 256\} $ \\
 		Dropout rate & $ \{0, 0.1\} $ \\
 		Recurrent Dropout rate & $ \{0, 0.1\} $ \\
 		Learning rate & $ \{10^{-2}, 10^{-3}\} $
@@ -413,8 +415,8 @@ The Random Search strategy was then used to optimize those hyperparameters on $ 
 		\hline
 		Type of architecture & \gls{rnn} & \gls{lstm} & \gls{gru} & \gls{rnn} & \gls{lstm} & \gls{gru}\\
 		\hline
-		Number of hidden layers & $3$ & $2$ & $3$ & $3$ & $2$ & $2$ \\
-		Number of cells per layer & $32$ & $64$ & $256$ & $32$ & $128$ & $256$ \\
+		Hidden layers & $3$ & $2$ & $3$ & $3$ & $2$ & $2$ \\
+		Cells per layer & $32$ & $64$ & $256$ & $32$ & $128$ & $256$ \\
 		Dropout rate & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ \\
 		Recurrent Dropout rate & $0$ & $0$ & $0$& $0$ & $0$ & $0$ \\
 		\hline
@@ -453,8 +455,8 @@ Table \ref{tab:variable_parameters_cnn_optimization} lists the variable paramete
 	\begin{tabular}{ll}
 		\textbf{Parameter} & \textbf{Value set} \\
 		\hline
-		Number of convolutional layers & $ \{2, 4, 6, 8\} $ \\
-		Number of filters per layer & $ \{15, 20, 25, 30, 35, 40, 45, 50\} $ \\
+		Convolutional layers & $ \{2, 4, 6, 8\} $ \\
+		Filters per layer & $ \{15, 20, 25, 30, 35, 40, 45, 50\} $ \\
 		Kernel size & $ \{3, 6, 9, 12\} $ \\
 		Learning rate & $ \{10^{-2}, 10^{-3}\} $
 	\end{tabular}
@@ -478,11 +480,11 @@ Table \ref{tab:hyperparameters_100_structures_cnn} shows the different architect
 	\caption{Best models of the 1D-\gls{cnn} hyperparameter optimization on $ 100 $ structures for different sliding window lengths}
 	\label{tab:hyperparameters_100_structures_cnn}
 	\setlength{\tabcolsep}{3pt} % Default value: 6pt
-	\begin{tabular}{p{2.5cm}|llllll}
+	\begin{tabular}{l|llllll}
 		Sliding window size & $ 5 $ & $ 10 $ & $ 15 $ & $ 20 $ & $ 30 $ & $ 40 $ \\
 		\hline
-		Number of convolutional layers & $ 4 $ & $ 2 $ & $ 4 $ & $ 2 $ & $ 6 $ & $ 6 $ \\
-		Number of filters per layer & $ 25 $ & $ 35 $ & $ 30 $ & $ 45 $ & $ 20 $ & $ 20 $ \\
+		Convolutional layers & $ 4 $ & $ 2 $ & $ 4 $ & $ 2 $ & $ 6 $ & $ 6 $ \\
+		Filters per layer & $ 25 $ & $ 35 $ & $ 30 $ & $ 45 $ & $ 20 $ & $ 20 $ \\
 		Kernel size & $ 3 $ & $ 6 $ & $ 9 $ & $ 9 $ & $ 6 $ & $ 3 $ \\
 		Learning rate & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ \\
 		\hline
@@ -511,13 +513,13 @@ The hyperparameter optimization of the 1D-\gls{cnn} with $ 500 $ training struct
 	\centering
 	\caption{Best models of the 1D-\gls{cnn} hyperparameter optimization for $ 100 $, $ 500 $ and $ 1000 $ training structures}
 	\label{tab:hyperparameters_100_500_1000_structures_CNN}
-	\begin{tabular}{p{2.5cm}|llllll}
+	\begin{tabular}{l|llllll}
 		Training structures & $ 100 $ & $ 500 $ & $ 1000 $ \\
 		\hline
 		Sliding window size & \multicolumn{3}{c}{$ 30 $} \\
 		\hline
-		Number of convolutional layers & $ 6 $ & $ 2 $ & $ 4 $ \\
-		Number of filters per layer & $ 20 $ & $ 40 $ & $ 25 $ \\
+		Convolutional layers & $ 6 $ & $ 2 $ & $ 4 $ \\
+		Filters per layer & $ 20 $ & $ 40 $ & $ 25 $ \\
 		Kernel size & $ 6 $ & $ 12 $ & $ 9 $ \\
 		Learning rate & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-3} $ \\
 		\hline
@@ -562,8 +564,8 @@ Table \ref{tab:variable_parameters_tcn_optimization} lists the variable paramete
 	\begin{tabular}{ll}
 		\textbf{Parameter} & \textbf{Value set} \\
 		\hline
-		Number of layers & $ \{4, 6, 8, 10\} $ \\
-		Number of filters per layer & $ \{15, 20, 25, 30, 35, 40, 45, 50\} $ \\
+		Layers & $ \{4, 6, 8, 10\} $ \\
+		Filters per layer & $ \{15, 20, 25, 30, 35, 40, 45, 50\} $ \\
 		Kernel size & $ \{3, 6, 9, 12\} $ \\
 		Dropout rate & $ \{0.0, 0.1, 0.2\} $ \\
 		Learning rate & $ \{10^{-2}, 10^{-3}\} $
@@ -587,12 +589,11 @@ Table \ref{tab:hyperparameters_100_structures_tcn} shows the different architect
 	\centering
 	\caption{Best models of the \gls{tcn} hyperparameter optimization on $ 100 $ structures for different sliding window lengths}
 	\label{tab:hyperparameters_100_structures_tcn}
-	%\setlength{\tabcolsep}{3pt} % Default value: 6pt
-	\begin{tabular}{p{2.5cm}|llllll}
+	\begin{tabular}{l|llllll}
 		Sliding window size & $ 10 $ & $ 15 $ & $ 20 $ & $ 30 $ \\
 		\hline
-		Number of \gls{tcn} residual blocks & $ 6 $ & $ 8 $ & $ 8 $ & $ 8 $ \\
-		Number of filters per layer & $ 30 $ & $ 45 $ & $ 25 $ & $ 30 $ \\
+		\gls{tcn} residual blocks & $ 6 $ & $ 8 $ & $ 8 $ & $ 8 $ \\
+		Filters per layer & $ 30 $ & $ 45 $ & $ 25 $ & $ 30 $ \\
 		Kernel size & $ 2 $ & $ 2 $ & $ 2 $ & $ 2 $ \\
 		Dropout rate & $ 0.0 $ & $ 0.0 $ & $ 0.0 $ & $ 0.0 $ \\
 		Learning rate & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-2} $ & $ 10^{-3} $ \\
@@ -622,13 +623,13 @@ Performing the hyperparameter optimization of the \gls{tcn} with $ 500 $ and $ 1
 	\centering
 	\caption{Best models of the \gls{tcn} hyperparameter optimization for $ 100 $, $ 500 $ and $ 1000 $ training structures}
 	\label{tab:hyperparameters_100_500_1000_structures_TCN}
-	\begin{tabular}{p{2.5cm}|llllll}
+	\begin{tabular}{l|llllll}
 		Training structures & $ 100 $ & $ 500 $ & $ 1000 $ \\
 		\hline
 		Sliding window size & \multicolumn{3}{c}{$ 30 $} \\
 		\hline
-		Number of \gls{tcn} residual blocks & $ 8 $ & $ 8 $ & $ 8 $ \\
-		Number of filters per layer & $ 30 $ & $ 25 $ & $ 35 $ \\
+		\gls{tcn} residual blocks & $ 8 $ & $ 8 $ & $ 8 $ \\
+		Filters per layer & $ 30 $ & $ 25 $ & $ 35 $ \\
 		Kernel size & $ 2 $ & $ 2 $ & $ 2 $ \\
 		Dropout rate & $ 0.0 $ & $ 0.0 $ & $ 0.0 $ \\
 		Learning rate & $ 10^{-3} $ & $ 10^{-2} $ & $ 10^{-2} $ \\
@@ -743,23 +744,18 @@ For the 1D-\gls{cnn} and \gls{tcn} models there is a steady increase in the achi
 	\centering
 	\caption{Accuracy of all fine tuned \gls{rnn} (\gls{rnn}, \gls{lstm} and \gls{gru}) and \gls{cnn} models (1D-\gls{cnn} and \gls{tcn}) on the validation and testing datasets}
 	\label{tab:accuracy_testing_rnn_cnn}
-	\setlength{\tabcolsep}{3pt} % Default value: 6pt
-	\begin{tabular}{p{2.5cm}|lll|llll}
-		Model type & \multicolumn{3}{c|}{1D-\gls{cnn}} & \multicolumn{4}{c}{\gls{tcn}} \\
+	\setlength{\tabcolsep}{2.8pt} % Default value: 6pt
+	\begin{tabular}{l|ll|ll|ll|ll}
+		Training structures & \multicolumn{2}{c|}{$ 100 $} & \multicolumn{2}{c|}{$ 500 $} & \multicolumn{2}{c|}{$ 1000 $} & \multicolumn{2}{c}{$ 9\,900 $} \\
 		\hline
-		Number of training structures & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ & $ 9\,900 $ \\
-		Validation accuracy & $ 0.78 $ & $ 0.84 $ & $ 0.82 $ & $ 0.81 $ & $ 0.98 $ & $ 0.99 $ & $ 0.99 $ \\
-		Testing accuracy & $ 0.82 $ & $ 0.84 $ & $ 0.84 $ & $ 0.82 $ & $ 0.98 $ & $ 0.99 $ & $ 1.00 $ \\
-		\multicolumn{8}{c}{}
-	\end{tabular}
-
-	\setlength{\tabcolsep}{2pt} % Default value: 6pt
-	\begin{tabular}{p{2.5cm}|lll|lll|lll}
-		Model type & \multicolumn{3}{c|}{\gls{rnn}} & \multicolumn{3}{c|}{\gls{lstm}} &  \multicolumn{3}{c}{\gls{gru}}\\
+		Accuracy & Val & Test & Val & Test & Val & Test & Val & Test \\
 		\hline
-		Number of training structures & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ & $ 100 $ & $ 500 $ & $ 1000 $ \\
-		Validation accuracy & $ 0.90 $ & $ 0.91 $ & $ 0.89 $ & $ 0.85 $ & $ 0.93 $ & $ 0.93 $ & $ 0.78 $ & $ 0.96 $ & $ 0.97 $ \\
-		Testing accuracy & $ 0.84 $ & $ 0.90 $ & $ 0.78 $ & $ 0.73 $ & $ 0.83 $ & $ 0.72 $ & $ 0.70 $ & $ 0.77 $ & $ 0.75 $
+		\gls{rnn} & $ \boldsymbol{0.90} $ & $ \boldsymbol{0.84} $ & $ 0.91 $ & $ 0.90 $ & $ 0.89 $ & $ 0.78 $ & $ - $ & $ - $ \\
+		\gls{lstm} & $ 0.85 $ & $ 0.73 $ & $ 0.93 $ & $ 0.83 $ & $ 0.93 $ & $ 0.72 $ & $ - $ & $ - $ \\
+		\gls{gru} & $ 0.78 $ & $ 0.70 $ & $ 0.96 $ & $ 0.77 $ & $ 0.97 $ & $ 0.75 $ & $ - $ & $ - $ \\
+		\hline
+		1D-\gls{cnn} & $ 0.78 $ & $ 0.82 $ & $ 0.84 $ & $ 0.84 $ & $ 0.82 $ & $ 0.84 $ & $ - $ & $ - $ \\
+		\gls{tcn} & $ 0.81 $ & $ 0.82 $ & $ \boldsymbol{0.98} $ & $ \boldsymbol{0.98} $ & $ \boldsymbol{0.99} $ & $ \boldsymbol{0.99} $ & $ \boldsymbol{0.99} $ & $ \boldsymbol{1.00} $ \\
 	\end{tabular}
 
 \end{table}
@@ -773,7 +769,7 @@ The \gls{rnn} models, especially the \glspl{gru}, achieved good performances on 
 
 The in general good results achieved on this dataset should come at no surprise as the dataset is synthetic without the flaws of real world data. There is no noise in the data which would never be the case in reality. The virtual strain gauges are always placed at the exact same location on the plates while in reality there is always a position tolerance when placing them on a structure. The synthetic dataset can also provide the models with amounts of data which are not available in reality. Especially the amount of data available until the \gls{eol} of the structures.
 
-Fur further research it is important to train and test the models on noisy data and focus on improving their accuracy when trained on smaller datasets, e.g. on $ 100 $ structures. This smaller datasets should also include less data towards the \gls{eol} of the structures.
+Fur further research it is important to train and test the models on noisy data and focus on improving their accuracy when trained on smaller datasets, e.g. on $ 100 $ structures. These smaller datasets should also include less data towards the \gls{eol} of the structures.
 
 Right now the models are restricted to a fixed sliding window size. They therefore can not use less but also not more of the available data than dictated by the sliding window size. A possible solution to consider for this problem would be to use a much larger sliding window together with zero padding when not enough data to fill the window is available. This way the networks could use all of the available past and current data independently of the sliding window size and the length of the currently available time series of the structure.
 
