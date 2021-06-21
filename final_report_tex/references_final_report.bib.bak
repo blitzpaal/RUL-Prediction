@@ -18,7 +18,7 @@
   volume       = {172},
   date         = {2018},
   doi          = {10.1016/j.ress.2017.11.021},
-  file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/Remaining useful life estimation in prognostics using deep convolution neural networks.pdf:PDF},
+  file         = {:G\:/My Drive/Studium ISAE SUPAERO/PIR/Literature/LI20181 - Remaining Useful Life Estimation in Prognostics Using Deep Convolution Neural Networks.pdf:PDF},
   journaltitle = {Reliability Engineering \& System Safety},
   keywords     = {Prognostics and health management, Remaining useful life, Deep learning, Convolution neural network},
   url          = {https://www.sciencedirect.com/science/article/pii/S0951832017307779},
@@ -491,6 +491,15 @@ A theory of learned sequential behavior is presented, with a focus on coarticula
   url     = {https://medium.com/@Rehan_Sayyad/how-to-use-convolutional-neural-networks-for-time-series-classification-80575131a474},
 }
 
+@Article{Chen2021,
+  author  = {Chen, Guang},
+  journal = {Computational Mechanics},
+  title   = {Recurrent neural networks (RNNs) learn the constitutive law of viscoelasticity},
+  year    = {2021},
+  month   = {03},
+  volume  = {67},
+  doi     = {10.1007/s00466-021-01981-y},
+}
 @InCollection{Feurer2019,
   author    = {Feurer, Matthias and Hutter, Frank},
   booktitle = {Automated Machine Learning},
